@@ -1,0 +1,9 @@
+<Files ~ "theme.html">
+Order allow,deny
+Deny from all
+</Files>
+
+<FilesMatch "theme_blockcenter_?.html">
+order deny,allow
+deny from all
+</FilesMatch>

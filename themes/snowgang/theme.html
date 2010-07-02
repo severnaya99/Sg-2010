@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<{assign var=theme_name value=$xoTheme->folderName}>
+<title><{$xoops_sitename}> - <{if $xoops_pagetitle}><{$xoops_pagetitle}><{else}><{$xoops_slogan}><{/if}></title>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta name="robots" content="<{$xoops_meta_robots|upper}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author|replace:"@":"&#x40;"}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS Cube" />
+<meta name="verify-v1" content="O6iy0Bpm+NwmxOUE0Lw2Ml2PAxjHJBmxJ+erT0CmfUs=" />
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rev="made" href="mailto:<{$xoops_meta_author|replace:"@":"&#x40;"}>" />
+<link rel="start" title="<{$xoops_sitename}>" href="<{$xoops_url}>/" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<{if $xoops_module_header}><{$xoops_module_header}><{/if}><{if $xoops_block_header}><{$xoops_block_header}><{/if}>
+<script type="text/javascript"><{$xoops_js|regex_replace:"/(\/\/\-\->|<!\-\-)/":""}></script>
+</head>
+
+<body>
+
+<div id="sfondo_pg">
+    <div id="site_container">
+        <div id="header_center">
+            <div id="cerca">
+                <!-- SiteSearch Google -->
+                <form method="get" action="http://www.google.it/custom" target="google_window">
+                    <table>
+                        <tr>
+                            <td width="50">
+                                <input type="hidden" name="domains" value="www.snowgang.com"></input>
+                                <input type="text" name="q" size="30" maxlength="255" value="" onfocus="" id="sbi"></input>
+                                <input type="hidden" name="sitesearch" value="www.snowgang.it" id="ss1"></input>
+                            </td>
+                            <td>
+                                <input name="" type="image" src="<{$xoops_url}>/themes/snowgang/images/btn_cerca.gif" alt="" title="" width="22" height="22"></input>
+                                <input type="hidden" name="client" value="pub-0330525491122529"></input>
+                                <input type="hidden" name="forid" value="1"></input>
+                                <input type="hidden" name="channel" value="4903495193"></input>
+                                <input type="hidden" name="ie" value="ISO-8859-1"></input>
+                                <input type="hidden" name="oe" value="ISO-8859-1"></input>
+                                <input type="hidden" name="flav" value="0000"></input>
+                                <input type="hidden" name="sig" value="j8ToJC6mM1ww-zDv"></input>
+                                <input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:100;LW:100;L:http://www.snowgang.it/xoops/uploads/img46716b0cd91a2.jpg;S:http://www.snowgang.it;LP:1;FORID:1"></input>
+                                <input type="hidden" name="hl" value="it"></input>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <!-- SiteSearch Google -->
+            </div>
+            <div id="log">
+                <a href="<{$xoops_url}>/modules/profile/register.php" >Registrati</a> | <a href="<{$xoops_url}>/modules/profile/user.php"> Login</a>
+            </div>
+            <div id="social">
+                <img src="<{$xoops_url}>/themes/snowgang/images/facebook_16.png"></img>
+                <img src="<{$xoops_url}>/themes/snowgang/images/myspace_16.png"></img>
+                <img src="<{$xoops_url}>/themes/snowgang/images/rss_16.png"></img>
+                <img src="<{$xoops_url}>/themes/snowgang/images/youtube_16.png"></img>
+            </div>
+            <div id="logo">
+                <a href="<{$xoops_url}>">
+                    <img alt="" src="<{$xoops_url}>/themes/snowgang/images/snowgang_logo.gif"></img>
+                </a>
+            </div>
+            <div id="banner_head">
+                <{if $xoops_showlblock}>
+                <!-- Start left blocks loop -->
+                <{foreach item=block from=$xoBlocks.canvas_left}>
+                    <{includeq file="$theme_name/theme_blockleft.html"}>
+                <{/foreach}>
+                <!-- End left blocks loop -->
+            <{/if}>
+            </div>
+        </div>
+        <div id="header_menu">
+            <ul>
+                    <li><a href="<{$xoops_url}>">HOME</a></li>
+                    <li> | </li>
+                    <li><a href="<{$xoops_url}>/modules/news/">NEWS</a></li>
+                    <li> | </li>
+                    <li><a href="<{$xoops_url}>/modules/xforum/">FORUM</a></li>
+                    <li> | </li>
+                    <li><a href="<{$xoops_url}>/modules/myalbum0/">FOTO</a></li>
+                    <li> | </li>
+                    <li><a href="#">VIDEO</a></li>
+                    <li> | </li>
+                    <li><a href="#">MATERIALI</a></li>
+                    <li> | </li>
+                    <li><a href="<{$xoops_url}>/modules/myalbum/">MERCATINO</a></li>
+                    <li> | </li>
+                    <li><a href="<{$xoops_url}>/modules/xfsection/">RUBRICHE</a></li>
+                    <li> | </li>
+                    <li><a href="<{$xoops_url}>/modules/profile/find_friend_search.php?list=all">UTENTI</a></li>
+                    <li> | </li>
+                    <li><a href="#">LINKS </a></li>
+                </ul>
+        </div>
+        <div id="header_bott"></div>
+        <!-- Inizio contenitore sito vero e proprio colonna centrale. -->
+        <div id="main_page">
+            <!-- Display center blocks if any -->
+                <{if $xoBlocks.page_topcenter}>
+                <!-- Start center-center blocks loop -->
+                    <{foreach item=block from=$xoBlocks.page_topcenter}>
+                        <{includeq file="$theme_name/theme_blockcenter_c.html"}>
+                    <{/foreach}>
+                <!-- End center-center blocks loop -->
+                <{/if}>
+
+                
+            <!-- End center top blocks loop -->
+                <{if $xoops_contents}>
+                    <div id="ModuleContents"><{$xoops_contents}></div>
+                <{/if}>
+            <!-- Start center bottom blocks loop -->
+                
+        </div>
+        <!-- Fine contenitore sito vero e proprio colonna centrale. -->
+        <div id="right_col">
+            <{if $xoops_showrblock}>
+                <!-- Start right blocks loop -->
+                <{foreach item=block from=$xoBlocks.canvas_right}>
+                    <{includeq file="$theme_name/theme_blockright.html"}>
+                <{/foreach}>
+            <{/if}>
+        </div>
+    </div>
+</div>
+</body>
+</html>

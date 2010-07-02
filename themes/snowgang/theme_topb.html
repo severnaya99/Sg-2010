@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<{assign var=theme_name value=$xoTheme->folderName}>
+<title><{$xoops_sitename}> - <{if $xoops_pagetitle}><{$xoops_pagetitle}><{else}><{$xoops_slogan}><{/if}></title>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta name="robots" content="<{$xoops_meta_robots|upper}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author|replace:"@":"&#x40;"}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS Cube" />
+<meta name="verify-v1" content="O6iy0Bpm+NwmxOUE0Lw2Ml2PAxjHJBmxJ+erT0CmfUs=" />
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rev="made" href="mailto:<{$xoops_meta_author|replace:"@":"&#x40;"}>" />
+<link rel="start" title="<{$xoops_sitename}>" href="<{$xoops_url}>/" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<{if $xoops_module_header}><{$xoops_module_header}><{/if}><{if $xoops_block_header}><{$xoops_block_header}><{/if}>
+<script type="text/javascript"><{$xoops_js|regex_replace:"/(\/\/\-\->|<!\-\-)/":""}></script>
+</head>
+
+<body>
+<div id="barra">
+    <div id="condivisione">
+        Spazio condivisione
+    </div>
+    <div id="cerca">
+<!-- SiteSearch Google -->
+        <form method="get" action="http://www.google.it/custom" target="google_window">
+                <input type="hidden" name="domains" value="www.snowgang.com"></input>
+                <input type="text" name="q" size="20" maxlength="255" value="" onfocus="" id="sbi"></input>
+                <input type="hidden" name="sitesearch" value="www.snowgang.it" id="ss1"></input>
+                <button type="submit" style="background:#ff0; width:60px;"><b>Cerca</b></button>
+                <input type="hidden" name="client" value="pub-0330525491122529"></input>
+                <input type="hidden" name="forid" value="1"></input>
+                <input type="hidden" name="channel" value="4903495193"></input>
+                <input type="hidden" name="ie" value="ISO-8859-1"></input>
+                <input type="hidden" name="oe" value="ISO-8859-1"></input>
+                <input type="hidden" name="flav" value="0000"></input>
+                <input type="hidden" name="sig" value="j8ToJC6mM1ww-zDv"></input>
+                <input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;LH:100;LW:100;L:http://www.snowgang.it/xoops/uploads/img46716b0cd91a2.jpg;S:http://www.snowgang.it;LP:1;FORID:1"></input>
+                <input type="hidden" name="hl" value="it"></input>
+        </form>
+        -<!-- SiteSearch Google -->
+    </div>
+</div>
+    
+<div id="canvas">
+    
+<!-- Inizio Parte alta menù e cerca -->
+    <div id="hh">
+        <div id="menu">
+            <ul>
+                <li><a href="<{$xoops_url}>">HOME </a></li>
+                <li><a href="<{$xoops_url}>/modules/news/">NEWS </a></li>
+                <li><a href="<{$xoops_url}>/modules/xfsection/">RUBRICHE </a></li>
+                <li><a href="#">FORUM </a></li>
+                <li><a href="#">FOTO </a></li>
+                <li><a href="#">VIDEO </a></li>
+                <li><a href="#">MERCATINO </a></li>
+                <li><a href="<{$xoops_url}>">CONTATTACI </a></li>
+            </ul>
+        </div>
+        
+
+            
+
+
+        
+    </div>
+<!-- FINE Parte alta menù e cerca -->
+<!-- Inizio Header TOP Logo e banner -->
+    <div id="header_top">
+        <div class="logosg">
+            <a href="<{$xoops_url}>"><img src="<{$xoops_imageurl}>images/logosg.png" alt="" width="300" height="100"/></a>
+        </div>
+        <div class="banner_top">
+            <img  src="http://www.snowgang.com/site/uploads/nike2010.jpg" alt="" style="width:468px; height:60px; border:0" />
+        </div>
+    </div>
+<!-- FINE Header TOP Logo e banner -->
+<!-- Inizio Header Bottom banner e mailing list -->
+    <div id="header_bottom">
+        <div class="banner">
+            <img  src="http://www.sitodenuclearizzato.eu/globali/immagini/testata.png" alt="" style="width:728px; height:90px; border:0" />
+        </div>
+        <div class="mail_list">
+            Mail
+        </div>
+    </div>
+<!-- FINE Header Bottom banner e mailing list -->
+    <div id="content-wrap">
+        <div id="main">
+            <div id="nav">
+                menu mappa
+            </div>
+            <div id="data-container">
+            <!-- Display center blocks if any -->
+                <{if $xoBlocks.page_topleft or $xoBlocks.page_topcenter or $xoBlocks.page_topright}>
+                <!-- Start center-center blocks loop -->
+                    <{foreach item=block from=$xoBlocks.page_topcenter}>
+                        <{includeq file="$theme_name/theme_blockcenter_c.html"}>
+                    <{/foreach}>
+                <!-- End center-center blocks loop -->
+                <!-- Start center-left blocks loop -->
+                    <div id="CenterLColumn">
+                        <{foreach item=block from=$xoBlocks.page_topleft}>
+                            <{includeq file="$theme_name/theme_blockcenter_l.html"}>
+                        <{/foreach}>
+                    </div>
+                <!-- End center-left blocks loop -->
+                <!-- Start center-right blocks loop -->
+                    <div id="CenterRColumn">
+                        <{foreach item=block from=$xoBlocks.page_topright}>
+                            <{includeq file="$theme_name/theme_blockcenter_r.html"}>
+                        <{/foreach}>
+                    </div>
+                <!-- End center-right blocks loop -->
+                <{/if}>
+            <!-- End center top blocks loop -->
+                <{if $xoops_contents}>
+                    <div id="ModuleContents"><{$xoops_contents}></div>
+                <{/if}>
+            <!-- Start center bottom blocks loop -->
+                <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright or $xoBlocks.page_bottomcenter}>
+                    <{if $xoBlocks.page_bottomcenter}>
+                        <{foreach from=$xoBlocks.page_bottomcenter item=block}>
+                            <{include file="$theme_name/theme_blockcenter_c.html"}>
+                        <{/foreach}>
+                    <{/if}>
+                    <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright}>
+                        <div id="CenterLColumn">
+                            <{foreach from=$xoBlocks.page_bottomleft item=block}>
+                                <{include file="$theme_name/theme_blockcenter_l.html"}>
+                            <{/foreach}>
+                        </div>
+                        <div id="CenterRColumn">
+                            <{foreach from=$xoBlocks.page_bottomright item=block}>
+                                <{include file="$theme_name/theme_blockcenter_r.html"}>
+                            <{/foreach}>
+                        </div>
+                    <{/if}>
+                <{/if}>
+            </div>
+        </div>
+        <div id="sidebar">
+            <{if $xoops_showrblock or $xoops_showlblock}>
+                <!-- Start right blocks loop -->
+                <{foreach item=block from=$xoBlocks.canvas_right}>
+                    <{includeq file="$theme_name/theme_blockright.html"}>
+                <{/foreach}>
+                <!-- End right blocks loop -->
+                <!-- Start left blocks loop -->
+                <{foreach item=block from=$xoBlocks.canvas_left}>
+                    <{includeq file="$theme_name/theme_blockleft.html"}>
+                <{/foreach}>
+                <!-- End left blocks loop -->
+            <{/if}>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footer-columns">
+            <div class="col3_sx">
+                <ul>
+                    <li>Sezioni:</li>
+                    <li><a href="<{$xoops_url}>">Home</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Foto</a></li>
+                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Mercatino</a></li>
+                    <li><a href="#">Utenti</a></li>
+                    <li><a href="#">Contattaci</a></li>
+                    <li><a href="#">Snowpark</a></li>
+                    <li><a href="#">Negozi</a></li>
+                    <li><a href="#">Zone sciistiche</a></li>
+                    <li><a href="#">Webcams</a></li>
+                    <li><a href="#">Noleggi</a></li>
+                    <li><a href="#">Scuole</a></li>
+                    <li><a href="#">Aziende</a></li>
+                </ul>
+            </div>
+            <div class="col3_center_1">
+                <ul>
+                    <li>Manuali:</li>
+                    <li><a href="#">La storia dello snowboard</a></li>
+                    <li><a href="#">Snowcabolario</a></li>
+                    <li><a href="#">Come comprare lo snow più adatto</a></li>
+                    <li><a href="#">Come funziona uno snowboard</a></li>
+                    <li><a href="#">Abc per saltare</a></li>
+                    <li><a href="#">Abc tricks</a></li>
+                    <li><a href="#">Guida alla manutenzione</a></li>
+                    <li><a href="#">Preparazione atletica</a></li>
+                    <li><a href="#">Vocabolario snowpark</a></li>
+                </ul>
+            </div>
+            <div class="col3_center_2">
+                <ul>
+                    <li>Informazioni:</li>
+                    <li><a href="#">Come diventare maestro di snowboard</a></li>
+                    <li><a href="#">Snowboard, regolamenazione giuridica</a></li>
+                    <li><a href="#">Regole del forum</a></li>
+                    <li><a href="#">Regole del mercatino</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="col3_dx">
+                <ul>
+                    <li>Freeride & Backcountry:</li>
+                    <li><a href="#">Fuori Pista e Valanghe: Nozioni Fondamentali</a></li>
+                    <li><a href="#">Backcountry, nozioni e materiali necessari</a></li>
+                    <li><a href="#">Freeride, nozioni e materiali necessari</a></li>
+                    <li><a href="#">Cenni di nivologia</a></li>
+                    <li><a href="#">Bollettino nivometereologioco, interpretazione e lettura</a></li>
+                    <li><a href="#">Arva, nozioni generali d'utilizzo</a></li>
+                    <li><a href="#">Genesi ed evoluzione di una valanga</a></li>
+                    <li><a href="#">Scala europea del pericolo di valanghe</a></li>
+                    <li><a href="#">Glossario dei termini utilizzati nei bollettini nivometerelogici</a></li>
+                    <li><a href="#">Negozi</a></li>
+                    <li><a href="#">Zone sciistiche</a></li>
+                    <li><a href="#">Libri e links importanti</a></li>
+                    <li><a href="#">Setting Splitboard</a></li>
+                    <li><a href="#">Utilizzo della Splitboard</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer-bottom">
+            <p><{$xoops_footer}></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

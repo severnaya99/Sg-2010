@@ -1,0 +1,223 @@
+
+body {
+    padding:0px 0px;
+    list-style-type: none;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    background-repeat:repeat-x;
+    background-image: url(images/sfumatura_sfondo.jpg);
+}
+
+#sfondo_pg {
+    background-image: url(images/fondo.jpg);
+    background-position: top center;
+    background-repeat: repeat-y;
+    width: 100%;
+    height: 3000px;
+    margin:0px;
+}
+#site_container{
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+}
+
+#header_center{
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(images/header.jpg);
+    background-repeat: no-repeat;
+    width:100%;
+    height: 149px;
+}
+#cerca{
+    background:transparent;
+    position:relative;
+    float:left;
+    width: 250px;
+    height: 39px;
+    top:0px;
+    left:350px;
+}
+
+#log{
+    font-size: 12px;
+    background-image: url(images/sfondo_login.png);
+    position:relative;
+    padding-top: 5px;
+    padding-left: 45px;
+    float:left;
+    width: 138px;
+    height: 34px;
+    top:0px;
+    left:360px;
+}
+
+#log a {
+    font-size: 12px;
+    color: #364866;
+    text-decoration:none;
+}
+#log a:visited {
+    font-size: 12px;
+    color: #364866;
+    text-decoration:none;
+}
+
+
+#social{
+    background-image: url(images/sfondo_social.png);
+    float:left;
+    position:relative;
+    padding-top: 5px;
+    padding-left: 25px;
+    width: 107px;
+    height: 34px;
+    top:0px;
+    left: 355px;
+}
+
+#logo{
+    background:transparent;
+    float:left;
+    position:relative;
+    width: 105px;
+    height: 105px;
+    top:20px;
+    right:545px;
+}
+#banner_head{
+    background: transparent;
+    float:left;
+    position:relative;
+    width: 468px;
+    height: 60px;
+    top: -55px;
+    left: 455px;
+    z-index: 5;
+}
+#header_menu{
+    background-image: url(images/sfondo_menu.jpg);
+    margin-left: auto;
+    margin-right: auto;
+    position:relative;
+    width:100%;
+    height: 24px;
+    top:0px;
+    font-family: arial;
+
+}
+ /* Menu*/
+#header_menu ul{
+    float:left;
+    list-style:none;
+    color: #364866;
+    margin-top: -13px;
+    margin-left: 30px;
+}
+#header_menu ul li {
+    display:inline;
+    margin:0;
+    padding:0;
+    font-size: 12px;
+    margin-right: 6px;
+    margin-left: 6px;
+    text-decoration:none;
+    float:left;
+}
+#header_menu ul li a {
+    font-weight: bold;
+    font-size: 14px;
+    color: #364866;
+    text-decoration:none;
+    display:block;
+    float:left;
+    width:auto;
+    margin-right: 0px;
+}
+#header_menu ul li a:visited {
+    color: #364866;
+    text-decoration:none;
+    display:block;
+    float:left;
+    width:auto;
+}
+
+#header_menu ul li a:hover {
+    color: #364866;
+    background: #ff0;
+    text-decoration:none;
+    display:block;
+    float:left;
+    width:auto;
+}
+
+
+
+#header_bott{
+    background-image: url(images/header_fine.jpg);
+    margin-left: auto;
+    margin-right: auto;
+    position:relative;
+    width:940px;
+    height: 24px;
+}
+
+#main_page{
+    width:750px;
+    float: left;
+    background: transparent;
+}
+
+
+
+
+
+
+.CenterCblock {
+    clear:both;
+    margin-bottom:10px;
+    margin-top: 10px;
+}
+#ModuleContents {font-size:100%; line-height:1.5; padding:5px 10px 5px 5px; clear:both;}
+
+
+#right_col {
+    float:right;
+    width:182px;
+    padding:15px 0 0 0;
+    margin:0;
+    background: transparent;
+}
+
+#right_col iframe{
+    border: transparent hidden;
+
+}
+#right_col .BlockTitle {
+    background-image: url(images/tit_newsletter.gif);
+    background: #222;
+    margin-top:10px;
+    padding:5px;
+    font:bold 160% 'Trebuchet MS', Tahoma, Sans-serif;
+    color:#caccaa;
+    text-align: center;
+}
+
+#right_col .BlockContent {
+    background-image: url(images/fondo_newsletter.gif);
+    padding:0px 0px;
+}
+
+
+
+
+
+
+#right_col ul {list-style:none; margin:0; padding:0; text-decoration:none;}
+#right_col li {list-style:none; margin:0; padding:5px;}
+
+* html body #right_col ul.sidemenu li {height:1%;}
