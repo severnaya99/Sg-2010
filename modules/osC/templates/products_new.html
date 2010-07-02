@@ -1,0 +1,67 @@
+<{include file="db:header.html"}>
+<table><tr>
+    <td width="100%" valign="top">
+	  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+       <tr>
+        <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+        <td class="pageHeading" align="right"><{$site_image}></td>
+       </tr>
+       </table>
+	  </td>
+     </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $psplit == 1 }>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="smallText"><{$product_split}></td>
+            <td align="right" class="smallText"><{$smarty.const.TEXT_RESULT_PAGE}> <{$product_split_links}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{if $sprd == 1 }>
+<{foreach item=product from=$products}>
+          <tr>
+            <td width="<{$width}>" valign="top" class="main"><a href="<{$product.link}>"><{$product.image}></a></td>
+            <td valign="top" class="main"><a href="<{$product.info}>"><b><u><{$product.products_name}></u></b></a><br><{$smarty.const.TEXT_DATE_ADDED}> <{$product.date}><br><{$smarty.const.TEXT_MANUFACTURER}> <{$product.manufacturers_name}><br><br><{$smarty.const.TEXT_PRICE}> <{$product.price}></td>
+            <td align="right" valign="middle" class="main"><a href="<{$product.buy}>"><{$product.buyimage}></a></td>
+          </tr>
+          <tr>
+            <td colspan="3"><{$seperator}></td>
+          </tr>
+<{/foreach}>
+<{else}>
+
+          <tr>
+            <td class="main"><{$smarty.const.TEXT_NO_NEW_PRODUCTS}></td>
+          </tr>
+          <tr>
+            <td><{$seperator}></td>
+          </tr>
+<{/if}>
+        </table></td>
+      </tr>
+
+<{ if $pslit2 == 1 }>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="smallText"><{$new_split}></td>
+            <td align="right" class="smallText"><{$smarty.const.TEXT_RESULT_PAGE}> <{$new_split_link}></td>
+          </tr>
+        </table></td>
+      </tr>
+<{/if}>
+    </table></td>
+</tr></table>

@@ -1,0 +1,20 @@
+<div id="div_births" class="div_births">
+	<div id="div_mothers" class="div_mothers">
+    	<{foreach item=mother from=$mothers}>
+        	<div id="div_mother" class="div_mother">
+            	<h3><a href="<{$mother.url}>"><{$mother.name}></a> - <{$mother.dob}></h3>
+                <div id="div_mother_key" class="div_mother_key">
+	                <div style="float:left;" id="div_mother_image" class="div_mother_image"><a href="<{$mother.url}>"><img border="0" width="120px" src="<{$person.display_image}>" id="img_display_mother_image" class="img_display_mother_image"></a></div>
+                	<div style="float:right;">
+                    <{foreach item=child from=$mother.children}>
+                    	<div style="float:left;">
+             	       		<div id="div_child_image" class="div_child_image"><a href="<{$child.url}>"><img border="0" width="87px" src="<{$child.baby_photo}>" id="img_display_child_image" class="img_display_child_image"></a></div>
+                            <div id="div_child_details" class="div_child_details"><a href="<{$child.url}>"><{$child.name}></a> - <{$child.dob}></div>
+                        </div>
+                    <{/foreach}>
+                    </div>
+                </div>
+            </div>
+        <{/foreach}>
+    </div>
+</div>

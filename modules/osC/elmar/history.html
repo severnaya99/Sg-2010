@@ -1,0 +1,974 @@
+<!-- $Id: history.html 437 2005-12-11 10:59:54Z stefan $ -->
+<!-- header_begin -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html dir="ltr" lang="de">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+  <title>Das Elm@r-Modul f&uuml;r osCommerce: Versionshistorie</title>
+  <link rel="stylesheet" type="text/css" href="elmar.css">
+</head>
+
+<body>
+<table border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#6B7DA6" summary="Layout Kopf">
+  <tr>
+    <td width="210" bgcolor="white"><img src="img/oscommerce.gif" border="0" alt="osCommerce"
+    title="osCommerce" width="204" height="50"></td>
+
+    <td>
+      <div style=
+      "color:#eaeeff;background-color:#6b7da6;padding-top:10px;padding-bottom:0px;padding-left:50px;padding-right:10px">
+      <div style="font-weight:bold; width:100%; filter:Shadow(color=#303030, direction=135)">
+          <h1 style="text-align:center;font-size:22px;color:#eaeeff;margin:0px;padding:1px;">
+          Elm<span style="color:red">@</span>r - Versionshistorie</h1>
+        </div>
+      </div><br clear="all">
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" bgcolor="#2A5580">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#2A5580" width="100%" summary="Layout Seite">
+  <tr>
+    <td valign="top"></td>
+
+    <td valign="top" bgcolor="#FFF8DC" width="99%">
+      <div class="middle">
+<!-- header_end -->
+
+<h1>Versionshistorie</h1>
+
+<div class="middleCell">
+  <p>Diese Datei enth&auml;lt die Versionshistorie f&uuml;r das <a href="http://projekt.wifo.uni-mannheim.de/elmar/nav/osCommerce">Elm@r-Modul</a>. Aufgelistet werden
+  jeweils die wichtigsten &Auml;nderungen und Neuerungen gegen&uuml;ber der unmittelbaren Vorg&auml;ngerversion.</p>
+
+  <p>Falls Sie eigene &Auml;nderungen und Anpassungen an den Dateien des Elm@r-Moduls vornehmen, tritt das Problem auf, dass diese bei einem Update auf eine neue Version des Moduls verloren gehen. Mithilfe des Open-Source Windows-Programms <a href="http://winmerge.sourceforge.net/">WinMerge</a> k&ouml;nnen Sie durch Abgleich von neuen und alten Dateien eigene &Auml;nderungen u.&nbsp;U. verh&auml;ltnism&auml;&szlig;ig leicht retten.</p>
+</div>
+
+
+<h1>V 3.60</h1>
+
+<div class="middleCell">
+<p>
+  Anpassungen f&uuml;r <a href="http://www.mysql.com/" target="_blank">MySQL 5.0</a> und <a href="http://www.osc2nuke.com/" target="_blank">osc2nuke</a>.
+  F&uuml;r <em>osc2nuke</em> ist die Konstante <code>ELMAR_RUNS_ON</code> in der Konfigurationsdatei <code>elmar_config.inc.php</code> entsprechend zu setzen.
+</p>
+</div>
+
+
+<h1>V 3.59</h1>
+
+<div class="middleCell">
+<p>
+  Produktdateien k&ouml;nnen nun auch f&uuml;r <em>Amazon Market Place</em> aufbereitet werden.
+  Beachten Sie dazu bitte die Hinweise in der Konfigurationsdatei <code>elmar_config.inc.php</code>.
+  <br>(Mit Dank an <EM>Christoph Grimmer</EM> f&uuml;r diese Idee.)
+</p>
+<p>
+  Bugfix: W&auml;hrungsbetr&auml;ge in Produktdateien werden wieder ohne Tausendertrennzeichen ausgegeben, d.&nbsp;h. <code>1234.56</code> bzw. <code>1234,56</code> und nicht mehr <code>1.234,56</code> bzw. <code>1,234.56</code>.
+</p>
+</div>
+
+
+<h1>V 3.58</h1>
+
+<div class="middleCell">
+<p>
+  Die Namen f&uuml;r die Datenbankfelder, in denen EAN und ISBN stehen, lassen sich in der Konfigurationsdatei <code>elmar_config.inc.php</code> mit den Konstanten <code>ELMAR_PRODUCTS_EAN_FIELD</code> und <code>ELMAR_PRODUCTS_ISBN_FIELD</code> einstellen. Dies erm&ouml;glicht den Einsatz von entsprechenden Contribs wie z.&nbsp;B. <a href="http://www.oscommerce.com/community/contributions,126" target="_blank">&quot;Add UPC numbers, SKUs, ISBN/ISSN, etc.&quot;</a> Die Werte werden dann in die Produktdateien geschrieben. Au&szlig;erdem wird die Echtzeitsuche nach EAN und ISBN unterst&uuml;tzt. Die Testseite f&uuml;r die Echtzeitsuche sowie die Protokollierung wurden entsprechend erweitert.
+  <br>(Mit Dank an <EM>Sirko</EM> f&uuml;r diese Idee.)
+</p>
+<p>
+  Die Echtzeitsuche erlaubt nun auch die gezielte Suche nach Artikelnummern.
+</p>
+</div>
+
+
+<h1>V 3.57</h1>
+
+<div class="middleCell">
+<p>
+  Der Name f&uuml;r das Datenbankfeld, das als Produktbeschreibung verwendet werden soll, l&auml;sst sich in der Konfigurationsdatei <code>elmar_config.inc.php</code> mit der Konstanten <code>ELMAR_PRODUCTS_DESCRIPTION_FIELD</code> einstellen. So sind osCommerce-Module einsetzbar, um zus&auml;tzlich zur ausf&uuml;hrlichen Produktbeschreibung (<code>products_description</code>) eine Kurzbeschreibung einzusetzen. Ein passendes Modul daf&uuml;r ist z.&nbsp;B. <a href="http://www.oscommerce.com/community/contributions,3123" target="_blank">Products&nbsp;Short&nbsp;Description</a>.
+  <br>(Mit Dank an <EM>Robert Daut</EM> von <a href="http://www.komerci.de/shop/">Komerci</a> f&uuml;r diese Idee.)
+</p>
+<p>
+  Falls die FTP-Erweiterungen f&uuml;r PHP nicht zugreifbar sind, nutzt das Modul stattdessen den so genannten FTP-Wrapper.
+</p>
+</div>
+
+
+<h1>V 3.56</h1>
+
+<div class="middleCell">
+<p>
+  Wenn der HTTP-Header <code>Range</code> gesetzt ist, wird die Erzeugung einer Produktdatei nach der gew&uuml;nschten Bytezahl abgebrochen.
+</p>
+<p>
+  Die Anzahl der &uuml;bertragenen Bytes bei Erzeugung einer Produktdatei wird protokolliert.
+</p>
+<p>
+  Bei der Installation wird ein evtl. fehlender Produktdateizugriff in der Shopdatei <code>shopinfo.xml</code> erg&auml;nzt.
+</p>
+</div>
+
+
+<h1>V 3.55</h1>
+
+<div class="middleCell">
+<p>
+  Produktdateien k&ouml;nnen nun auch f&uuml;r <strong>Shopping.com</strong> erzeugt werden.
+  Anmeldung per E-Mail unter: <a href="mailto:anmeldung@shopping.com">anmeldung@shopping.com</a>
+</p>
+<p>
+  F&uuml;r <strong>Kelkoo</strong> werden die beiden Produktdateiformate f&uuml;r die kostenlose Partnerschaft und die kostenpflichtige Pr&auml;miumpartnerschaft unterst&uuml;tzt. Bitte setzen Sie die entsprechenden Werte in der Konfigurationsdatei <code>elmar_config.inc.php</code>. Suchen Sie dazu einfach innerhalb der Datei nach allen Stellen, wo &quot;kelkoo&quot; steht.
+</p>
+<p>
+  Die Konstante <code>ELMAR_KELKOO_MAX_DESCRIPTION_LENGTH</code> gibt an, wie viele Zeichen die Produktbeschreibung bei der <em>kostenlosen</em> Kelkoo-Partnerschaft umfassen darf. Produkte mit l&auml;ngerer Beschreibung werden ignoriert! Falls zu lange Produktbeschreibungen vorhanden sind, erhalten Sie eine Warnung. In der Protokolldatei wird vermerkt, wie viele Produkte ignoriert wurden, z.B. <code>~35</code>.
+</p>
+<p>
+  Eine Kopie der Konfigurationsdatei <code>elmar_config.inc.php</code> mit den Voreinstellungen steht unter dem Namen <code>elmar_config.default</code> zur Verf&uuml;gung.
+  Bei einem Update kann man so mithilfe von <a href="http://winmerge.sourceforge.net/">WinMerge</a> einfach die vorhandene Konfigurationsdatei aktualisieren.
+</p>
+</div>
+
+
+<h1>V 3.54</h1>
+
+<div class="middleCell">
+<p>
+  Unterst&uuml;tzung f&uuml;r suchmaschinenfreundliche URLs f&uuml;r Produktseiten, die mithilfe der Funktion <code>tep_href_link</code> gebildet werden. Erm&ouml;glicht den Einsatz vieler SEO-Contribs, die <code>tep_href_link</code> modifizieren.
+  Aktivieren mit der Konstanten <code>ELMAR_SEO_URLS</code>.
+</p>
+<p>
+  In der Produktdatei zus&auml;tzliche Linkparameter an die URLs von Produktseiten anh&auml;ngen, um zu erkennen, von welcher Website Besucher kommen.
+  Aktivieren mit der Variablen <code>$partner_ids</code> in der Konfigurationsdatei <code>elmar_config.inc.php</code>.
+</p>
+</div>
+
+
+<h1>V 3.53</h1>
+
+<div class="middleCell">
+<p>
+  Produkte f&uuml;r Erwachsene k&ouml;nnen durch Setzen der Konstanten <code>ELMAR_FSK_18</code> aus Produktdateien und Echtzeitabfragen herausgehalten werden.
+  Voraussetzung ist die Installation der <a href="http://www.oscommerce.com/community/contributions,2567" target="_blank">FSK 18 Contribution</a>. (Das Elm@r-Modul testet den Wert des Feldes <code>products.products_fsk_18</code> auf <code>0</code>.)
+</p>
+</div>
+
+
+<h1>V 3.52</h1>
+
+<div class="middleCell">
+<p>
+  Produktvarianten werden in der Produktbeschreibung aufgef&uuml;hrt.
+  Dies l&auml;sst sich mit der Konstanten <code>ELMAR_PRODUCT_OPTIONS</code> in der Konfigurationsdatei <code>elmar_config.inc.php</code> abschalten.
+</p>
+<p>
+  Per Vorgabe werden nur noch Produkte mit einem Preis gr&ouml;&szlig;er als 0 ber&uuml;cksichtigt.
+  Dies l&auml;sst sich mit der Konstanten <code>NUR_POSITIVER_PREIS</code> in der Konfigurationsdatei <code>elmar_config.inc.php</code> einstellen.
+</p>
+</div>
+
+
+<h1>V 3.51</h1>
+
+<div class="middleCell">
+<p>
+  Die Limitierung der Produktanzahl f&uuml;r Kelkoo wurde auf 5.000 Produktdatens&auml;tze begrenzt.
+  Die am h&auml;ufigsten betrachteten Produkte werden vorrangig ber&uuml;cksichtigt.
+  Beides ist in der Konfigurationsdatei <code>elmar_config.inc.php</code> einstellbar.
+</p>
+<p>
+  In die Shopdatei <code>shopinfo.xml</code> werden keine doppelten Kategorienamen mehr aufgenommen.
+</p>
+</div>
+
+
+<h1>V 3.50</h1>
+
+<div class="middleCell">
+<p>
+  Bugfix f&uuml;r den FTP-Upload bei Froogle.
+</p>
+</div>
+
+
+<h1>V 3.49</h1>
+
+<div class="middleCell">
+<p>
+  Die Standardproduktdatei wurde um die beiden Spalten <code>image_width</code> und <code>image_height</code> erweitert, welche die Gr&ouml;&szlig;e der Produktbilder in Pixeln enthalten. Mithilfe dieser Werte k&ouml;nnen Preisvergleichsdienste die Bilder verzerrungsfrei skalieren. Aktiviert werden die neuen Spalten in der Konfigurationsdatei <code>elmar_config.inc.php</code> mit der Konstanten <code>ELMAR_PROD_IMAGE_CALCULATE_SIZE</code>. Falls alle Bilder gleich gro&szlig; sind, sollten au&szlig;erdem die beiden Konstanten <code>ELMAR_PROD_IMAGE_WIDTH</code> und <code>ELMAR_PROD_IMAGE_HEIGHT</code> gesetzt werden.
+</p>
+</div>
+
+
+<h1>V 3.48</h1>
+
+<div class="middleCell">
+<p>
+  Die Standardproduktdatei wurde um die beiden Spalten <code>expirationdate</code> und <code>oldprice</code> (G&uuml;ltigkeitsdatum f&uuml;r Sonderangebote und alter Preis) erweitert.
+</p>
+<p>
+  Bugfix: Abgelaufene Sonderangebote werden nun mit dem normalen Preis in Produktdateien aufgenommen.
+</p>
+</div>
+
+
+<h1>V 3.47</h1>
+
+<div class="middleCell">
+<p>
+  Die HTML-Tags <code>&lt;br&gt;</code> und <code>&lt;p&gt;</code> werden in Produktdateien durch Leerzeichen ersetzt.
+</p>
+<p>
+  Bugfix: Keine doppelten Pfade mehr f&uuml;r Thumbnails bei Echtzeitabfragen.
+</p>
+</div>
+
+
+<h1>V 3.46</h1>
+
+<div class="middleCell">
+<p>
+  Das Generieren von Produktdateien sollte nun auch mit SSL-Verbindungen (URL f&auml;ngt mit <code>https</code> an) klappen, sofern PHP ab Version 4.3 mit aktiviertem OpenSSL l&auml;uft.
+</p>
+</div>
+
+
+<h1>V 3.45</h1>
+
+<div class="middleCell">
+<p>
+  Froogle m&ouml;chte neuerdings von einigen Shops, dass die Language-ID an Produktlinks angeh&auml;ngt wird, damit Besucher unabh&auml;ngig von der Spracheinstellung im Browser immer eine bestimmte Produktseite zu sehen kriegen. In der Datei <code>elmar_config.inc.php</code> gibt es deshalb die neue Konstante <code>FROOGLE_LANGUAGE_PARAM</code>. Gegebenenfalls den Wert wie folgt setzen:
+</p>
+<blockquote><pre class="code">define('FROOGLE_LANGUAGE_PARAM', '&amp;language=de');</pre></blockquote>
+<p>Die HTML-Protokolldateien verwenden nun einen Style, damit sie besser aussehen.</p>
+</div>
+
+
+<h1>V 3.44</h1>
+
+<div class="middleCell">
+<p>
+  Bugfix beim Umrechnen von W&auml;hrungsbetr&auml;gen: Betroffen waren nur Shops, die beispielsweise in EUR rechnen, aber auch USD-Preise in Produktdateien schreiben m&ouml;chten.
+</p>
+</div>
+
+
+<h1>V 3.43</h1>
+
+<div class="middleCell">
+<p>
+  Im Men&uuml; kann die Anzeige von PHP-Fehler- und Warnmeldungen im Fu&szlig; der Seiten des Webinterface des Elm@r-Moduls aktiviert werden. Dies ist &auml;u&szlig;erst hilfreich bei der Fehlersuche.
+</p>
+<p>
+  Die Konfigurationsdateien des Elm@r-Moduls d&uuml;rfen nicht mit dem osCommerce-Dateimanager bearbeitet werden, weil sonst Backslash-Zeichen, z.&nbsp;B. beim Tabulator, der als Trennzeichen in Produktdateien benutzt wird, verloren gehen. Das Elm@r-Modul erzeugt nun entsprechende Hinweise und zeigt in der <a href="readme.html#osfilemanager">Readme</a>, wie der osCommerce-Dateimanager repariert werden kann.
+</p>
+<p>
+  Um nur Produkte mit Beschreibung in Produktdateien aufzunehmen, kann die Konstante <code>NUR_MIT_PRODUKTBESCHREIBUNG</code> in der Datei <code>elmar_config.inc.php</code> gesetzt werden.
+</p>
+<p>
+  Der Defaultwert f&uuml;r <code>DB_STEP</code> wurde von 300 auf 1000 hochgesetzt, damit Produktdateien schneller erzeugt werden.
+</p>
+<p>
+ Beim Erzeugen von gro&szlig;en Produktdateien, die auf dem Server gespeichert werden, greift das Elm@r-Modul quasi auf sich selbst per URL zu. Wenn auf dem Server <code>allow_url_fopen=off</code> ist, funktioniert dies mit <code>fopen</code> jedoch nicht. Daher &ouml;ffnet das Modul die URL nun mit <code>fsockopen</code>. Sollte dies wider Erwarten nicht funktionieren, k&ouml;nnen Sie mit der Konstanten <code>ELMAR_MODUL_USE_FOPEN_FOR_URL</code> auf <code>fopen</code> umschalten.
+</p>
+<p>
+  F&uuml;r generierte Produktdateien zeigt das Modul Dateigr&ouml;&szlig;e und &Auml;nderungsdatum an.
+</p>
+<p>
+  F&uuml;r xt:Commerce wurde <code>DISPLAY_PRICE_WITH_TAX</code> per Vorgabe aktiviert, damit Preise inklusive Mehrwehrsteuer in Produktdateien geschrieben werden.
+</p>
+</div>
+
+
+<h1>V 3.42</h1>
+
+<div class="middleCell">
+<p>
+  Neuer Men&uuml;punkt &quot;System&quot; zur Anzeige von Systeminformationen, die bei einer Fehlersuche helfen.
+  Wer Sicherheitsbedenken hat, kann dieses Feature mit der Konstanten <code>ELMAR_SYSINFO</code> in der Datei <code>elmar_config.inc.php</code> deaktivieren. Normalerweise sollte der Passwortschutz des Moduls aber ausreichend sein.
+</p>
+</div>
+
+
+<h1>V 3.41</h1>
+
+<div class="middleCell">
+<p>
+  Kleinere Verbesserungen.
+</p>
+</div>
+
+
+<h1>V 3.40</h1>
+
+<div class="middleCell">
+<p>
+  Fehlermeldungen verbessert.
+</p>
+</div>
+
+
+<h1>V 3.39</h1>
+
+<div class="middleCell">
+<p>
+  Es wurden Anpassungen f&uuml;r das Shopsystem <a href="http://www.xt-commerce.com/" target="_blank">XT-Commerce</a> vorgenommen.
+</p>
+<p>
+  Die Pr&uuml;fung auf Verf&uuml;gbarkeit eines Updates wurde ge&auml;ndert.
+</p>
+</div>
+
+
+<h1>V 3.38</h1>
+
+<div class="middleCell">
+<p>
+  Da das Shopsystem <a href="http://www.zen-cart.com/" target="_blank">Zen&nbsp;Cart</a> auch mit der PHP-Einstellung <code>register_globals=Off</code> l&auml;uft, wurde das Elm@r-Modul entsprechend angepasst.
+  Des Weiteren wurde die Bestimmung von Sprache und W&auml;hrung verbessert. Insbesondere wird automatisch die passende Sprache gew&auml;hlt, wenn nur eine zur Verf&uuml;gung steht.
+</p>
+</div>
+
+
+<h1>V 3.37</h1>
+
+<div class="middleCell">
+<p>
+  Bugfixes:
+  Verlorengegangener Sprachcode in Pangora-Produktdateien ist wieder da.
+  F&uuml;r <code>PROD_ID_IST_ARTIKELNUMMER=FALSE</code> wird <code>products_id</code> f&uuml;r die Produkt-URL benutzt.
+  F&uuml;r Links werden wieder SERVER_NAME und SERVER_PORT statt HTTP_HOST verwendet.
+</p>
+</div>
+
+
+<h1>V 3.36</h1>
+
+<div class="middleCell">
+<p>
+  Ber&uuml;cksichtigung von <code>allow_url_fopen=Off</code> in der <code>php.ini</code>.
+</p>
+</div>
+
+
+<h1>V 3.35</h1>
+
+<div class="middleCell">
+<p>
+  Jetzt l&auml;uft das Modul auch unter PHP&nbsp;4 (und nicht nur unter PHP&nbsp;5) mit dem Shopsystem <a href="http://www.zen-cart.com/" target="_blank">Zen&nbsp;Cart</a>.
+</p>
+</div>
+
+
+<h1>V 3.34</h1>
+
+<div class="middleCell">
+<p>
+  Kleinere Verbesserungen, z.&nbsp;B. bei der Protokollierung in Bezug auf die Erstellung von Produktdateien in mehreren Schritten.
+</p>
+</div>
+
+
+<h1>V 3.33</h1>
+
+<div class="middleCell">
+<p>
+  Sofern aktiviert, wird die osCommerce-Fu&szlig;zeile ausgegeben (<code>application_bottom.php</code>).
+</p>
+<p>
+  Bugfix f&uuml;r den Fall, dass sowohl f&uuml;r das Modul (<code>ELMAR_OUTPUT_COMPRESSION</code>) als auch den Shop Kompression (<code>GZIP_COMPRESSION</code>) aktiviert ist.
+</p>
+</div>
+
+
+<h1>V 3.32</h1>
+
+<div class="middleCell">
+<p>
+  Das Modul wurde f&uuml;r das Shopsystem <a href="http://www.zen-cart.com/" target="_blank">Zen&nbsp;Cart</a>
+  Version&nbsp;V1.2.3d angepasst.
+</p>
+</div>
+
+
+<h1>V 3.31</h1>
+
+<div class="middleCell">
+<p>
+  Wenn die Anfrage keine Sprache vorgibt, wird die Default-Einstellung des Moduls benutzt, die in <CODE>elmar_config.inc.php</CODE> mit den Konstanten <CODE>PROD_DEFAULT_LANGUAGE</CODE> und <CODE>PROD_DEFAULT_LANGUAGE_ID</CODE> festgelegt wird. (Bisher wurde auf die osCommerce-Spracheinstellung zur&uuml;ckgegriffen.)
+</p>
+<p>
+  F&uuml;r Produktbeschreibungen u.&nbsp;&Auml;. k&ouml;nnen bei Bedarf in der Datei <CODE>elmar_config.inc.php</CODE> Ersetzungen definiert werden, die in PHPs <CODE>get_html_translation_table</CODE> fehlen, z.&nbsp;B.
+</p>
+<blockquote><pre class="code">$elmar_html_translation['&trade;'] = 'TM';</pre></blockquote>
+<p>
+  Auswahlm&ouml;glichkeiten f&uuml;r Sprachen und W&auml;hrungen werden nur angezeigt, wenn auch mehrere zur Verf&uuml;gung stehen.
+</p>
+<p>
+  Die Produktkategorien der ersten Ebene in die <CODE>shopinfo.xml</CODE> schreiben.
+</p>
+</div>
+
+
+<h1>V 3.30</h1>
+
+<div class="middleCell">
+<p>
+  Die Auswahl von Sprache und W&auml;hrung wird nur noch angezeigt, wenn mehrere zur Auswahl stehen.
+  Falls Werte f&uuml;r Sprache und W&auml;hrung nicht vorhanden sind, werden Vorgabewerte eingesetzt.
+</p>
+<p>
+  Anpassungen im Zusammenhang mit xt:Commerce&nbsp;3, um fehlende Werte f&uuml;r <CODE>HTML_PARAMS</CODE> sowie <CODE>CHARSET</CODE> zu setzen.
+</p>
+</div>
+
+
+<h1>V 3.29</h1>
+
+<div class="middleCell">
+<p>
+  Dateien werden beim &Ouml;ffnen gesperrt, um gleichzeitige Zugriffe zu koordinieren.
+</p>
+<p>
+  Die Standardproduktdatei kann nun auch wie die anderen in einem bestimmten Verzeichnis relativ zum <code>catalog</code>-Verzeichnis gespeichert werden.
+</p>
+<p>
+  Das Startskript besitzt jetzt eine Fehlerpr&uuml;fung, um Probleme beim Einbinden von Konfigurationsdateien besser zu erkennen und anzuzeigen.
+</p>
+</div>
+
+
+<h1>V 3.28</h1>
+
+<div class="middleCell">
+<p>
+  Um insbesondere Probleme nach Updates zu erkennen, pr&uuml;ft das Startskript, ob es mit einer passenden Konfigurationsdatei l&auml;uft. Zum Schutz des Startskripts vor unberechtigtem Zugriff wird das Setzen eines Passworts empfohlen, siehe <a href="readme.html#elmar_password">Readme</a>. (Das fr&uuml;here Umbenennen des <CODE>elmar</CODE>-Verzeichnisses f&uuml;hrt zu Problemen bei Updates.)
+</p>
+</div>
+
+
+<h1>V 3.27</h1>
+
+<div class="middleCell">
+<p>
+  Bei der Erstellung von Produktdateien werden Sonderpreise nun direkt im SQL-Befehl ber&uuml;cksichtigt, was den Vorgang etwas beschleunigt und ggf. die Angabe des G&uuml;ltigkeitsdatums erm&ouml;glicht (bei Kelkoo ist dadurch die Spalte <code>expiration</code> hinzugekommen).
+</p>
+<p>
+  In Produktdateien f&uuml;r WEB.DE wird keine Kopfzeile mit den Spaltennamen geschrieben.
+</p>
+<p>
+  Das Modul wurde f&uuml;r <a href="http://www.xt-commerce.com/" target="_blank">XT-Commerce</a> Version&nbsp;3 angepasst.
+</p>
+</div>
+
+
+<h1>V 3.26</h1>
+
+<div class="middleCell">
+<p>
+  Das Modul unterst&uuml;tzt nun auch das Produktdateiformat f&uuml;r <a href="http://web.de/">WEB.DE</a>.
+</p>
+</div>
+
+
+<h1>V 3.25</h1>
+
+<div class="middleCell">
+<p>
+  Bei der Erstellung von Produktdateien werden in Texten wie Produktbeschreibungen nun auch <strong>numerische HTML-Entities</strong> wie <code>&amp;#39;</code> durch das entsprechende ASCII-Zeichen ersetzt. 2-Byte Unicode-Zeichen wie <code>&amp;#8482;</code> werden durch den Wert der neuen Konstante <code>ELMAR_MODULE_HTML_ENTITY_REPLACE_CHAR</code> ersetzt.
+</p>
+</div>
+
+
+<h1>V 3.24</h1>
+
+<div class="middleCell">
+<p>
+  Bisher wurden bei der Erstellung von Produktdateien in den <STRONG>Produktbeschreibungen</STRONG> nur die HTML-Tags entfernt. Ab dieser Version werden nun auch die HTML-Entities wie <code>&amp;auml;</code> ersetzt.
+</p>
+</div>
+
+
+<h1>V 3.23</h1>
+
+<div class="middleCell">
+<p>
+  Bugfix: Protokollierung von Parametern f&uuml;r das Produktdateiformat korrigiert.
+</p>
+</div>
+
+
+<h1>V 3.22</h1>
+
+<div class="middleCell">
+<p>
+  Bei der Generierung von Produktdateien f&uuml;r Kelkoo kann die maximale Anzahl von Produktdatens&auml;tzen begrenzt werden, um unter der kostenfreien Grenze von derzeit 32.000 Eintr&auml;gen zu bleiben.
+</p>
+</div>
+
+
+<h1>V 3.21</h1>
+
+<div class="middleCell">
+<p>
+  Falls ein Ersatzbild in der Art <CODE>keinbild.gif</CODE> anstelle des Produktbildes eingesetzt wird, kann dieses aus Produktdateien entfernt werden, indem die neue Konstante <CODE>NO_IMAGE_NAME</CODE> in der Datei <CODE>elmar_config.inc.php</CODE> gesetzt wird.
+</p>
+<p>
+  Bugfix: Die bei &auml;lteren osCommerce-Versionen nicht existierende Konstante <CODE>DIR_WS_HTTP_CATALOG</CODE> wird nicht mehr benutzt.
+</p>
+</div>
+
+
+<h1>V 3.20</h1>
+
+<div class="middleCell">
+<p>
+  Um Timeout-Probleme bei der Generierung von Produktdatei f&uuml;r sehr viele Produkte zu umgehen, wurde die Funktion &quot;Markierte Produktdateien in mehreren Schritten generieren&quot; eingebaut.
+  Solange Timeouts auftreten, muss der Wert der Konstanten <STRONG><CODE>DB_STEP</CODE></STRONG> in der Datei <CODE>elmar_config.inc.php</CODE> verringert werden.
+  Vor einem <STRONG>FTP-Upload bei Froogle</STRONG> sind gro&szlig;e Dateien ggf. in einem ersten Schritt zun&auml;chst zu erzeugen und dann im zweiten Schritt mit dem FTP-Button hochzuladen.
+</p>
+</div>
+
+
+<h1>V 3.19</h1>
+
+<div class="middleCell">
+<p>
+  Bugfix: Komplette URLs f&uuml;r Produktgrafiken, die mit <code>http:</code> beginnen, werden unver&auml;ndert &uuml;bermittelt.
+</p>
+<p>
+  Bugfix: Produktbezeichnung wird f&uuml;r Froogle auf 80 Zeichen begrenzt.
+</p>
+</div>
+
+
+<h1>V 3.18</h1>
+
+<div class="middleCell">
+<p>
+  Zur Feststellung, ob ein Produkt ab Lager lieferbar ist oder nicht, hat das Elm@r-Modul bisher das Datenbankfeld f&uuml;r den Produktstatus (<CODE>products_status</CODE>) mit den Werten &quot;auf Lager&quot; oder &quot;nicht vorr&auml;tig&quot; benutzt. Es gibt nun zwei neue Konstanten in der Datei <CODE>elmar_config.inc.php</CODE>, mit denen stattdessen die Artikelanzahl (<CODE>products_quantity</CODE>) herangezogen werden kann. Dazu sind die Werte wie folgt zu setzen:
+</p>
+<blockquote><pre class="code">define('NUR_POSITIVE_ANZAHL', TRUE);
+define('LIEFERBARKEIT_FELDNAME', 'products_quantity');</pre></blockquote>
+</div>
+
+
+<h1>V 3.17</h1>
+
+<div class="middleCell">
+<p>
+  Bugfix: Der Zugriff auf eine ben&ouml;tigte JavaScript-Datei wurde durch eine zu restriktive <CODE>.htaccess</CODE>-Datei f&auml;lschlicherweise unterbunden.
+</p>
+<p>
+  Die speziellen Produktdateien <CODE>froogle.txt</CODE>, <CODE>kelkoo.txt</CODE>, <CODE>pangora.txt</CODE> usw. werden nun bei der Installation erzeugt und vom Shellskript zum Setzen der Schreibrechte ber&uuml;cksichtigt.
+</p>
+</div>
+
+
+<h1>V 3.16</h1>
+
+<div class="middleCell">
+<p>
+  Wir freuen uns, dass der kommerzielle Preisvergleichsdienst <a href="http://www.idealo.de/" target="_blank">idealo</a> nun auch den <CODE>shopinfo.xml</CODE>-Standard unterst&uuml;tzt. Auf der Registrierungsseite des Moduls kann man seinen Shop nun auch bei <STRONG>idealo</STRONG> automatisch anmelden.
+</p>
+<p>
+  <a href="http://froogle.google.de/" target="_blank">Froogle</a>, die Produktsuchmaschine von <a href="http://www.google.de/" target="_blank">Google</a>, wird vom Elm@r-Modul unterst&uuml;tzt. Produktdateien im passenden Format k&ouml;nnen erzeugt und auch gleich per Knopfdruck auf Froogles FTP-Server geschoben werden. Weitere Informationen finden Sie im Modul unter dem Men&uuml;punkt &quot;Produktdateien&quot;.
+</p>
+</div>
+
+
+<h1>V 3.15</h1>
+
+<div class="middleCell">
+<p>
+  Das Modul unterst&uuml;tzt nun <STRONG>verschiedene Sprachen und W&auml;hrungen</STRONG>, die in Eingabeformularen ausgew&auml;hlt oder beim Abruf der Produktdaten als Parameter an die URL angeh&auml;ngt werden k&ouml;nnen (z.&nbsp;B. <code>http://www.example.com/elmar_products.php?language=de&amp;currency=EUR</code>). Bisher waren <STRONG>de</STRONG> (Deutschland) und <STRONG>EUR</STRONG> (Euro) fest programmiert. Wenn dies so auch in osCommerce eingestellt ist und bei der Abfrage von Produktdaten keine andere W&auml;hrung und/oder Sprache (Spracheinstellung im Browser beachten!) vorgegeben wird, sollte sich an den bisherigen Produktdaten nichts &auml;ndern.
+</p>
+<p>
+  Auf der Registrierungsseite kann man seinen Shop nun nicht nur bei Elm@r, sondern auch beim Preisvergleichsdienst <a href="http://www.rockbottom.de/" target="_blank">RockBottom</a> automatisch anmelden.
+</p>
+</div>
+
+
+<h1>V 3.14</h1>
+
+<div class="middleCell">
+<p class="comment">
+  Um die Shopdatei <code>shopinfo.xml</code> zu aktualisieren, einfach nach der Installation den <STRONG>Install</STRONG>-Button auf der Startseite dr&uuml;cken oder die Seite <code>install.php</code> aufrufen. Ein mehrmaliger Aufruf schadet nicht.
+</p>
+<p>
+  Bugfix: Das in der Shopdatei <CODE>shopinfo.xml</CODE> definierte Format f&uuml;r die Produktdatei wird aktualisiert, wobei die Konstanten in <CODE>elmar_config.inc.php</CODE> benutzt werden.
+</p>
+</div>
+
+
+<h1>V 3.13</h1>
+
+<div class="middleCell">
+<p>
+  Bugfix: Auch die neuen Spaltennamen in der Shopdatei aktualisieren. Um die Shopdatei <CODE>shopinfo.xml</CODE> zu aktualisieren, einfach nach der Installation den <STRONG>Install</STRONG>-Button auf der Startseite aufrufen.
+</p>
+</div>
+
+
+<h1>V 3.12</h1>
+
+<div class="middleCell">
+<p>
+  Die Erzeugung einer Produktdatei im Standardformat zus&auml;tzlich zu den speziellen Produktdateiformaten eingef&uuml;gt.
+</p>
+<p>
+  Bugfix f&uuml;r nicht gesetzte Konstanten nach einem Update.
+</p>
+</div>
+
+
+<h1>V 3.11</h1>
+
+<div class="middleCell">
+<p>
+  Umstellung des Produktdateiformats auf die &uuml;blichen Standards. Um die Shopdatei <CODE>shopinfo.xml</CODE> zu aktualisieren, einfach nach der Installation den <STRONG>Install</STRONG>-Button auf der Startseite aufrufen.
+</p>
+</div>
+
+
+<h1>V 3.10</h1>
+
+<div class="middleCell">
+<p>
+  Die Produktdatei f&uuml;r Pangora enth&auml;lt jetzt auch die Versandkosten.
+</p>
+<p>
+  Ein Musterbrief wurde vorbereitet, der von m&ouml;glichst vielen Shopbetreibern an viele Preisvergleichsdienste geschickt werden soll, um diese zu ermuntern, den <CODE>shopinfo.xml</CODE>-Standard zu unterst&uuml;tzen, damit das leidige Erstellen verschiedener Produktdateien nicht mehr notwendig ist.
+</p>
+</div>
+
+
+<h1>V 3.09</h1>
+
+<div class="middleCell">
+<p>
+  Das Modul ber&uuml;cksichtigt bei der Bildung von URLs auf Produktseiten die Einstellung f&uuml;r suchmaschinenfreundliche URLs.
+</p>
+</div>
+
+
+<h1>V 3.08</h1>
+
+<div class="middleCell">
+<p>
+  Angepasst, so dass das Modul auch mit <a href="http://www.xt-commerce.com/" target="_blank">XT-Commerce</a> laufen sollte. Getestet mit <CODE>XTCommerce_v2.0_RC1.2</CODE>.
+</p>
+<p>
+  Es gibt nun einen Button zum L&ouml;schen der Protokolldateien.
+</p>
+</div>
+
+
+<h1>V 3.07</h1>
+
+<div class="middleCell">
+<p>
+  In der Datei <code>elmar_config.inc.php</code> gibt es eine neue Konstante, die steuert, wie viele Zeichen der Produktbeschreibung ber&uuml;cksichtigt werden. Vorgabe ist 0 f&uuml;r alle Zeichen.
+</p>
+<blockquote><pre class="code">define('ELMAR_PRODUCT_DESCRIPTION_MAX_LENGTH', 0);</pre></blockquote>
+</div>
+
+
+<h1>V 3.06</h1>
+
+<div class="middleCell">
+<p>
+  Um Fehler zu beheben, die beim Einsatz des Elm@r-Moduls unter <STRONG>PHP&nbsp;5</STRONG> auftraten, wurden die verwendeten Tools aus dem <EM>&quot;PHP Extension and Application Repository&quot;</EM> (PEAR) aktualisiert.
+</p>
+</div>
+
+
+<h1>V 3.05</h1>
+
+<div class="middleCell">
+<p>
+  In der Datei <code>elmar_config.inc.php</code> gibt es eine neue Konstante, die steuert, wie viele Kategorien f&uuml;r Produkte, die mehreren Produktkategorien zugeordnet sind, ausgegeben werden. Normalerweise gen&uuml;gt in Produktdateien eine.
+</p>
+<blockquote><pre class="code">define('MAX_PRODUCT_CATEGORIES', 1);</pre></blockquote>
+</div>
+
+
+<h1>V 3.04</h1>
+
+<div class="middleCell">
+<p>
+  In der Datei <code>elmar_config.inc.php</code> gibt es eine neue Konstante, die steuert, ob Ausgaben der Elm@r-Skripte komprimiert werden sollen. Damit l&auml;sst sich das &Uuml;bertragungsvolumen erheblich reduzieren. Weitere Hinweise in der Konfigurationsdatei. Zum Aktivieren der Kompression auf <code>true</code> setzen.
+</p>
+<blockquote><pre class="code">define('ELMAR_OUTPUT_COMPRESSION', true);</pre></blockquote>
+</div>
+
+
+<h1>V 3.03</h1>
+
+<div class="middleCell">
+<p>
+  Vorlage zum Einbinden des Elm@r-Logos auf Websites in die <a href="readme.html#logo">Readme</a> eingef&uuml;gt.
+</p>
+<p>
+  Hinweis zur finanziellen Unterst&uuml;tzung des Projekts in die <a href="readme.html#spenden">Readme</a> aufgenommen.
+</p>
+</div>
+
+
+<h1>V 3.02</h1>
+
+<div class="middleCell">
+<p>
+  Probleml&ouml;sung in die Readme aufgenommen, wenn Internet Explorer Produktdateien anzeigt, anstatt sie zum Download anzubieten.
+</p>
+<p>
+  Versionsinformationen in die Dateien eingef&uuml;gt.
+</p>
+</div>
+
+
+<h1>V 3.01</h1>
+
+<div class="middleCell">
+<p>
+  Das Elm@r-Modul wurde f&uuml;r die Nutzung im Zusammenhang mit der deutschsprachigen &quot;<a href="http://shops.vistanova.de/" target="_blank">Vista Nova Edition von osCommerce</a>&quot; angepasst.
+</p>
+<p>
+  Die Konstante <STRONG>ELMAR_USE_PHP_AUTH</STRONG> in der Datei <code>elmar_config.inc.php</code> steuert, ob - sofern m&ouml;glich - BASIC Authorization per Browser benutzt wird (TRUE). Bei FALSE werden Cookies benutzt.
+</p>
+<p>
+  Der Men&uuml;punkt <strong>Abmelden</strong> ist als Gegenst&uuml;ck zur Anmeldung mittels Cookie hinzugekommen.
+</p>
+<p>
+  Wenn PHP-Dateien des Elm@r-Moduls in unzul&auml;ssiger Weise direkt aufgerufen werden, erfolgt nun eine automatische <STRONG>Weiterleitung</STRONG> zur Startdatei, ohne eine Fehlermeldung anzuzeigen.
+</p>
+<p>
+  Bei der ersten <STRONG>Erstellung der Shopdatei</STRONG> <CODE>shopinfo.xml</CODE> werden nun auch das Shop-Logo und die Zahlungsarten Lastschrift, Rechnung sowie Vorkasse ber&uuml;cksichtigt.
+</p>
+<p>
+  In das <STRONG>Feedback-Formular</STRONG> werden nun auch der Shopname und die URL vorbelegt.
+</p>
+</div>
+
+
+<h1>V 3.00</h1>
+
+<div class="middleCell">
+<p>
+  Die Generierung von Produktdateien f&uuml;r andere Dienste wie Froogle, Kelkoo usw. wurde &uuml;berarbeitet. Neu hinzugekommen ist <a href="http://www.pangora.de/" target="_blank">Pangora</a>. Es k&ouml;nnen mehrere Produktdateien mit einem Knopfdruck erzeugt und auf dem eigenen Server gespeichert werden.
+  (Mit Dank an <EM>Michael Trapp</EM> von <a href="http://www.aqua-shop.de/">Aqua-Shop</a> f&uuml;r die Idee.)
+</p>
+<p>
+  Die Startdatei <code>elmar_start.php</code> wurde mit einem einfachen <STRONG>Passwortschutz</STRONG> versehen.
+  Um den Passwortmechanismus zu aktivieren, muss in der Datei <code>config.inc.php</code> die Konstante <CODE>ELMAR_PASSWORD</CODE> definiert werden.
+  Weitere Informationen finden Sie in der <a href="readme.html#elmar_password">Readme</a>.
+  (Mit Dank an <EM>Werner Bleckwendt</EM> von <a href="http://shop.laserpointer4u.de/">Profi Laser Pointer Shop</a> f&uuml;r diese und weitere gute Ideen.)
+</p>
+<p>Bei fehlerhaften Aufrufen der Startdatei wird nun automatisch die Indexseite geladen.</p>
+<p>
+  Bei der Installation der <STRONG>Update</STRONG>-Dateien (statt der Vollversion) ist die folgende Zeile in der Datei <STRONG><CODE>elmar_config.inc.php</CODE></STRONG> unter <code>$productfilenames</code> einzuf&uuml;gen:
+</p>
+<blockquote><pre class="code"><STRONG>'pangora' => 'pangora.txt',</STRONG></pre></blockquote>
+<p>Au&szlig;erdem sind die folgenden Konstanten zu definieren:</p>
+<blockquote><pre class="code">define('FILENAME_FROOGLE', 'froogle.txt');
+define('FILENAME_HARDWARESCHOTTE', 'hardwareschotte.txt');
+define('FILENAME_KELKOO', 'kelkoo.txt');
+define('FILENAME_PANGORA', 'pangora.txt');
+
+define('WARN_ELMAR_PASSWORD', TRUE);</pre></blockquote>
+</div>
+
+
+<h1>V 2.22</h1>
+
+<div class="middleCell">
+<p>Es ist ein Men&uuml;punkt zum einfachen &Uuml;bermitteln von <STRONG>Feedback</STRONG> zum Modul hinzugekommen.
+</p>
+</div>
+
+
+<h1>V 2.21</h1>
+
+<div class="middleCell">
+<p>
+  Die osCommerce-Contribution <a href="http://www.oscommerce.com/community/contributions,2202/" target="_blank"><STRONG>Product Extra Fields</STRONG></a> wird unterst&uuml;tzt.
+  <br>Bei der Implementierung hat <EM>Giuseppe Costa</EM> (<a href="http://www.puntovino.de/" target="_blank">http://www.puntovino.de/</a>) mitgeholfen.
+</p>
+<p>
+  Preise werden jetzt immer mit zwei Nachkommastellen ausgegeben.
+</p>
+<p>
+  Unter dem neuen Men&uuml;punkt &quot;<STRONG>Produktdateien</STRONG>&quot; k&ouml;nnen Preislisten f&uuml;r <STRONG>Kelkoo</STRONG>, <STRONG>Hardwareschotte</STRONG> und <STRONG>Froogle</STRONG> generiert werden. Die entsprechenden Buttons unter &quot;Test&nbsp;1&quot; wurden entfernt.
+  <br>Bei der Implementierung hat <EM>Mathias Grimm</EM> (<a href="http://www.tuxman.de/" target="_blank">http://www.tuxman.de/</a>) mitgeholfen.
+</p>
+<p>
+  Bei der Installation der <STRONG>Update</STRONG>-Dateien (statt der Vollversion) ist die folgende Zeile in der Datei <STRONG><CODE>elmar_config.inc.php</CODE></STRONG> unter <code>$productfilenames</code> einzuf&uuml;gen:
+</p>
+<blockquote><pre class="code">$productfilenames = array(
+  '' => 'products.csv',
+  'kelkoo' => 'kelkoo.txt',
+  'froogle' => 'froogle.txt',  // Am besten den Namen des Shops als Dateinamen verwenden!
+  <STRONG>'hardwareschotte' => 'hardwareschotte.txt',</STRONG>
+);</pre></blockquote>
+</div>
+
+
+<h1>V 2.20</h1>
+
+<div class="middleCell">
+<p>
+  Produktdateien k&ouml;nnen jetzt auch im <STRONG>Froogle</STRONG>-Format erzeugt werden.
+  F&uuml;r <STRONG>Kelkoo</STRONG>-Produktdateien wurde der <code>country</code>-Header auf <code>de</code> (statt <code>DE</code>) ge&auml;ndert.
+</p>
+<p>
+  Bei der Installation der <STRONG>Update</STRONG>-Dateien (statt der Vollversion) ist der folgende Code-Block in der Datei <STRONG><CODE>elmar_config.inc.php</CODE></STRONG> zu l&ouml;schen
+</p>
+<blockquote><pre class="code">// Name der Produktdatei
+// Defaultwert: 'products.csv'
+define('PRODUCTFILE', 'products.csv');
+
+// Name der Produktdatei fuer Kelkoo
+// Defaultwert: 'kelkoo.txt'
+define('KELKOPRODUCTFILE', 'kelkoo.txt');</pre></blockquote>
+<p>und durch diesen Code zu ersetzen:</p>
+<blockquote><pre class="code">// Namen fuer die Produktdateien
+$productfilenames = array(
+  '' => 'products.csv',
+  'kelkoo' => 'kelkoo.txt',
+  'froogle' => 'froogle.txt',  // Am besten den Namen des Shops als Dateinamen verwenden!
+);</pre></blockquote>
+</div>
+
+
+<h1>V 2.19</h1>
+
+<div class="middleCell">
+<p>
+  Der HTTP-Header <STRONG>Content-Type</STRONG> f&uuml;r Echtzeitanfragen mittels <CODE>elmar_request.php</CODE> wird auf <code>application/xml</code> gesetzt.
+  Au&szlig;erdem wird der HTTP-Header <STRONG>Content-Length</STRONG> geschickt.
+  Der Wert f&uuml;r die Anzahl der &uuml;bertragenen Bytes wird protokolliert.
+</p>
+<p>
+  Die Produktbeschreibung wird bei der Schnellsuche mittels Echtzeitanfragen nicht mehr ber&uuml;cksichtigt.
+</p>
+</div>
+
+
+<h1>V 2.18</h1>
+
+<div class="middleCell">
+<p><CODE>elmar_products.php</CODE> und <CODE>elmar_request.php</CODE> beantworten HTTP-Anfragen mittels <CODE>HEAD</CODE> nur noch mit den Kopfdaten und f&uuml;hren in dem Fall keine Datenbankabfragen mehr durch. Au&szlig;erdem werden solche Anfragen in den Protokolldateien vermerkt.</p>
+</div>
+
+
+<h1>V 2.17</h1>
+
+<div class="middleCell">
+<p>Im Zusammenhang mit Echtzeitabfragen wurden zwei Fehler beseitigt, die u.&nbsp;U. die Anzeige der Produkte in der Elm@r-Suchergebnisliste verhinderten.</p>
+<ul>
+<li>Die W&auml;hrungsumrechnung in <CODE>elmar_request.php</CODE> ist unn&ouml;tig und wurde deshalb entfernt.</li>
+<li>Das Cost-Tag wird in <CODE>elmar_request.php</CODE> nur erzeugt, wenn <CODE>VERSANDKOSTEN_AB</CODE> nicht leer ist.</li>
+</ul>
+</div>
+
+
+<h1>V 2.16</h1>
+
+<div class="middleCell">
+<p>Zeilenumbr&uuml;che mit dem Sonderzeichen 11 (0x0B) werden durch Leerzeichen ersetzt, wenn Datenbankfelder wie Produktbeschreibungen in Produktdateien oder Echtzeitantworten eingef&uuml;gt werden.</p>
+</div>
+
+
+<h1>V 2.15</h1>
+
+<div class="middleCell">
+  <table summary="" cellspacing="1" cellpadding="3" border="0">
+    <tr>
+      <th colspan="2" class="cellHeader">Neue Konfigurationskonstanten in
+      <code>elmar_config.inc.php</code></th>
+    </tr>
+
+    <tr>
+      <td class="row1"><code>PROD_ID_IST_ARTIKELNUMMER</code></td>
+
+      <td class="row2">Einstellen, ob <code>products_model</code> oder
+      <code>products_id</code> als Artikelnummer benutzt wird.</td>
+    </tr>
+
+    <tr>
+      <td class="row1"><code>THUMBNAIL_PATH</code></td>
+
+      <td class="row2">Pfad f&uuml;r kleine Produktgrafiken zus&auml;tzlich zu den gro&szlig;en
+      Bildern.</td>
+    </tr>
+
+    <tr>
+      <td class="row1"><code>VERSANDKOSTEN_AB</code></td>
+
+      <td class="row2">Betrag f&uuml;r Standardversandkosten</td>
+    </tr>
+  </table>
+
+  <ul>
+    <li>Produktdateien: <code>elmar_products.php</code>
+
+      <ul>
+        <li>F&uuml;r Kelkoo die maximale Feldl&auml;nge um ein Zeichen verkleinert.</li>
+
+        <li>Abgeschnittener Text wird durch ... angedeutet.</li>
+      </ul>
+    </li>
+
+    <li>Echtzeitabfragen: <code>elmar_request.php</code>
+
+      <ul>
+        <li>Ausf&uuml;hrliche Produktbeschreibung ohne Konvertierung von Sonderzeichen (als
+        <code>CDATA</code>).</li>
+
+        <li>Maximale Anzahl von Antworts&auml;tzen kann nicht mehr vom Anfrager erh&ouml;ht
+        werden.</li>
+      </ul>
+    </li>
+
+    <li><code>access.html</code>: Text &uuml;berarbeitet</li>
+
+    <li>
+      <strong>Bugfixes</strong>
+
+      <ul>
+        <li><code>.htaccess</code>: Zugriff auf <code>index.php</code> nur noch &uuml;ber
+        Startskript</li>
+
+        <li>PHP-Dateien im elmar-Verzeichnis sind nicht mehr ohne Startskript
+        aufrufbar</li>
+
+        <li>Wenn <code>products_model</code> leer ist, keinen Doppelpunkt vor der
+        Produktbeschreibung ausgeben.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<h1>V 2.14</h1>
+
+<div class="middleCell">
+<p>Ausgangsversion f&uuml;r die Versionshistorie.</p>
+</div>
+
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div align="center" style="border-top:1px black solid">
+  <p>&copy;&nbsp;2004-2005 &nbsp; Elm@r &nbsp; &bull; &nbsp; Der elektronische Markt &nbsp; &bull; &nbsp;
+  <a href="http://elektronischer-markt.de/" target=
+  "_blank">http://elektronischer-markt.de/</a></p>
+</div>
+</body>
+</html>

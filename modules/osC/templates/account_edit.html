@@ -1,0 +1,95 @@
+<{include file="db:form_check.js.html"}>
+<{include file="db:header.html"}>
+<table width="100%"><tr>
+    <td width="100%" valign="top"><{$form_account_edit}><{$action_field}>
+	<table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$site_image}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $smessage == 1 }>
+      <tr>
+        <td><{$messagetext}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td class="main"><b><{$smarty.const.MY_ACCOUNT_TITLE}></b></td>
+                <td class="inputRequirement" align="right"><{$smarty.const.FORM_REQUIRED_INFORMATION}></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+              <tr class="infoBoxContents">
+                <td><table border="0" cellspacing="2" cellpadding="2">
+<{ if $gender == 1 }>
+                  <tr>
+                    <td class="main"><{$smarty.const.ENTRY_GENDER}></td>
+                    <td class="main"><{$gender_field_m}>&nbsp;&nbsp;<{$smarty.const.MALE}>&nbsp;&nbsp;<{$gender_field_f}>&nbsp;&nbsp;<{$smarty.const.FEMALE }>&nbsp;<{$gender_entry}></td>
+                  </tr>
+<{/if}>
+                  <tr>
+                    <td class="main"><{$smarty.const.ENTRY_FIRST_NAME}></td>
+                    <td class="main"><{$firstname}>&nbsp;<{$firstname_entry}></td>
+                  </tr>
+                  <tr>
+                    <td class="main"><{$smarty.const.ENTRY_LAST_NAME}></td>
+                    <td class="main"><{$lastname}>&nbsp;<{$lastname_entry}></td>
+                  </tr>
+<{if $DOB == 1 }>
+                  <tr>
+                    <td class="main"><{$smarty.const.ENTRY_DATE_OF_BIRTH}></td>
+                    <td class="main"><{$cust_dob}>&nbsp;<{$dob_entry}></td>
+                  </tr>
+<{/if}>
+                  <tr>
+                    <td class="main"><{$smarty.const.ENTRY_EMAIL_ADDRESS}></td>
+                    <td class="main"><{$email}>&nbsp;<{$email_entry}></td>
+                  </tr>
+                  <tr>
+                    <td class="main"><{$smarty.const.ENTRY_TELEPHONE_NUMBER}></td>
+                    <td class="main"><{$telephone}>&nbsp;<{$telephone_entry}></td>
+                  </tr>
+                  <tr>
+                    <td class="main"><{$smarty.const.ENTRY_FAX_NUMBER}></td>
+                    <td class="main"><{$fax}>&nbsp;<{$fax_entry}></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td><a href="<{$account}>"><{$bt_back}></a></td>
+                <td align="right"><{$bt_continue}></td>
+                <td width="10"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></form></td>
+</tr></table>

@@ -1,0 +1,164 @@
+<!--
+// +----------------------------------------------------------------------+
+// |zen-cart Open Source E-commerce                                       |
+// +----------------------------------------------------------------------+
+// | Copyright (c) 2004 The zen-cart developers                           |
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
+// | Portions may be Copyright (c) 2003 osCommerce                        |
+// +----------------------------------------------------------------------+
+// | This source file is subject to version 2.0 of the GPL license,       |
+// | that is bundled with this package in the file LICENSE, and is        |
+// | available through the world-wide-web at the following url:           |
+// | http://www.zen-cart.com/license/2_0.txt.                             |
+// | If you did not receive a copy of the zen-cart license and are unable |
+// | to obtain it through the world-wide-web, please send a note to       |
+// | license@zen-cart.com so we can mail you a copy immediately.          |
+// +----------------------------------------------------------------------+
+// $Id: WHATSNEW1.2.6d.html 1871 2005-08-20 20:22:02Z drbyte $
+//-->
+<html>
+<style type="text/css">
+<!--
+body, table{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; }
+table.intro {border-color:C96E29; }
+td.intro{background-color:#EEEEEE ; border-color:5778ce; font-size:11px; }
+td.plainbox, div.callout {border: 1px dashed; border-color: C96E29; margin:5 40 5 40;}
+.heading {background-color:5778CE; font-weight:bold; font-size:14px;	width: 100%; }
+
+.title1 {color:C96E29; font-weight:bold; font-size:22px; }
+.title2 {color:C96E29; font-weight:bold; font-size:13px; }
+.small {font-size:10px ;}
+.error {color:FF0000; }
+.filename {font-family: mono, "Courier New", Courier ; font-size:14px; color: c96e29;}
+.pseudolink {text-decoration:underline; color:5778CE;}
+h1.intro { color: #ffffff; border:1px solid #aca893; background-color: #c96e29;  font-size: 22px;   padding: 4px;}
+h1 { color: #ffffff;    border:1px solid #aca893;   background-color: #5778ce;   font-size: 20px;   padding: 4px;}
+h2 { color: #c96e29; 	font-size: 18px;}
+h3 { color: #5778ce;	font-size: 16px; margin-bottom:0px;}
+h4 { color: #c96e29;	font-size: 14px;}
+
+
+-->
+</style>
+<title>What's New in Zen Cart(tm)</title><body>
+
+<table class="intro" cellspacing="4" cellpadding="6" border="3" width="748px" align="center">
+<tr><td class="intro">
+<center><h1 class="intro">Welcome to Zen Cart&trade; ...</h1></center>
+<br />
+The Zen Cart&trade; software is made available to you for use, additions, changes, modifications, etc. without charge, under the GNU General Public License.
+<br />
+<br />
+While we do not charge for this software, donations are greatly appreciated each time you download a new version, to help cover the expenses of maintenance, upgrades, updates, the free support forum and the continued development of this software for your online e-commerce store.
+<br />
+<br />
+Donations can be made at:
+<a href="http://www.zen-cart.com/modules/freecontent/index.php?id=6" target="_blank">The Zen Cart&trade; Team Page</a>
+<br /><br />
+We appreciate your support.<br />
+<em>The Zen Cart&trade; Team</em><br />
+<br />
+
+<center>
+<span class="small">
+Zen Cart&trade; is derived from: Copyright  2003 osCommerce<br />
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;<br />
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE<br />
+and is redistributable under the GNU General Public License<br /><br />
+</span>
+</center>
+</td></tr></table>
+
+<br />
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td align="center"><img src="osi-certified-120x100.png" /><br />
+This software is OSI Certified Open Source Software.<br />
+OSI Certified is a certification mark of the Open Source Initiative.
+</td></tr></table>
+<br />
+
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td>
+<h1>NOTE FOR UPGRADERS</h1>
+<p>IF YOU ARE UPGRADING <strong class="error">FROM v1.2.5</strong>, there are NO changes to PayPal or other payment modules.</p>
+<p><strong>If you are upgrading <span class="error">from 1.2.4 or earlier</span>, and are using PayPal</strong>, you'll need to REMOVE and re-INSTALL the paypal payment module in Admin-&gt;Modules-&gt;Payment, after upgrading.<br />
+<br />
+If you need a reference for paypal settings, <a href="/docs/3.Readme-PayPal_IPN_v1.2.4-1.2.5.html" target="_blank">see the Zen Cart + Paypal Setup document in the /docs folder</a>, or refer to <a href="https://www.paypal.com/en_US/pdf/integration_guide.pdf " target="_blank">the paypal site for technical documentation</a>.
+</p>
+<h1>Whats New ... </h1>
+<strong>The following are the changes in v1.2.6d</strong>: 
+<ul>
+<li>Fixed some significant bugs in the logout processes ... related to session-handling</li>
+<li>Bugfix and code-cleanup in admin/categories.php so that images are no longer deleted when merely editing a category's description</li>
+<li>Bugfix related to fmod() function being used incorrectly</li>
+<li>Bugfix in shopping_cart class for Always Free Shipping for zones etc where price is used </li>
+<li>Bugfix in shopping_cart class for $product-&gt; vs $products-&gt; </li>
+<li>Moved CATEGORIES_TABS_STATUS define from tpl_header.php to configuration table in DB </li>
+<li>Included all bugfixes and patches from/since 1.2.5d </li>
+<li>&quot;Demo&quot; admin account is no longer created via default install</li>
+<li>ob_flush() fixes in admin/newsletters and prod-notification modules</li>
+<li> Bugfix: Prices are no longer hidden from administrators when down for maintenance</li>
+<li> Bugfix in metatags where &quot;Display prices with tax&quot; was not including tax in TITLE metatag.</li>
+<li>Bugfix in metatags where custom keywords were getting duplicated in some cases</li>
+<li> Bugfix in meta tag description to use products_description when not customized</li>
+<li>Bugfix to meta_tags module previously causing override to not work</li>
+<li>Bugfix to GV_redeem where coupons weren't getting set to inactive properly </li>
+<li>Bugfix to html_output so that &quot;?&quot; is used as initial separator for static pages </li>
+<li>Removed extra blank line at end of account-password header_php page</li>
+<li> Bugfixes to query_factory to better handle use of multiple open connections when needed </li>
+<li>Added clarification to 'ERROR_ADMIN_SECURITY_WARNING' in the admin english.php </li>
+<li>Bugfix to catalog-side english.php related to language overrides for CC defines </li>
+<li>Bugfix to checkout_process to prevent generation of orders containing no items</li>
+<li>Reverted the Products Purchased report in admin to use earlier query for results reporting </li>
+<li>Bugfix for admin activity log table to allow for more than 32,000 records</li>
+<li>Bugfix for admin password validation of login name and password</li>
+<li>Bugfix for new-admin-user error that loses the right panel on insert</li>
+<li>Bugfix for duplicate customers_id in select for orders listing</li>
+<li>Bugfix for missing customers_company from orders listing</li>
+<li>Adjustment made to accommodate 1and1 hosting issues related to SSL detection </li>
+<li>Bugfix to admin downloads manager where an array_merge() error would appear on newer PHP versions </li>
+<li>Bugfix: Increased user_agent field in whos_online to support longer data-strings </li>
+<li>Added order shipping info to admin orders infobox</li>
+<li>Bugfix to provide &quot;Login to Shop&quot; link instead of Add to Cart if store requires approval </li>
+<li>Bugfix for Customer Authorization to show prices pending approval</li>
+<li>Bugfix for attributes to show prices on CUSTOMERS_APPROVAL_AUTHORIZATION == 3</li>
+<li>Bugfix to the &quot;add selected products to cart&quot; top/bottom button placement</li>
+<li>Bugfix to admin orders page where customer/company info not shown properly during delete </li>
+<li>Bugfix to orders class code related to storing attribute info in order history</li>
+<li>Bugfix to payment modules causing checkout to halt even on free products in some cases </li>
+<li>Bugfix to pagination in various admin pages </li>
+</ul>
+<p><strong>The following are additions to v1.2.6d: </strong></p>
+<ul>
+<li>Added <a href="/docs/Site_Security_Recommendations.html">Site Security Recommendations </a>document to the <a href="/docs/">/docs folder</a> for tips on securing your site effectively<br />
+</li>
+<li>Added option to installer to enable/disable the &quot;check for version updates&quot; option without having to set it in the Admin area. This is only useful for those who &quot;know&quot; they need to disable it right at install time. In most cases this isn't necessary, unless working totally offline with no internet connection</li>
+</ul>
+<h1>IMPORTANT NOTES </h1>
+<ul>
+<li><span class="error">Please be sure to review and apply the Site Security Recommendations to your site prior to taking your shop &quot;live&quot;.</span> If uncertain about how site security applies to you, talk to your web host to ensure that you have proper measures in place. </li>
+</ul>
+<h1>Notes for Upgraders ... from v1.2.4 or v1.2.5 to v1.2.6 </h1>
+<ul>
+<li>In the /includes/templates/YOURTEMPLATE/common/tpl_header.php there &quot;was&quot; a DEFINE for CATEGORIES_TABS_STATUS. In v1.2.6, this has been moved to the admin menu.<br />
+
+<strong>IF YOU ARE USING THIS FEATURE</strong>, you will need to re-enable it by going into the admin menu and setting it back to 1, since the upgrade sets it to 0 by default.<br />
+<br />
+The new location for it is:
+<br />
+<span class="filename">Admin-&gt;Configuration-&gt;Layout Settings-&gt;Categories Tabs Status</span><br />
+</li>
+</ul>
+
+
+</td>
+</tr>
+</table>
+<br /><br />
+<br /><br />
+</body>
+</html>

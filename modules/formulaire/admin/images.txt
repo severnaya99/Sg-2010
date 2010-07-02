@@ -1,0 +1,12 @@
+../images/colorbars/aqua.gif
+../images/colorbars/blue.gif
+../images/colorbars/brown.gif
+../images/colorbars/darkgreen.gif
+../images/colorbars/gold.gif
+../images/colorbars/green.gif
+../images/colorbars/grey.gif
+../images/colorbars/orange.gif
+../images/colorbars/pink.gif
+../images/colorbars/purple.gif
+../images/colorbars/red.gif
+../images/colorbars/yellow.gif

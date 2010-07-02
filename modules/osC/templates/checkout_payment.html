@@ -1,0 +1,256 @@
+<script language="javascript"><!--
+var selected;
+
+function selectRowEffect(object, buttonSelect) {
+  if (!selected) {
+    if (document.getElementById) {
+      selected = document.getElementById('defaultSelected');
+    } else {
+      selected = document.all['defaultSelected'];
+    }
+  }
+
+  if (selected) selected.className = 'moduleRow';
+  object.className = 'moduleRowSelected';
+  selected = object;
+
+// one button is not an array
+  if (document.checkout_payment.payment[0]) {
+    document.checkout_payment.payment[buttonSelect].checked=true;
+  } else {
+    document.checkout_payment.payment.checked=true;
+  }
+}
+
+function rowOverEffect(object) {
+  if (object.className == 'moduleRow') object.className = 'moduleRowOver';
+}
+
+function rowOutEffect(object) {
+  if (object.className == 'moduleRowOver') object.className = 'moduleRow';
+}
+//--></script>
+<{include file="db:header.html"}>
+<table width="100%"><tr>
+    <td width="100%" valign="top"><{$payment_form}><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$py_img}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $error == 1}>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$err_title}></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBoxNotice">
+          <tr class="infoBoxNoticeContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td><{$seperator}></td>
+                <td class="main" width="100%" valign="top"><{$err_txt}></td>
+                <td><{$seperator}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.TABLE_HEADING_BILLING_ADDRESS}></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td><{$seperator}></td> 
+                <td class="main" width="50%" valign="top"><{$smarty.const.TEXT_SELECTED_BILLING_DESTINATION}><br><br><a href="<{$chk_link}>"><{$chk_img}></a></td>
+                <td align="right" width="50%" valign="top"><table border="0" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="main" align="center" valign="top"><b><{$smarty.const.TITLE_BILLING_ADDRESS}></b><br><{$arrow_se}></td>
+                    <td><{$seperator}></td> 
+                    <td class="main" valign="top"><{$cust_lbl}></td>
+                    <td><{$seperator}></td> 
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator1}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.TABLE_HEADING_PAYMENT_METHOD}></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{if $selection ==1 }>
+              <tr>
+                <td><{$seperator}></td>
+                <td class="main" width="50%" valign="top"><{$smarty.const.TEXT_SELECT_PAYMENT_METHOD}></td>
+                <td class="main" width="50%" valign="top" align="right"><b><{$smarty.const.TITLE_PLEASE_SELECT}></b><br><{$arrow_se}></td>
+                <td><{$seperator}></td>
+              </tr>
+<{else}>
+              <tr>
+                <td><{$seperator}></td>
+                <td class="main" width="100%" colspan="2"><{$smarty.const.TEXT_ENTER_PAYMENT_INFORMATION}></td>
+                <td><{$seperator}></td>
+              </tr>
+<{/if}>
+<{ section name=selection loop=$selections}>
+              <tr>
+                <td><{$seperator}></td>
+                <td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{if $selectons[selection].on==1}>
+
+                       <tr id="defaultSelected" class="moduleRowSelected" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)" onclick="selectRowEffect(this, '<{$selections[selection].radio}>')">
+<{else}>
+                        <tr class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)" onclick="selectRowEffect(this, '<{$selections[selection].radio}>')">
+<{/if}>
+
+                    <td width="10"><{$seperator}></td>
+                    <td class="main" colspan="3"><b><{$selections[selection].module}></b></td>
+                    <td class="main" align="right"><{$selections[selection].field}>
+                    </td>
+                    <td width="10"><{$seperator}></td>
+                  </tr>
+<{if $selections[selection].serr == 1 }>
+                  <tr>
+                    <td width="10"><{$seperator}></td>
+                    <td class="main" colspan="4"><{$selections[selection].error}></td>
+                    <td width="10"><{$seperator}></td>
+                  </tr>
+<{elseif $selections[selection].sfields == 1 }>
+                  <tr>
+                    <td width="10"><{$seperator}></td>
+                    <td colspan="4"><table border="0" cellspacing="0" cellpadding="2">
+<{ section name=fields loop=$fields[selection] }>
+                      <tr>
+                        <td width="10"><{$seperator}></td>
+                        <td class="main"><{$fields[selection][fields].title}></td>
+                        <td><{$seperator}></td>
+                        <td class="main"><{$fields[selection][fields].field}></td>
+                        <td width="10"><{$seperator}></td>
+                      </tr>
+<{/section}>
+                    </table></td>
+                    <td width="10"><{$seperator}></td>
+                  </tr>
+<{/if}>
+                </table></td>
+                <td><{$seperator}></td>
+              </tr>
+<{/section}>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator1}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$coupon_text}></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.TABLE_HEADING_COMMENTS}></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td><{$comment}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator1}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator}></td>
+                <td class="main"><b><{$smarty.const.TITLE_CONTINUE_CHECKOUT_PROCEDURE}></b><br><{$smarty.const.TEXT_CONTINUE_CHECKOUT_PROCEDURE}></td>
+                <td class="main" align="right"><{$cont_img}></td>
+                <td width="10"><{$seperator}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator1}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="25%"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="50%" align="right"><{$seperator_silver1}></td>
+                <td width="50%"><{$seperator_silver}></td>
+              </tr>
+            </table></td>
+            <td width="25%"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="50%"><{$seperator_silver}></td>
+                <td><{$co_img}></td>
+                <td width="50%"><{$seperator_silver}></td>
+              </tr>
+            </table></td>
+            <td width="25%"><{$seperator_silver}></td>
+            <td width="25%"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="50%"><{$seperator_silver}></td>
+                <td width="50%"><{$seperator_silver1}></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="center" width="25%" class="checkoutBarFrom"><a href="<{$co_link}>" class="checkoutBarFrom"><{$smarty.const.CHECKOUT_BAR_DELIVERY}></a></td>
+            <td align="center" width="25%" class="checkoutBarCurrent"><{$smarty.const.CHECKOUT_BAR_PAYMENT}></td>
+            <td align="center" width="25%" class="checkoutBarTo"><{$smarty.const.CHECKOUT_BAR_CONFIRMATION}></td>
+            <td align="center" width="25%" class="checkoutBarTo"><{$smarty.const.CHECKOUT_BAR_FINISHED}></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></form></td>
+	</tr></table>

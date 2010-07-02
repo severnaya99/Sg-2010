@@ -1,0 +1,264 @@
+/*
+  Das Elm@r-Modul fuer osCommerce
+  Unterstuetzung des shopinfo.xml-Standards
+  http://projekt.wifo.uni-mannheim.de/elmar/nav/osCommerce
+  Copyright (c) 2004-2005 Dr. Stefan Kuhlins, http://kuhlins.de/
+  Released under the GNU General Public License
+  $Id: elmar.css 297 2005-02-24 20:34:15Z stefan $
+*/
+
+body {
+  background-color:#c3cde0;
+  border:none;
+  color:black;
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:13px;
+  margin:0px;
+  padding:0px;
+}
+
+div.middle {
+  background-color:#FFF8DC;
+  color:black;
+  padding-bottom:5px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:10px;
+  text-align:left;
+}
+
+div.middleCell {
+  border-left:2px #6B7DA6 solid;
+  border-top:2px #6B7DA6 solid;
+  margin-bottom:20px;
+  margin-left:5px;
+  margin-right:5px;
+  margin-top:1px;
+  padding-left:5px;
+  padding-top:10px;
+  text-align:left;
+}
+
+h1 {
+  color:#6B7DA6;
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:0px;
+  margin-top:0px;
+  padding-bottom:3px;
+  padding-top:10px;
+  padding-left:5px;
+  text-align:left;
+}
+
+h2 {
+  color:#6B7DA6;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:0px;
+  margin-top:0px;
+  padding-bottom:3px;
+  padding-top:10px;
+  padding-left:5px;
+  text-align:left;
+}
+
+form {
+  margin-top:1px;
+  padding-top:1px;
+  margin-bottom:5px;
+  padding-bottom:5px;
+}
+
+p, dl, blockquote {
+  margin-bottom:5px;
+  margin-right:0px;
+  margin-top:0px;
+  padding-left:5px;
+  padding-right:0px;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+ol, ul {
+  margin-bottom:5px;
+  margin-top:0px;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+th, td {
+  font-size:13px;
+}
+
+div.errorCell {
+	border-left:2px red solid;
+	border-top:2px red solid;
+	margin-bottom:20px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-top:1px;
+	padding-left:5px;
+	padding-top:10px;
+	text-align:left;
+}
+
+h1.error {
+	color:red;
+	font-weight:bold;
+	font-size:14px;
+	margin-bottom:0px;
+	margin-top:0px;
+	padding-bottom:3px;
+	padding-top:10px;
+	padding-left:5px;
+	text-align:left;
+}
+
+.error {
+	color:red;
+	font-weight:bold;
+}
+
+div.okCell {
+	border-left:2px green solid;
+	border-top:2px green solid;
+	margin-bottom:20px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-top:1px;
+	padding-left:5px;
+	padding-top:10px;
+	text-align:left;
+}
+
+h1.ok {
+	color:green;
+	font-weight:bold;
+	font-size:14px;
+	margin-bottom:0px;
+	margin-top:0px;
+	padding-bottom:3px;
+	padding-top:10px;
+	padding-left:5px;
+	text-align:left;
+}
+
+.ok {
+	color:green;
+	font-weight:bold;
+}
+
+a:active {
+  color:red;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a:link {
+  color:blue;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a:visited {
+  color:purple;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a:hover {
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+a.submenu {
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+a:active.submenu {
+  color:red;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+a:link.submenu {
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+a:visited.submenu {
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+a:hover.submenu {
+  color:white;
+  font-weight:bold;
+  text-decoration:underline;
+}
+
+.todo {
+  background-color:#FFB7B7;
+  color:black;
+  font-family:'Comic Sans MS', sans-serif;
+}
+
+.comment {
+	background-color:#fff8c6;
+	border:1px black solid;
+	color:black;
+	margin-bottom:10px;
+	margin-top:10px;
+	padding:5px;
+	text-align:left;
+}
+
+.cellHeader {
+	background-color:#c3cde0;
+	color:black;
+	font-weight:bold;
+}
+
+.row1 {
+	background-color:#eaeef5;
+	color:black;
+}
+
+.row2 {
+	background-color:#FCFCFF;
+	color:black;
+}
+
+.tiny {
+  font-size:10px;
+}
+
+.attention {
+	background-color:#FFB7B7;
+	color:black;
+}
+
+.data {
+	color: #A52A2A;
+	font-weight:bold;
+}
+
+.code {
+	background-color=#efefef;
+	padding:5pt;
+	margin:5pt;
+	border:1px black solid;
+}
+
+#menu { border-collapse: collapse; }
+#page { border-collapse: collapse; }
+table.b { border-collapse: collapse; }
+th.b, td.b { border: 1px solid black; padding: 5px; margin: 5px; }
+
+dt { padding-top: 3px; padding-bottom: 2px; }
+dd { padding-top: 2px; padding-bottom: 3px; }

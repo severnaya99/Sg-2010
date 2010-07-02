@@ -1,0 +1,9 @@
+<table cellspacing="0">
+  <tr>
+    <td id="mainmenu">
+	<{foreach item=wfsmenu2 from=$block.nsmenu}>
+    <a class="menuMain" href="<{$xoops_url}>/modules/wfsection/article.php?articleid=<{$wfsmenu2.nsid}>"><{$wfsmenu2.nstitle}></a></li>
+  	<{/foreach}>
+	</td>
+  </tr>
+</table>

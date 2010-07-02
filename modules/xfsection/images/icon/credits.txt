@@ -1,0 +1,56 @@
+Icons in this directory is mainly from:
+
+--------------------------------------------------
+
+This is an filemanager module for XOOPS CMS
+
+
+Filemanager made by:
+
+WebJeff - FileManager v1.6
+        
+	Jean-François GAZET
+	http://www.webjeff.org
+	webmaster@webjeff.org	
+
+
+Ported by:
+
+ 	Xendtech Media
+ 	Jan Inge Pettersen
+ 	xend@online.no
+
+
+With good help from:
+
+	Jan Erik Amundsen
+	www.playboyphoto.com
+	
+	w4z004
+	w4z004@xoops.sytes.net
+
+	ELF
+	http://elf.no-ip.org/
+
+
+And all of Xoops dev that made it possible for us to use xoops. 
+
+	
+	onokazu
+	
+	goghs 
+	
+	JM 	
+	
+	w4z004 
+	
+	wanderer
+	
+	malexandria
+
+
+Have a nice Day.....
+ 
+
+For more themes/modules, please visit:
+http://www.xendtech.com/

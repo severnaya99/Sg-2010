@@ -1,0 +1,83 @@
+<script language="javascript"><!--
+function popupWindow(url) {
+  window.open(url,'popupWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=100,height=100,screenX=150,screenY=150,top=150,left=150')
+}
+//--></script>
+<{include file="db:header.html"}>
+<table width="100%"><tr>
+    <td width="100%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading" valign="top"><{$products_name}></td>
+            <td class="pageHeading" align="right" valign="top"><{$products_price}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="2">
+          <tr>
+            <td valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="main"><b><{$review_text}></b></td>
+                    <td class="smallText" align="right"><{$review_date}></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+                  <tr class="infoBoxContents">
+                    <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                      <tr>
+                        <td width="10"><{$seperator1}></td>
+                        <td valign="top" class="main"><{$review_text_long}></i></td>
+                        <td width="10" align="right"><{$seperator1}></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td><{$seperator}></td>
+              </tr>
+              <tr>
+                <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+                  <tr class="infoBoxContents">
+                    <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                      <tr>
+                        <td width="10"><{$seperator1}></td>
+                        <td class="main"><a href="<{$review_link}>"><{$bt_back}></a></td>
+                        <td class="main" align="right"><a href="<{$revie_write_link}>"><{$bt_review}></a></td>
+                        <td width="10"><{$seperator1}></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+            <td width="<{$width}>" align="right" valign="top"><table border="0" cellspacing="0" cellpadding="2">
+              <tr>
+                <td align="center" class="smallText">
+<{ if $image == 1 }>
+<script language="javascript"><!--
+document.write('<a href="javascript:popupWindow(\'<{$popup_link}>\')"><{$popup_image}><br><{$marty.const.TEXT_CLICK_TO_ENLARGE}></a>');
+//--></script>
+<noscript>
+<a href="<{$html_link}>" target="_blank"><{$html_image}><br><{$smarty.const.TEXT_CLICK_TO_ENLARGE}></a>
+</noscript>
+<{/if}>
+<p><a href="<{$buy_link}>"><{$bt_cart}></a></p>
+
+                </td>
+              </tr>
+            </table>
+          </td>
+        </table></td>
+      </tr>
+    </table></td>
+	</tr></table>

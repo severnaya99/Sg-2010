@@ -1,0 +1,36 @@
+<{ if $down == 1 }>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="main"><b><{$smarty.const.HEADING_DOWNLOAD}></b></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+<!-- list of products -->
+<{ foreach item=downl from=$tmp_downloads}>
+          <tr class="infoBoxContents">
+ <{ if $downl.slink == 1}>
+           <td class="main"><a href="<{$downl.link}>"><{$downl.products_name}></a></td>
+<{else}>
+        <td class="main"><{$downl.products_name}></td>
+<{/if}>
+  <td class="main"><{$smarty.const.TABLE_HEADING_DOWNLOAD_DATE}><{$downl.date}></td>
+                       <td class="main" align="right"><{$downl.download_count}><{$smarty.const.TABLE_HEADING_DOWNLOAD_COUNT}></td>
+   </tr>
+<{/foreach}>
+          </tr>
+        </table></td>
+      </tr>
+<{ if $fahi == 1}>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="smalltext" colspan="4"><p><{$footer_down}></p></td>
+      </tr>
+<{/if}>
+<{/if}>

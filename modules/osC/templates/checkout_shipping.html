@@ -1,0 +1,207 @@
+<{include file="db:checkout_shipping.js"}>
+<{include file="db:header.html"}>
+<table width="100%"><tr>
+    <td width="100%" valign="top"><{$shipping_form}><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$top_image}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.TABLE_HEADING_SHIPPING_ADDRESS}></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td><{$seperator}></td> 
+                <td class="main" width="50%" valign="top"><{$smarty.const.TEXT_CHOOSE_SHIPPING_DESTINATION}><br><br><a href="<{$check_addr}>"><{$check_addr_img}></a></td>
+                <td align="right" width="50%" valign="top"><table border="0" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="main" align="center" valign="top"><{$smarty.const.TITLE_SHIPPING_ADDRESS }></b><br><{$arrow_se}></td>
+                    <td><{$seperator}></td> 
+                    <td class="main" valign="top"><{$addr_label}></td>
+                    <td><{$seperator}></td> 
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{if $shipmod ==1 }>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.TABLE_HEADING_SHIPPING_METHOD}></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{if $shipshow == 1}>
+              <tr>
+                <td><{$seperator}></td>
+                <td class="main" width="50%" valign="top"><{$smarty.const.TEXT_CHOOSE_SHIPPING_METHOD}></td>
+                <td class="main" width="50%" valign="top" align="right"><b><{$smarty.const.TITLE_PLEASE_SELECT}></b><br><{$arrow_se}></td>
+                <td><{$seperator}></td>
+              </tr>
+<{elseif $freeship == 0 }>
+              <tr>
+                <td><{$seperator}></td>
+                <td class="main" width="100%" colspan="2"><{$smarty.const.TEXT_ENTER_SHIPPING_INFORMATION}></td>
+                <td><{$seperator}></td>
+              </tr>
+<{/if}>
+<{if $freeship == 1}>
+              <tr>
+                <td><{$seperator}></td>
+                <td colspan="2" width="100%"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td width="10"><{$seperator}></td>
+                    <td class="main" colspan="3"><b><{$smarty.const.FREE_SHIPPING_TITLE}></b>&nbsp;<{$icon}></td>
+                    <td width="10"><{$seperator}></td>
+                  </tr>
+                  <tr id="defaultSelected" class="moduleRowSelected" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)" onclick="selectRowEffect(this, 0)">
+                    <td width="10"><{$seperator}></td>
+                    <td class="main" width="100%"><{$ship_desc}><{$ship_img}></td>
+                    <td width="10"><{$seperator}></td>
+                  </tr>
+                </table></td>
+                <td><{$seperator}></td> 
+              </tr>
+<{else}>
+  <{section name=q loop=$tmp_quotes}>
+              <tr>
+                <td><{$seperator}></td>
+                <td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td width="10"><{$seperator}></td>
+                    <td class="main" colspan="3"><b><{$tmp_quotes[q].module}></b>&nbsp;<{$tmp_quotes[q].icon}></td>
+                    <td width="10"><{$seperator}></td>
+                  </tr>
+    <{ if $tmp_quotes[q].error != 1}>
+                  <tr>
+                    <td width="10"><{$seperator}></td>
+                    <td class="main" colspan="3"><{$tmp_quotes[q].error}></td>
+                    <td width="10"><{$seperator}></td>
+                  </tr>
+    <{else}>
+         <{section name=method loop=$methods[q]}>
+            <{ if $methods[q][method].checked == 1}>
+             <tr id="defaultSelected" class="moduleRowSelected" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)" onclick="selectRowEffect(this, ' <{$methods[q][method].radio}> ')">
+            <{else}>
+              <tr class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)" onclick="selectRowEffect(this, '<{$methods[q][method].radio}>')">
+            <{/if}>
+
+                    <td width="10"><{$seperator}></td>
+                    <td class="main" width="75%"><{$methods[q][method].title}></td>
+	        <{ if $methods[q][method].tax == 1 }>
+                    <td class="main"><{$methods[q][method].cost}></td>
+                    <td class="main" align="right"><{$methods[q][method].radio_field}></td>
+            <{else}>
+                    <td class="main" align="right" colspan="2"><{$methods[q][method].cost}><{$methods[q][method].hidden_field}></td>
+
+            <{/if}>
+
+                    <td width="10"><{$seperator}></td>
+                  </tr>
+        <{/section}>
+   <{/if}>
+
+
+                </table></td>
+                <td><{$seperator}></td> 
+              </tr>
+  <{/section}>
+<{/if}>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator }></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.TABLE_HEADING_COMMENTS}></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td><{$comments}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator}></td>
+                <td class="main"><b><{$smarty.const.TITLE_CONTINUE_CHECKOUT_PROCEDURE}></b><br><{$smarty.const.TEXT_CONTINUE_CHECKOUT_PROCEDURE}></td>
+                <td class="main" align="right"><{$continue}></td>
+                <td width="10"><{$seperator}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="25%"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="50%" align="right"><{$checkout}></td>
+                <td width="50%"><{$seperator}></td>
+              </tr>
+            </table></td>
+            <td width="25%"><{$seperator_silver}></td>
+            <td width="25%"><{$seperator_silver}></td>
+            <td width="25%"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="50%"><{$seperator_silver}></td>
+                <td width="50%"><{$seperator_silver1}></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="center" width="25%" class="checkoutBarCurrent"><{$smarty.const.CHECKOUT_BAR_DELIVERY}></td>
+            <td align="center" width="25%" class="checkoutBarTo"><{$smarty.const.CHECKOUT_BAR_PAYMENT}></td>
+            <td align="center" width="25%" class="checkoutBarTo"><{$smarty.const.CHECKOUT_BAR_CONFIRMATION}></td>
+            <td align="center" width="25%" class="checkoutBarTo"><{$smarty.const.CHECKOUT_BAR_FINISHED}></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></form></td>
+</tr></table>

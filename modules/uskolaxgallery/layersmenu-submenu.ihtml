@@ -1,0 +1,22 @@
+
+<table border="tiny" cellpadding="2" cellspacing="0" class="bg1">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="{abscissa_step}">
+<tr>
+<td class="bg1" nowrap>
+<table border="0" cellpadding="0" cellspacing="10" width="{abscissa_step}">
+<tr>
+<td class="nav" nowrap>
+<b>{layer_title}</b>
+<br><br>
+{layer_content}
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>

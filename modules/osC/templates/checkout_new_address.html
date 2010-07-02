@@ -1,0 +1,53 @@
+<{if $cna_gender == 1 }>
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+  <tr>
+    <td class="main"><{$smarty.const.ENTRY_GENDER}></td>
+    <td class="main"><{$cna_male}>&nbsp;&nbsp;<{$smarty.const.MALE}>&nbsp;&nbsp;<{$cna_female}>&nbsp;&nbsp;<{$smarty.const.FEMALE}>&nbsp;<{$cna_gender_entry}></td>
+  </tr>
+<{/if}>
+  <tr>
+    <td class="main"><{$smarty.const.ENTRY_FIRST_NAME}></td>
+    <td class="main"><{$cna_firstname}>&nbsp;<{$cna_firstname_entry}></td>
+  </tr>
+  <tr>
+    <td class="main"><{$smarty.const.ENTRY_LAST_NAME}></td>
+    <td class="main"><{$cna_lastname}>&nbsp;<{$cna_lastname_entry}></td>
+  </tr>
+<{ if $cna_company == 1 }>
+
+  <tr>
+    <td class="main"><{$smarty.const.ENTRY_COMPANY}></td>
+    <td class="main"><{$cna_comp}>&nbsp;<{$cna_comp_entry}></td>
+  </tr>
+<{/if}>
+  <tr>
+    <td class="main"><{$smarty.const.ENTRY_STREET_ADDRESS}></td>
+    <td class="main"><{$cna_street}>&nbsp;<{$cna_street_entry}></td>
+  </tr>
+<{ if $cna_suburb == 1 }>
+  <tr>
+    <td class="main"><{$smarty.const.ENTRY_SUBURB}></td>
+    <td class="main"><{$cna_sub}>&nbsp;<{$cna_sub_entry}></td>
+  </tr>
+<{/if}>
+  <tr>
+    <td class="main"><{$smarty.const.ENTRY_POST_CODE}></td>
+    <td class="main"><{$cna_postcode}>&nbsp;<{$cna_postcode_entry}></td>
+  </tr>
+  <tr>
+    <td class="main"><{$smarty.const.ENTRY_CITY}></td>
+    <td class="main"><{$cna_city}>&nbsp;<{$cna_city_entry}></td>
+  </tr>
+<{if $cna_state == 1}>
+  <tr>
+    <td class="main"><{$smarty.const.ENTRY_STATE}></td>
+    <td class="main">
+<{$cna_state_list}><{$cna_state_entry}>
+    </td>
+  </tr>
+<{/if}>
+  <tr>
+    <td class="main"><{$smarty.const.ENTRY_COUNTRY}></td>
+    <td class="main"><{$cna_country}>&nbsp;<{$cna_country_entry}></td>
+  </tr>
+</table>

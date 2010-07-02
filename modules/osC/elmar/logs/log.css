@@ -1,0 +1,35 @@
+body {
+	align:center;
+	background-color:#c3cde0;
+	border:none;
+	color:black;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+}
+
+table {
+	border-style:solid;
+	border-color:#c3cde0;
+	border-width:1px;
+	margin:10px;
+}
+
+th {
+	border-style:solid;
+	border-color:#c3cde0;
+	border-width:1px;
+	background-color:#6b7da6;
+	color:#FFF8DC;
+	font-size:13px;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+td {
+	border-style:solid;
+	border-color:#c3cde0;
+	border-width:1px;
+	background-color:#FFF8DC;
+  	font-size:13px;
+  	padding-right:5px;
+}

@@ -1,0 +1,22 @@
+<{ if $show == 1 }>
+          <tr>
+            <td><br><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td class="tableHeading">&nbsp;<{$smarty.const.TABLE_HEADING_UPCOMING_PRODUCTS}>&nbsp;</td>
+                <td align="right" class="tableHeading">&nbsp;<{ $smarty.const.TABLE_HEADING_DATE_EXPECTED}>&nbsp;</td>
+              </tr>
+              <tr>
+                <td colspan="2"><{$seperator}></td>
+              </tr>
+			  <{foreach item=upcoming_product from=$upcoming_product }>
+			  <tr class="<{ cycle values="pcomingProducts-even,upcomingProducts-odd"}>">
+				<td class="smallText">&nbsp;<a href="<{$upcoming_product.link}>"><{$upcomin_product.name}></a></td>
+			    <td align="right" class="smallText">&nbsp;<{$upcoming_product.date}>&nbsp;</td>
+			  </tr>
+			  <{/foreach}>
+              <tr>
+                <td colspan="2"><{$seperator}></td>
+              </tr>
+            </table></td>
+          </tr>
+<{/if}>

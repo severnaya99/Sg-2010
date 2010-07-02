@@ -1,0 +1,90 @@
+<{include file="db:header.html"}>
+<script language="javascript"><!--
+function popupPrintReceipt(url) {
+  window.open(url,'popupPrintReceipt','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no,width=900')
+}
+//--></script>
+
+<table width="100%"><tr>
+    <td width="100%" valign="top"><{$form_order}>
+	<table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="4" cellpadding="2">
+          <tr>
+            <td valign="top"><{$site_image}></td>
+            <td valign="top" class="main"><{$seperator}><div align="center" class="pageHeading"><{$smarty.const.HEADING_TITLE}></div>
+			<br><{$smarty.const.TEXT_SUCCESS}><br><br>
+			<b><{$smarty.const.TEXT_BESTELLNUMMER}></b>&nbsp;<{$pdf_order_id}>
+			<br><br>
+			<b><{$smarty.const.TEXT_KUNDENNUMMER}></b>&nbsp;<{$pdf_customer_id}>
+			<br><br>
+
+<{if $gpn == 0}>
+    <{$smarty.const.TEXT_NOTIFY_PRODUCTS}><br><p class="productsNotifications">
+<{ foreach item=product from=$products}>
+<{$product.field}> <{$product.text}><br>
+<{/foreach}>
+    </p>
+<{else}>
+    <{$smarty.const.TEXT_SEE_ORDERS}><br><br><{$smarty.const.TEXT_CONTACT_STORE_OWNER}>
+<{/if}>
+            <h3><{$smarty.const.TEXT_THANKS_FOR_SHOPPING}></h3></td>
+          </tr>
+        </table></td>
+      </tr>
+<{ if $showGift == 1 }>
+      <tr>
+        <td><{$seperator1}></td>
+      </tr>
+      <tr>
+        <td align="center" class="main"><{$smarty.const.GV_HAS_VOUCHERA}><{$GiftLink}><{$smarty.const.GV_HAS_VOUCHERB}></td>
+      </tr>
+      <tr>
+        <td><{$seperator1}></td>
+      </tr>
+<{/if}>
+
+      <tr>
+        <td><{$seperator1}></td>
+      </tr>
+      <tr>
+	   <td><table>
+       <td valign="top" width="40%"><{$seperator1}><b><{$smarty.const.TEXT_BESTELLUNG_DRUCKEN}>&nbsp;:<b/></td><td><a href="javascript:popupPrintReceipt('<{$print_order_link}>')"><{$bt_print}></a></td><td align="right">		
+		<{$bt_continue}><{$seperator1}></td>
+
+      </tr>
+	  </table></td>
+      <tr>
+        <td><{$seperator1}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="25%"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="50%" align="right"><{$seperator_silver}></td>
+                <td width="50%"><{$seperator_silver1}></td>
+              </tr>
+            </table></td>
+            <td width="25%"><{$seperator_silver1}></td>
+            <td width="25%"><{$seperator_silver1}></td>
+            <td width="25%"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="50%"><{$seperator_silver1}></td>
+                <td width="50%"><{$bullet}></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="center" width="25%" class="checkoutBarFrom"><{$smarty.const.CHECKOUT_BAR_DELIVERY}></td>
+            <td align="center" width="25%" class="checkoutBarFrom"><{$smarty.const.CHECKOUT_BAR_PAYMENT}></td>
+            <td align="center" width="25%" class="checkoutBarFrom"><{$smarty.const.CHECKOUT_BAR_CONFIRMATION}></td>
+            <td align="center" width="25%" class="checkoutBarCurrent"><{$smarty.const.CHECKOUT_BAR_FINISHED}></td>
+          </tr>
+        </table></td>
+      </tr>
+	  <{ if $downloads == 1}>
+	    <{ include file="db:downloads.html"}>
+      <{/if}>
+    </table></form></td>
+</tr></table>

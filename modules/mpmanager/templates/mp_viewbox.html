@@ -1,0 +1,72 @@
+<form name='prvmsg' method='post' action='msgbox.php'>
+<{include file="db:mp_box.html"}>
+
+<table class="outer" cellspacing="1" width="100%">
+      <th width="15%" align="center"><b><{$lang_from}></b></th>
+      <th width="5%" align="right"></th>
+      <th width="80%" valign="top" colspan="2" align="center"><b><{$lang_subject}></b></th>
+    </tr>
+    <{foreach item=mp from=$prive}>     <tr> 
+      <td class="head" width="15%" align="center"><b><{$mp.poster.name}></td>
+      <td width="5%" align="center" class="head"><{$mp.poster.addcont}></td>
+      <td class="head" width="60%" align="center"><{$lang_posted}>&nbsp;<{$mp.msg_time}></td>
+<td width="15%" align="center" class="head" ><{$mp.anim}></td>
+    </tr>
+    <tr> 
+      <td colspan="2" valign="top" class="even"> 
+        <div class="comUserRank"> 
+          <div class="comUserRankText"><{$mp.poster.title}></div>
+          <{$mp.poster.img}> </div>
+        <{$mp.poster.avatar}> <div class="comUserStat"><span class="comUserStatCaption"><{$lang_joined}></span> 
+          <{$mp.poster.regdate}></div>
+        <div class="comUserStat"><span class="comUserStatCaption"><{$lang_from2}></span> 
+          <{$mp.poster.from}></div>
+        <div class="comUserStat"><span class="comUserStatCaption"><{$lang_posts}> 
+          </span><{$mp.poster.posts}></div>
+        <{$mp.poster.uline}> </td>
+      <td class='odd' valign='top' colspan='2'><div class='comTitle'><{$mp.msg_img}>&nbsp;<{$mp.msg_subject}></div><div class='comText'> 
+        <{$mp.msg_text}><br /><br />
+       <{$mp.file_msg}><{$mp.poster.sign}>
+</td>
+    <tr> 
+      <td colspan='4'>
+<table border='0'  cellspacing='0' cellpadding='0' ><tr class='foot' height='40px'><td align='center' style='vertical-align: middle;'><{$mp.export}></td><td align='right' style='vertical-align: middle;'>
+<{foreach item=bouttons from=$mp.view_actions}> 
+<{$bouttons}>
+<{/foreach}>
+</td></tr></table>
+</td>
+    </tr>
+    <{/foreach}> 
+
+<{if $topic_trees}>
+<!-- start topic tree -->
+<{foreach item=tree from=$topic_trees}>
+  <tr class="<{cycle values="odd,even"}>">
+<td colspan="4">
+<table><tr>
+    <td width="15%" align="center">
+<{$tree.poster}>
+</td>
+    <td width="5%" align="center"> <{$tree.post_image}>
+</td>
+    <td width="60%" align="left"><{$tree.post_prefix}>
+ <{$tree.post_title}>
+</td>
+<td width="20%" align="center"><{$tree.post_time}>
+</td>
+</tr></table>
+<{/foreach}>
+</tr></table>
+<!-- end topic tree -->
+<{/if}>
+
+<input type='hidden' id='msg_mp[]'  name='msg_mp[]' value='<{$msg_id}>'>
+
+<table><td align="left"><{$mp_quik_reply}></td>
+<td align="right"><{$lang_previous}><{$lang_next}></td></tr></table>
+
+<br /><table border='0' cellspacing='1' cellpadding='4' width='100%'><tr>
+<td valign="top" align="right"><{$mp_print}>&nbsp;<{$mp_pdf}>&nbsp;<{$mp_email}></td>
+</tr></table></form><br />
+<{$mp_quik_post}>

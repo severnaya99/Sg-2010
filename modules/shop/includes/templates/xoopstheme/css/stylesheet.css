@@ -1,0 +1,317 @@
+/*XOOPS*/
+div #content {padding:0px}
+div.blockTitle a {color:#fff}
+
+td.main, P.main {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/*HEADER CSS*/
+td.breadCrumb {
+  font-size: 10px;
+  font-weight: bold;
+  color: #9a9a9a;
+  padding: 3px;
+  border-bottom: 1px dotted #9a9a9a;
+}
+
+tr.headerError, td.headerError,td.headerInfo {
+  background: #ff0000;
+  color: #ffffff;
+  font-weight : bold;
+  text-align : center;
+}
+
+tr.headerInfo {
+  background: #00ff00;
+}
+
+
+/*SIDEBOX CSS*/
+.boxText {
+  font-size: 11px;
+  line-height: 125%;
+}
+
+.infoBoxNotice {
+  background: #FF8E90;
+}
+
+.infoBoxNoticeContents {
+  background: #FFE6E6;
+}
+
+tr.sideBoxHeading, td.productListing-heading, tr.centerboxheading {
+  background: #abbbd3;
+}
+
+.sideBoxFooter, .centerboxfooter {
+ background: #abbbd3;
+}
+
+.sideBoxHeading, .productListing-heading, .centerboxheading {
+  font-size: 10px;
+  font-weight: bold;
+  color: #000000;
+  padding: 3px;
+}
+
+span.newItemInCart {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+
+/*center main section
+-----------------------------------*/
+h1 {font-size:16px;text-align:center}
+span.greetUser {color: #f0a480; font-weight: bold;}
+td.greetUser {padding:4px;}
+
+.plainBox, .plainbox-description {
+  font-size: 11px;
+  background: #ffffff;
+  border: 1px solid #9a9a9a;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.plainBoxHeading {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 11px 5px 5px;
+}
+
+/*miscellaneous areas
+-------------------------------------*/
+td.infoBox, span.infoBox {}
+
+td.cartBox {
+   background: #eff4f8;
+   font-size: 10px;
+   padding: 3px;
+   border: 1px dotted #ffb062;
+}
+
+tr.accountHistory-odd, tr.addressBook-odd, tr.alsoPurchased-odd, tr.payment-odd, tr.productListing-odd, tr.productreviews-odd, tr.upcomingProducts-odd, tr.shippingOptions-odd {
+  background: #ffffff;
+}
+
+tr.accountHistory-even, tr.addressBook-even, tr.alsoPurchased-even, tr.payment-even, tr.productListing-even, tr.productreviews-even, tr.upcomingProducts-even, tr.shippingOptions-even {
+  background: #eff4f8;
+}
+
+td.productListing-data-description-odd {
+  background: #ffffff;
+  font-size: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+td.productListing-data-description-even {
+  background: #eff4f8;
+  font-size: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+.errorBox {   background: #ff797c; color: #ffffff; font-weight: bold; }
+.stockWarning {   color: #cc0033; }
+.productsNotifications { background: #f2fff7; }
+.orderEdit {   color: #70d250; text-decoration: underline; }
+.productListing-heading {
+  border-bottom: 1px solid #9a9a9a;
+}
+
+td.productListing-data {
+   font-size: 10px;
+}
+
+td.pageresults a {
+  color: #0000FF;
+}
+
+td.pageresults a:hover {
+  background: #FFFF33;
+}
+td.pageresults {
+  font-size: 10px;
+}
+tr.subBar {
+  background: #f4f7fd;
+}
+
+td.smallText, span.smallText, P.smallText {
+   font-size: 10px;
+}
+
+td.accountCategory {
+  font-size: 13px;
+  color: #aabbdd;
+}
+
+td.fieldKey {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+td.fieldValue {
+  font-size: 12px;
+}
+
+td.tableHeading {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+checkbox, input, radio, select {
+  font-size: 11px;
+}
+
+textarea {
+  width: 100%;
+  font-size: 11px;
+}
+
+table.formArea {
+	background: #f1f9fe;
+	border: 1px solid #7b9ebd;
+}
+
+td.formAreaTitle {
+	font: bold 12px Verdana, Arial, sans-serif;
+}
+
+span.markProductOutOfStock {
+	color: #c76170;
+	font: bold 12px Verdana, Arial, sans-serif;
+}
+
+span.normalprice {
+	text-decoration: line-through;
+}
+
+span.productSpecialPrice {
+  color: #ff797c;
+}
+
+span.productSpecialPriceSale {
+  color: #ff797c;
+	text-decoration: line-through;
+}
+
+span.productSalePrice {
+  color: #FF0000;
+}
+
+span.productPriceDiscount {
+  font-size: 10px;
+  color: #FF0000;
+}
+
+span.errorText {
+  color: #ff0000;
+}
+
+.moduleRow { }
+.moduleRowOver { background-color: #D7E9F7; cursor: pointer; }
+.moduleRowSelected { background-color: #E9F4FC; }
+
+.checkoutBarFrom, .checkoutBarTo {   color: #8c8c8c; }
+.checkoutBarCurrent {   color: #000000; }
+
+/* message box */
+
+.messageBox {   }
+.messageStackError, .messageStackWarning { background-color: #ff797c; color: #ffffff; padding: 2px; border: 1px solid #9a9a9a; }
+.messageStackSuccess {   background-color: #b3ffa8; padding: 2px; border: 1px solid #9a9a9a; }
+.messageStackCaution { font-family: Verdana, Arial, sans-serif; font-size: 10px; background-color: #FFFF00; }
+
+/* input requirement */
+
+.inputrequirement {
+  color: #ff0000;
+  font-size: 10px;
+}
+
+span.coming {
+color: #ff797c;
+}
+
+/* checkout totals */
+td.ot-subtotal-Text, td.ot-cod-fee-Text, td.ot-total-Text, td.ot-group-pricing-Text, td.ot-gv-Text, td.ot-loworderfee-Text, td.ot-shipping-Text, td.ot-subtotal-Text, td.ot-tax-Text, td.ot-coupon-Text {
+  font-weight: bold;
+}
+td.ot-subtotal-Amount, td.ot-cod-fee-Amount, td.ot-total-Amount, td.ot-group-pricing-Amount, td.ot-gv-Amount, td.ot-loworderfee-Amount, td.ot-shipping-Amount, td.ot-subtotal-Amount, td.ot-tax-Amount, td.ot-coupon-Amount {}
+
+/* product_info attribute comments */
+
+.ProductInfoComments, td.ProductInfoComments, span.ProductInfoComments {
+  color: #ff0000;
+  font-size: 9px;
+  line-height: 1.0;
+  text-align : left;
+  font-weight: bold;
+  padding-top: 6px;
+  border-top: 1px solid #9a9a9a;
+}
+
+/* General alert span class */
+td.alert, span.alert {
+  color: #FF0000;
+  font-weight: bold;
+}
+
+/* General alert span class */
+td.alertBlack, span.alertBlack {
+  color: #000000;
+  font-weight: bold;
+}
+
+/* popup tables */
+table.popupattributeqty, table.popupcouponhelp, table.popupcvvhelp, table.popupimage, table.popupimageadditional, table.popupsearchhelp, table.popupshippingestimator, table.popupinfoshoppingcart {
+  background-color: #ffffff;
+	margin: 6px;
+  padding: 6px;
+  font: 11px Verdana, Arial, sans-serif;
+}
+
+/* categories_description */
+table.categoriesdescription {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  background: #D0D0D0;
+  border:1px solid #9a9a9a;
+}
+
+td.categoriesdescription {
+  font-size: 11px;
+  line-height: 1.0;
+}
+
+/* categories box parent and child categories and extra links */
+A.category-top, A.category-links {
+  color: #428dff;
+  text-decoration: none;
+}
+A.category-subs, A.category-products {
+  color: #428dff;
+  text-decoration: none;
+}
+span.category-subs-parent {
+  font-weight: bold;
+}
+span.category-subs-selected {
+  font-weight: bold;
+}
+
+/* attribute images table */
+table.products-attributes-images {
+  float: left;
+  padding: 2px;
+}

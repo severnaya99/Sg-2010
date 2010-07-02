@@ -1,0 +1,31 @@
+<{ if $message==1}>
+<table>
+  <tr>
+    <td><{$messagetext}></td>
+  </tr>
+</table>
+<{/if}>
+<table border="0" width="100%" cellspacing="0" cellpadding="1">
+  <tr class="headerNavigation">
+    <td class="headerNavigation">&nbsp;&nbsp;<{$trail}></td>
+    <td align="right" class="headerNavigation">
+<{ if $slogoff == 1 }>
+  <a href="<{$logoff}>" class="headerNavigation"><{$smarty.const.HEADER_TITLE_LOGOFF}></a>&nbsp;|&nbsp; 
+<{/if}>
+<a href="<{$account}>" class="headerNavigation"><{$smarty.const.HEADER_TITLE_MY_ACCOUNT}></a> &nbsp;|&nbsp; <a href="<{$shopping_cart}>" class="headerNavigation"><{$smarty.const.HEADER_TITLE_CART_CONTENTS}></a> &nbsp;|&nbsp; <a href="<{$checkout_shipping}>" class="headerNavigation"><{$smarty.const.HEADER_TITLE_CHECKOUT}></a> &nbsp;&nbsp;</td>
+  </tr>
+</table>
+<{if $serror == 1}>
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+  <tr class="headerError">
+    <td class="headerError"><{$errortext}></td>
+  </tr>
+</table>
+<{/if}>
+<{ if $sinfo == 1 }>
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+  <tr class="headerInfo">
+    <td class="headerInfo"><{$infotext}></td>
+  </tr>
+</table>
+<{/if}>

@@ -1,0 +1,264 @@
+<{include file="db:form_check.js.html"}>
+<{ include file="db:header.html"}>
+<table width="100%"><tr>
+ <td width="100%" valign="top"><form name="create_account" action="create_account.php" method="post" onSubmit="return check_form(create_account);"><input type="hidden" name="action" value="process"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+	<{if $messagestack == 1}>
+	<tr>
+		<td><{$message_output}>
+		</td>
+	</tr>
+	<{/if}>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><img src="images/table_background_account.gif" border="0" alt="<{$smarty.const.HEADING_TITLE}>"onError=this.src="images/no_image.jpg" title="<{$smarty.const.HEADING_TITLE}>" width="57" height="40"></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="smallText"><br><font color="#FF0000"><{$origin_login}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.CATEGORY_PERSONAL}></b></td>
+           <td class="inputRequirement" align="right"><{$smarty.const.FORM_REQUIRED_INFORMATION}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" cellspacing="2" cellpadding="2">
+			<{if $smarty.const.ACCOUNT_GENDER == "true"}>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_GENDER}></td>
+                <td class="main"><input type="radio" name="gender" value="m" <{if $ingender == 'm'}>checked<{/if}>><{$smarty.const.MALE_ADDRESS}><input type="radio" name="gender" value="f" <{if $ingender == 'f'}>checked<{/if}>><{$smarty.const.FEMALE_ADDRESS}><span class="inputRequirement">*</span></td>
+              </tr>
+			 <{/if}>
+			 <{if $noxoopsuser == 1 }>
+			  <tr>
+	               <td class="main"><{$smarty.const._PROFILE_MA_NICKNAME}></td>
+	              <td class="main"><{$xoops_nick}></td>
+	          </tr>
+			 <{/if}>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_FIRST_NAME}></td>
+                <td class="main"><input type="text" name="firstname" value="<{$infirstname}>"><span class="inputRequirement">*</span></td>
+              </tr>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_LAST_NAME}></td>
+                <td class="main"><input type="text" name="lastname" value="<{$inlastname}>"><span class="inputRequirement">*</span></td>
+              </tr>
+			<{if $smarty.const.ACCOUNT_DOB == "true"}>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_DATE_OF_BIRTH}></td>
+                <td class="main"><input type="text" name="dob" value="<{$indob}>"><span class="inputRequirement">* (z.B. 21.05.1970)</span></td>
+              </tr>
+			 <{/if}>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_EMAIL_ADDRESS}></td>
+                <td class="main"><{$email_address}><span class="inputRequirement">*</span></td>
+              </tr>
+			   <{if $noxoopsuser == 1 }>
+			  <tr>
+	            <td class="main" colspan="2"><{$xoops_viewemail}></td>
+	         </tr>
+	         <tr>
+	  	        <td class="main" colspan="2"><{$smarty.const._PROFILE_MA_MAILOK}></td>
+ 	         </tr>
+			 <tr>
+			    <td class="main" colspan="2"><{$xoops_mailok}></td>
+			</tr>
+	        <tr>
+    	        <td class="main"><{$smarty.const._PROFILE_MA_TIMEZONE}></td>
+   	            <td class="main"><{$xoops_timezone}></td>
+	        </tr>
+		   <{/if}>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+	  <{if $smarty.const.ACCOUNT_COMPANY == "true"}>
+      <tr>
+        <td class="main"><b><{$smarty.const.CATEGORY_COMPANY}></b></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" cellspacing="2" cellpadding="2">
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_COMPANY}></td>
+                <td class="main"><input type="text" name="company" value="<{$incompany}>"></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+	  <{/if}>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="main"><b><{$smarty.const.CATEGORY_ADDRESS}></b></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" cellspacing="2" cellpadding="2">
+			 <{if $noxoopsuser == 1 }>
+             <tr>
+			   <td class="main"><{$smarty.const._PROFILE_MI_URL_TITLE}></td>
+			   <td class="main"><{$xoops_homepage}></td>
+			 </tr>
+			 <{/if}>
+			  <tr>
+                <td class="main"><{$smarty.const.ENTRY_STREET_ADDRESS}></td>
+                <td class="main"><input type="text" name="street_address" value="<{$instreet_address}>"><span class="inputRequirement">*</span></td>
+              </tr>
+	<{if $smarty.const.ACCOUNT_SUBURB == "true"}>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_SUBURB}></td>
+                <td class="main"><input type="text" name="suburb" value="<{$insuburb}>"></td>
+              </tr>
+	<{/if}>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_POST_CODE}></td>
+                <td class="main"><input type="text" name="postcode" value="<{$inpostcode}>"><span class="inputRequirement">*</span></td>
+              </tr>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_CITY}></td>
+                <td class="main"><input type="text" name="city" value="<{$incity}>"><span class="inputRequirement">*</span></td>
+              </tr>
+	  <{if $smarty.const.ACCOUNT_STATE == "true"}>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_STATE}></td>
+                <td class="main">
+				<{$form_state}> </td>
+              </tr>
+	<{/if}>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_COUNTRY}></td>
+                <td class="main"><{$form_country}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="main"><b><{$smarty.const.CATEGORY_CONTACT}></b></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" cellspacing="2" cellpadding="2">
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_TELEPHONE_NUMBER}></td>
+                <td class="main"><input type="text" name="telephone" value="<{$intelephone}>"><span class="inputRequirement">*</span></td>
+              </tr>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_FAX_NUMBER}></td>
+                <td class="main"><input type="text" name="fax" value="<{$infax}>"></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="main"><b><{$smarty.const.CATEGORY_OPTIONS}></b></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" cellspacing="2" cellpadding="2">
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_NEWSLETTER}></td>
+                <td class="main"><input type="checkbox" name="newsletter" <{ if $newsletter == 1 }> checked <{/if}> value="1">&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{if $noxoopsuser == 1 }>
+      <tr>
+        <td class="main"><b><{$smarty.const.CATEGORY_PASSWORD}></b></td>
+      </tr>
+      <tr>
+        <td>
+		<table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td>
+			  <table border="0" cellspacing="2" cellpadding="2">
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_PASSWORD}></td>
+                <td class="main"><input type="password" name="password" maxlength="40">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+              <tr>
+                <td class="main"><{$smarty.const.ENTRY_PASSWORD_CONFIRMATION}></td>
+                <td class="main"><input type="password" name="confirmation" maxlength="40">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+            </table>
+		 </td>
+          </tr>
+        </table>
+	  </td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $show_disc == 1}>	  
+	        <tr>
+        <td>
+		<table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td>
+			  <table border="0" cellspacing="2" cellpadding="2">
+              <tr>
+                <td class="main"><{$smarty.const._US_DISCLAIMER}></td>
+                <td class="main"><{$xoops_agree}></td>
+              </tr>
+            </table>
+		 </td>
+          </tr>
+        </table>
+	  </td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+<{/if}>
+      <tr>
+
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td><{$bt_continue}></td>
+                <td width="10"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></form></td></tr></table>

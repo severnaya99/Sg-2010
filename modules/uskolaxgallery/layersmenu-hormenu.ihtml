@@ -1,0 +1,18 @@
+<!-- horizontal menu start -->
+
+<table border="0" cellpadding="2" cellspacing="0" class="bg1">
+<tr>
+<td>
+<table border="0" cellpadding="3" cellspacing="1" width="{menuwidth}">
+<tr>
+<!-- BEGIN hormenu_cell -->
+<td class="bg1" width="{cellwidth}" align="center">
+{cellbody}
+</td>
+<!-- END hormenu_cell -->
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- horizontal menu end -->

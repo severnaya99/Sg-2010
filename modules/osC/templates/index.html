@@ -1,0 +1,104 @@
+<{include file="db:header.html"}>
+<table width="100%">
+<tr>
+<{if $nested==1 }>
+    <td width="100%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$categories_image}></td>
+          </tr>
+		  <tr><td><{$categorie_description}></td></tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+<{assign var="counter" value=0}>
+<{foreach item=categories from=$display_categories }>
+
+			  	<td align="center" class="smallText" width="<{$categories.width}>" valign="top"><a href="<{$categories.link}>"><{$categories.image}><br><{$categories.name}></a></td>
+<{assign var="counter" value=$counter+1}>
+				<{if $counter == $smarty.const.MAX_DISPLAY_CATEGORIES_PER_ROW }></tr><tr>
+				<{assign var="counter" value=0}>
+				<{/if}>
+<{/foreach}>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><{$seperator}></td>
+          </tr>
+          <tr>
+            <td><{include file="db:product_listing.html"}></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+<{/if}>
+<{if $catmanu == 1 }>
+    <td width="100%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+<{ if $filterlist == 1 }>
+		<td align="center" class="main"><{$filterform}><{$hiddenfield}><{$sortfield}><{$filterid}>
+			</form></td> 
+<{/if}>
+            <td align="right"><{$top_image}></td>
+          </tr>
+		  <tr><td><{$categorie_description}></td></tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><{include file="db:product_listing.html"}></td>
+      </tr>
+    </table></td>
+<{/if}>
+<{if $default == 1 }>
+    <td width="100%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$back_image}></td>
+          </tr>
+
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="main"><{$greeting}></td>
+          </tr>
+          <tr>
+            <td><{$seperator}></td>
+          </tr>
+          <tr>
+            <td class="main"><{$smarty.const.TEXT_MAIN}></td>
+          </tr>
+          <tr>
+            <td><{$seperator}></td>
+          </tr>
+          <tr>
+            <td><{$new_products}></td>
+          </tr>
+<{include file="db:upcoming_products.html"}>
+        </table></td>
+      </tr>
+    </table></td>
+<{/if}>
+</tr></table>

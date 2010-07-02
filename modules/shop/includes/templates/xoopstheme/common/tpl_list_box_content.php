@@ -1,0 +1,48 @@
+<?php
+//
+// +----------------------------------------------------------------------+
+// |zen-cart Open Source E-commerce                                       |
+// +----------------------------------------------------------------------+
+// | Copyright (c) 2003 The zen-cart developers                           |
+// |                                                                      |   
+// | http://www.zen-cart.com/index.php                                    |   
+// |                                                                      |   
+// | Portions Copyright (c) 2003 osCommerce                               |
+// +----------------------------------------------------------------------+
+// | This source file is subject to version 2.0 of the GPL license,       |
+// | that is bundled with this package in the file LICENSE, and is        |
+// | available through the world-wide-web at the following url:           |
+// | http://www.zen-cart.com/license/2_0.txt.                             |
+// | If you did not receive a copy of the zen-cart license and are unable |
+// | to obtain it through the world-wide-web, please send a note to       |
+// | license@zen-cart.com so we can mail you a copy immediately.          |
+// +----------------------------------------------------------------------+
+// $Id: tpl_list_box_content.php 290 2004-09-15 19:48:26Z wilt $
+//
+
+//print_r($list_box_contents);
+$lcontents = '<table width="100%" border="0" cellspacing="0" cellpadding="0" class="productListing-data">';
+
+  for($row=0;$row<sizeof($list_box_contents);$row++) {
+    $params = "";
+    if ($list_box_contents[$row]['align']) $params = 'align = "' . $list_box_contents[$row]['align']. '"';
+    if ($list_box_contents[$row]['params']) $params .= ' ' . $list_box_contents[$row]['params'];
+$lcontents .= '<tr '. $params .' >';
+
+    for($col=0;$col<sizeof($list_box_contents[$row]);$col++) {
+      $r_params = "";
+      if ($list_box_contents[$row][$col]['align']) $r_params = 'align="' . $list_box_contents[$row][$col]['align']. '"';
+      if ($list_box_contents[$row][$col]['params']) $r_params .= ' ' . $list_box_contents[$row][$col]['params'];
+      if ($list_box_contents[$row][$col]['text']) {
+		$lcontents .= '<td '. $r_params .'>';
+		$lcontents .= $list_box_contents[$row][$col]['text'] . '</td>';
+      }
+    }
+
+  $lcontents .= '</tr>';
+
+  }
+
+$lcontents .= '</table>';
+echo $lcontents;
+?> 

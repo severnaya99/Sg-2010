@@ -1,0 +1,99 @@
+$Id: wiki_jp.txt,v 1.2 2005/06/20 15:03:23 ohwada Exp $
+
+=================================================
+Date:    2003/11/21
+Author:  Kenichi OHWADA
+URL:     http://linux.ohwada.net/
+Email:   linux@ohwada.net
+=================================================
+
+BracketName によるurlリンク
+
+BracketName は PukiWiki で採用されている簡略記法です。
+PukiWiki に関しては、下記をご覧ください。
+http://pukiwiki.org/
+
+デフォルトでは、オフとなっているので、
+使用する場合は 下記のファイルを変更してください。
+22 行目 conf.php
+35 行目 class/wfsarticle.php 
+
+[[hogehoge]] のように二重の大かっこ[[ ]]でくくった文字列を書くと、
+urlリンクに変換されます。
+大かっこの中の文字列には、日本語、記号、数字、半角空白文字を含めることができます。
+大かっこの中の文字列は、urlエンコードされます。
+書式は、以下のとおりです。
+
+１．XFセクション内のリンク
+[[hogehoge]]
+と書くと
+<a href="http://ホスト名//modules/xfsectuon/article.php?title=hogehoge">hogehoge</a>
+と変換される。
+
+[[foo bar]]
+と書くと
+<a href="http://ホスト名//modules/xfsectuon/article.php?title=foo%20bar">foo bar
+</a>
+と変換される。
+
+[[日本語]]
+と書くと
+<a href="http://ホスト名//modules/xfsectuon/article.php?title=%C6%FC%CB%DC%B8%EC">日本語</a>
+と変換される。
+
+２． エイリアス
+[[hogehoge>foobar]]
+と書くと
+<a href="http://ホスト名//modules/xfsectuon/article.php?title=foobar">hogehoge</a>
+と変換される。
+
+３．外部へのリンク
+[[hogehoge:http://www.pukiwiki.org/]]
+と書くと
+<a href="http://www.pukiwiki.org/">hogehoge</a>
+と変換される。
+
+４．大かっこの表記
+HTMLでは、[ の代わりに &#091; が使えます。
+[[hogehoge]] という表示をするが、リンクはしないときなどに、使用してください。 
+
+=================================================
+追加したファイルの一覧
+=================================================
+wiki
+  - init.php
+  - make_link.php
+  - mbstring.php
+  - func.php
+  - file.php
+  - plugin.php
+  - html.php
+
+=================================================
+PukiWiki からの変更点
+=================================================
+PukiWiki 1.4.3 がベースです。
+
+１．make_link.php
+(1) PukiWikiでは、本文中にタグを許さない仕様なので、タグは「&lt;」のようなHTMLコードに変換されます。
+XFsection では、素通ししています。
+(2) PukiWikiでは、記事（ファイル）の存在を確認して、存在しないときは、?を表示しています。
+XFsection では、無条件にリンクしています。
+
+２．init.php
+下記のファイルから必要な変数をマージしました。
+init.php
+pukiwiki.php
+pukiwiki.ini.php
+default.ini.php
+ja.lng
+
+３．mbstring.php
+英語版用に設けた mbstring のダミー・ファイルです。
+
+４．下記のファイルは変更はありません。
+func.php
+file.php
+plugin.php
+html.php
+

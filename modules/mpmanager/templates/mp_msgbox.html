@@ -1,0 +1,46 @@
+<form name='prvmsg' method='post' action='msgbox.php'>
+<{include file="db:mp_box.html"}>
+
+
+<table border='0' cellspacing='1' width='100%' class='outer'>
+<tr><th colspan='6' align='center'><{$lang_vous}>&nbsp;<{$lang_msg}></th>
+</tr>
+<tr>
+<td class="head" width="5%">&nbsp;</td><td class="head" width="5%">&nbsp;</td>
+<{if $mp_catbox != 2}>
+<td align="center" class="head" width="20%"><{$lang_from}></td>
+<{/if}>
+<td align="center" class="head" width="45%"><{$lang_subject}></td><td align="center" class="head" width="25%"><{$lang_date}></td></tr>
+
+<{if $mp_amount == 0}>
+<tr><td class='even' colspan='6' align='center'><{$lang_none}></td></tr> 
+<{/if}>
+
+<{foreach item=mp from=$prive}>
+
+<tr align='left' class="<{cycle values="odd,even"}>">
+<td colspan="5">
+<table><tr>
+<td valign='top'   style='vertical-align: middle' width='5%' align='center'><{$mp.msg_mp}></td>
+<td  width='5%' style='vertical-align: middle' align='center'><{$mp.msg_img}></td>
+<{if $mp_catbox != 2}>
+<td  style='vertical-align: middle' width='20%' align='center'><{$mp.msg_poster}></td>
+<{/if}>
+<td  style='vertical-align: middle' width='45%'><{$mp.msg_view}>&nbsp;<{$mp.msg_file}>&nbsp;<{$mp.msg_subject}></td>
+<td  style='vertical-align: middle' align='center' width='25%'><{$mp.msg_time}></td></tr>
+<tr><td colspan='5'><{$mp.msg_previous}></td>
+</tr></table></td></tr>
+<{/foreach}>
+<tr>
+<td align='center' colspan='6' class='foot'><{$mp_select}></td>
+</tr>
+</table>
+
+<div align=right><{$mp_pagenav}></div>
+
+<br /><table border='0' cellspacing='1' cellpadding='4' width='100%'><tr><td><{$mp_news}><br />
+     <{$mp_reply}><br />
+     <{$mp_lus}></td>
+<td valign="top" align="right"><{$mp_print}>&nbsp;<{$mp_pdf}>&nbsp;<{$mp_email}></td>
+</tr></table><br />
+</form>

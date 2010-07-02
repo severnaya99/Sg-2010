@@ -1,0 +1,35 @@
+<form name='prvmsg' method='post' action='contbox.php'>
+<{include file="db:mp_box.html"}>
+
+  <table border='0' cellspacing='1' cellpadding='4' width='100%' class='outer'>
+    <tr align="center"> 
+      <th colspan='8'><{$lang_msg}></th>
+</tr>
+<tr align='center' valign='middle'><td class="head" width="5%"></td>
+<td class="head" width="20%"><{$lang_from}></td>
+<td class="head" width="20%"><{$lang_groupe}></td>
+<td class="head" width="20%"><{$lang_joindate}></td>
+<td class="head" width="20%"><{$lang_last}></td>
+<td class="head" width="5%"><{$lang_online}></td>
+</tr>
+
+<{if $mp_amount == 0}>
+<tr><td class='even' colspan='8' align='center'><{$lang_none}></td></tr> 
+<{/if}>
+
+<{foreach item=mp from=$prive}>
+
+<tr align='left' class="<{cycle values="odd,even"}>">
+<td colspan="6">
+<table><tr>
+<td valign='top' width='5%' align='center'><input type='checkbox' id='ct_contact[]' name='ct_contact[]'  class='4'  onClick='ChangeStatut(this)' value='<{$mp.msg_id}>'  /></td>
+<td valign='middle' width='20%'><div align="center"><{$mp.msg_poster}></div></td>
+<td valign='middle' width='20%'><div align="center"><{$mp.msg_groupe}></div></td>
+<td valign='middle' width='20%'><div align="center"><{$mp.msg_joindate}></div></td>
+<td valign='middle' width='20%'><div align="center"><{$mp.msg_last}></div></td>
+<td valign='middle' width='5%'><div align="center"><{$mp.msg_online}></div></td>
+</tr></table></td></tr>
+<{/foreach}>
+</table>
+<div align=right><{$mp_pagenav}></div>
+</form>

@@ -1,0 +1,11 @@
+<h2><{$smarty.const._AM_NW_TOPICS_DIRECTORY}></h2>
+<br />
+<ul>
+<{foreach item=topic from=$topics}>
+	<{if $urlrewrite == true}>
+		<li><{$topic.prefix}><a href="<{$newsmodule_url}>/articles.cat.<{$topic.id}>/<{$topic.titleurl}>"><{$topic.title}></a> (<{$topic.nw_count}>)</li>
+	<{else}>
+		<li><{$topic.prefix}><a href="<{$newsmodule_url}>/index.php?storytopic=<{$topic.id}>"><{$topic.title}></a> (<{$topic.nw_count}>)</li>
+	<{/if}>
+<{/foreach}>
+</ul>

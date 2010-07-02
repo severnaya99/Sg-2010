@@ -1,0 +1,82 @@
+Version francaise en fin de document
+
+-----------------------
+--- English version ---
+-----------------------
+You can read the changelog to see the differencies between the v2.83 and the 3.23
+
+
+Install
+
+Pre-required
+
+To use the formulaire module, are necessary :
+
+    * the 2.0.7 xoops version, or more recent
+    * xoops must be configured to send mails
+
+Fresh install
+
+You don't have previous formulaire or you don't want to migrate old data ? follow this process :
+
+    * download the module
+    * verify that your module folder don't have yet a formulaire subfolder. (delete the folder formulaire in this case)
+    * decompress the archive contents in the modules folder of your site
+    * install the module
+    * notice : there is no access to the module from the main menu
+
+Upgrade from a previous version
+
+In the version 3, there are a lot of modifications, so, it is not possible to upgrade from the V2 version.
+It is better to uninstall your formulaire version and install this new version.
+If you have already the V3 installed you can upload all files and update the module in the admin area (very important ! This update create the missing fields in the database.
+
+Installation procedure
+
+After having installed the module :
+
+    * activate the block in the 'Blocks and Groups' part
+    * at installation, a demo form is created, the users permissions must be given in order to set visible the form in the user side
+    * if you word locally, the demo form is reachable, if you work on an external website, you have to modify the access url of the module in the admin part
+    * the form is now reachable and the installation is over
+
+
+
+-----------------------
+--- French version ---
+-----------------------
+Vous pouvez lire le changelog.txt pour voir les changements entre la version 2.83 et la version 3.23
+
+Installation du module
+
+Pré-requis
+
+Afin d'utiliser le module formulaire, sont nécessaires :
+
+    * la version 2.0.7 de xoops, ou plus récent
+    * xoops doit être configuré pour pouvoir envoyer des mails    
+    
+Nouvelle installation
+
+Vous démarrez de zéro et n'avez pas de migration à faire, voici la procédure à suivre :
+
+    * téléchargez le module
+    * vérifiez que votre répertoire modules ne contient pas déjà un dossier formulaire, si c'est le cas supprimez-le
+    * décompressez le contenu du fichier dans le répertoire modules de votre site
+    * installer le module 
+    * note : il n'y a pas d'accès au module dans le menu principal
+
+Mise à jour d'une version antérieure
+
+Suite aux nombreuses modifications effectuées dans la version 3, il n'est pas possible de réaliser de mise à jour de la V2 vers la V3
+Il est donc préférable de désinstaller votre version de formulaire puis d'installer cette nouvelle mouture.
+Pour la mise à jour depuis la V3 vers 3.21 il suffit d'uploader le module et de faire une mise a jour du module (tres important car cela cree les champs dans la base
+
+Procédure d'installation
+
+Après avoir installé le module :
+
+    * activez le bloc dans la partie 'Blocs et Groupes' du module
+    * un formulaire de démo est créé à l'installation, il faut accorder les permissions aux utilisateurs afin que ce formulaire soit visible côté utilisateur
+    * si vous travaillez en local, le formulaire de démo est accessible, si vous travaillez sur un site distant, vous devez aller dans la partie menu du module et modifier l'url d'accès du formulaire
+    * le formulaire est maintenant accessible et l'installation terminée 

@@ -1,0 +1,170 @@
+<script language="javascript" type="text/javascript"><!--
+<{$price_info}>
+function popupWindow(url) {
+  window.open(url,'popupWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=100,height=100,screenX=150,screenY=150,top=150,left=150')
+}
+function check(name,id) {
+option_selected[name] = id;
+var preis=0;
+for(var i=0;i< option_name.length;i++) {
+  if(option_selected[option_name[i]] > 0 ) {
+   preis=preis+product_options[option_name[i]][option_selected[option_name[i]]];
+  }
+}
+preis=preis+ppreis;
+preis=preis+0.005;
+  str_number = preis+"";
+  arr_int = str_number.split(".");
+  if(!arr_int[0]) arr_int[0] = "0";
+  if(!arr_int[1]) arr_int[1] = "";
+  if(arr_int[1].length < 2){
+    nachkomma = arr_int[1];
+    for(i=arr_int[1].length+1; i <= 2; i++){  nachkomma += "0";  }
+    arr_int[1] = nachkomma;
+  }
+preis=arr_int[0]+"."+arr_int[1].substr(0,2);
+
+
+//alert(price[name+'['+id+']']+" - "+id);
+document.getElementById("actualPrice").innerHTML=currency_prefix+preis+currency_postfix;
+}
+//--></script>
+<{ include file="db:header.html"}>
+<table width="100%"><tr>
+    <td width="100%" valign="top"><{$cartform}><table border="0" width="100%" cellspacing="0" cellpadding="0">
+<{ if $noproduct == 1 }>
+      <tr>
+        <td><{$noproducttxt}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator}></td>
+                <td align="right"><a href="<{$goon}></a></td>
+                <td width="10"><{$seperator}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+<{ else }>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading" valign="top"><{$products_name}></td>
+            <td class="pageHeading" align="right" valign="top"><div id="actualPrice" name="actualPrice" class="pageHeading"><{$products_price}></div></td></tr><tr><td align="left" class="smallText"><{$products_model}></td><td align="right">
+			<span class="smallText"><{$products_tax_text}></span>
+			<br><span class="smallText"><{$products_shipment_text}></span>
+			</td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="main">
+<{ if $image == 1}>
+          <table width="100%" border="0" cellspacing="0" cellpadding="2" align="right">
+            <tr>
+			 <td><p><{$p_desc}></p></td>
+              <td align="center" class="smallText">
+<script language="javascript"><!--
+document.write('<a href="javascript:popupWindow(\'<{$pjimage}>\')"><{$pjimagetext}><br><{$smarty.const.TEXT_CLICK_TO_ENLARGE}></a>');
+//--></script>
+<noscript>
+<a href="<{$pjimagehref}>" target="_blank"><{$pjimagehreftext}><br><{$smarty.const.TEXT_CLICK_TO_ENLARGE }></a>
+</noscript>
+              </td>
+            </tr>
+          </table>
+<{else}>
+          <p><{$p_desc}></p>
+<{/if}>	
+</td></tr><tr><td>	  
+<{if $attr == 1}>
+
+          <table width="100%" border="0" cellspacing="0" cellpadding="2">
+            <tr>
+              <td class="main" colspan="2"><{$smarty.const.TEXT_PRODUCT_OPTIONS}></td>
+            </tr>
+
+<{foreach item=option from=$p_opt }>
+            <tr>
+              <td class="main"><{$option.name}></td>
+              <td class="main"><{$option.menu}></td>
+            </tr>
+<{/foreach}>
+          </table>
+<{/if}>
+        </td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $reviews == 1 }>
+      <tr>
+        <td class="main"><{$smarty.const.TEXT_CURRENT_REVIEWS}> <{$rev_count}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+<{ if $pdf == 1 }>
+      <tr>
+        <td class="main"><{$pdftext}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+
+<{ if $url == 1 }>
+      <tr>
+        <td class="main"><{$urltext}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td align="center" class="smallText"><{$pdatext}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator}></td>
+                <td class="main"><a href="<{$bt_reviews}>"><{$bt_reviews_img}></a></td>
+                <td class="main" align="right"><{$hf_pid}><{$cart_img}></td>
+                <td width="10"><{$seperator}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td>
+		<{$also_purchased}>
+        </td>
+      </tr>
+	 <{/if}>
+    </table></form></td>
+</tr></table>
+<script type="text/javascript">
+for(var i=0;i< option_name.length;i++) {
+check(option_name[i],document.forms["cart_quantity"].elements[option_name[i]].options[document.forms["cart_quantity"].elements[option_name[i]].options.selectedIndex].value);
+}
+</script>

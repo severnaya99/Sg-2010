@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+#m_body {
+	width:100%;
+	background-color:#aaaaaa; /* DO NOT REMOVE THIS; or you'll have issue w/ the scrollbar, when the mouse pointer is on a white space */
+}

@@ -1,0 +1,406 @@
+<!-- $Id: readme.html 388 2005-09-07 09:30:43Z stefan $ -->
+<!-- header_begin -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="LTR" lang="de">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Das Elm@r-Modul f&uuml;r osCommerce: Readme</title>
+  <link rel="stylesheet" type="text/css" href="elmar.css">
+</head>
+<body>
+<table border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#6b7da6" summary="Layout Kopf">
+<tr>
+  <td width="210" bgcolor="#FFFFFF"><img src="img/oscommerce.gif" border="0" alt="osCommerce" title="osCommerce" width="204" height="50"></td>
+  <td>
+    <div style="color:#eaeeff;background-color:#6b7da6;padding-top:10px;padding-bottom:0px;padding-left:50px;padding-right:10px">
+      <div style="font-weight:bold; width:100%; filter:Shadow(color=#303030, direction=135)">
+        <h1 style="text-align:center;font-size:22px;color:#eaeeff;margin:0px;padding:1px;">
+          Elm<span style="color:red">@</span>r - Readme
+        </h1>
+      </div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td colspan="2" bgcolor="#2a5580">&nbsp;</td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0"  bgcolor="#2a5580" width="100%" summary="Layout Seite">
+  <tr>
+    <td valign="top">
+    </td>
+    <td valign="top" bgcolor="#FFF8DC" width="99%">
+      <div class="middle">
+<!-- header_end -->
+
+<h1>Das Elm@r-Modul f&uuml;r osCommerce</h1>
+<div class="middleCell">
+<p>
+  Dies ist die Startseite des Elm@r-Moduls f&uuml;r <a href="http://www.oscommerce.com/" target="_blank">osCommerce</a>. Mit Hilfe dieses Moduls k&ouml;nnen Shop- und Produktdaten f&uuml;r verschiedene Internetdienstleister wie Shopverzeichnisse, Produktsuchmaschinen, Preisvergleichsdienste usw. auf einfache Weise gem&auml;&szlig; dem offenen <code>shopinfo.xml</code>-Standard bereitgestellt werden. Weitere Informationen finden Sie zum <a href="http://projekt.wifo.uni-mannheim.de/elmar/nav/osCommerce" target="_blank">Modul</a> und zum Standard unter <a href="http://elektronischer-markt.de/" target="_blank">http://elektronischer-markt.de/</a>. Nutzen Sie f&uuml;r Fragen und Anregungen bitte auch das <a href="http://projekt.wifo.uni-mannheim.de/forum/viewforum.php?f=7" target="_blank">Diskussionsforum</a>.
+</p>
+</div>
+
+<h1>Voraussetzungen</h1>
+<div class="middleCell">
+<p>
+  Das Elm@r-Modul nutzt Funktionen, die <strong>PHP</strong> erst <strong>ab&nbsp;Version&nbsp;4.1</strong> zur Verf&uuml;gung stellt.
+  Getestet haben wir unser Modul mit <strong>osCommerce&nbsp;2.2&nbsp;Milestone&nbsp;2</strong> unter Linux und Windows mit <EM>Apache</EM> und <EM>Microsoft Internet Information Server</EM>.
+</p>
+</div>
+
+<h1><a name="Installation">Installation</a></h1>
+<div class="middleCell">
+<p>
+  Bitte entpacken Sie die Installationsdatei im Hauptverzeichnis des Shops; das ist normalerweise das Verzeichnis <code>catalog</code> von osCommerce.
+  Unter Linux bei <code>tar</code> den Parameter <code>-p</code> angeben, damit die Zugriffsrechte stimmen, z.&nbsp;B.:<br>
+</p>
+<blockquote><pre class="code">tar -xzpvf elmarmodul.tar.gz</pre></blockquote>
+<p>
+  Dabei wird das Verzeichnis <code>elmar</code> zum Unterverzeichnis des osCommerce-Verzeichnisses <code>catalog</code> und steht auf der gleichen Ebene im Verzeichnisbaum wie das <code>include</code>-Verzeichnis von osCommerce.
+  Die Verzeichnisse <code>img</code>, <code>logs</code> und <code>tools</code> liegen im Verzeichnis <code>elmar</code>.
+  Siehe Bild.
+</p>
+<p align="center"><img src="img/directories.gif" width="150" height="238" alt="Verzeichnisstruktur"></p>
+<script type="text/javascript">
+<!--
+  function start(a) {
+    var s = '' + a;
+    if (s.indexOf('http://') == 0)
+      return true;
+    var lnk = 'http:// ... /elmar_start.php?file=index.php';
+    var url = prompt('Bitte geben Sie die URL der Startseite des Elm@r-Moduls passend f&uuml;r Ihre osCommerce-Installation an.', lnk);
+    if (url != null && url.length > 0 && url != lnk) {
+      document.location = url;
+    }
+    return false;
+  }
+//-->
+</script>
+<script type="text/javascript">
+<!--
+  document.write('<p>Nach dem Entpacken der Dateien und dem Kopieren in die jeweiligen Verzeichnisse rufen Sie bitte &uuml;ber einen Internet-Browser die URL ');
+  var loc = '' + window.location;
+  var p = loc.lastIndexOf('/');
+  if (loc.indexOf('http://') == 0 && p > 0) {
+    var lnk = loc.substring(0, p-5) + 'elmar_start.php?file=index.php';
+    document.write(lnk.link(lnk));
+  } else {
+    document.write('<a href="../elmar_start.php?file=index.php" onClick="return start(this);">' + 'http://www.example.com/catalog/elmar_start.php?file=index.php' + '<\/a>');
+  }
+  document.write(' auf, wobei die URL ggf. an Ihren Webserver anzupassen ist. Folgen Sie anschlie&szlig;end bitte den dortigen Hinweisen.<\/p>');
+//-->
+</script>
+<noscript>
+  <p>Nach dem Entpacken der Dateien und dem Kopieren in die jeweiligen Verzeichnisse rufen Sie bitte &uuml;ber einen Internet-Browser die URL
+  <a href="../elmar_start.php?file=index.php">http://www.example.com/catalog/elmar_start.php?file=index.php</a>
+  auf, wobei die URL ggf. an Ihren Webserver anzupassen ist. Folgen Sie anschlie&szlig;end bitte den dortigen Hinweisen.</p>
+</noscript>
+<p class="comment">
+  <strong>Es sind keine Ver&auml;nderungen an der osCommerce-Installation notwendig.</strong>
+</p>
+</div>
+
+
+<h1>Anpassen des Elm@r-Moduls</h1>
+<div class="middleCell">
+<p>
+  Sie k&ouml;nnen das Elm@r-Modul mit zahlreichen Konstanten, die in der Datei <code>elmar_config.inc.php</code> definiert sind, an Besonderheiten Ihres Shops anpassen. Erl&auml;uterungen dazu finden Sie direkt in der Konfigurationsdatei.
+</p>
+<p>
+  Zum &Auml;ndern der Konfigurationsdatei k&ouml;nnen Sie diese beispielsweise per FTP vom Webserver auf Ihren Rechner holen und dann lokal mit einem Texteditor bearbeiten. Anschlie&szlig;end speichern Sie die Datei und &uuml;bertragen Sie wieder zum Webserver.
+</p>
+<p class="attention">
+  <strong>ACHTUNG:</strong> Bearbeiten Sie die Konfigurationsdatei <code>elmar_config.inc.php</code> <strong>nicht</strong> mit dem <strong>osCommerce-Dateimanager</strong>. Aufgrund eines Fehlers im Dateimanager werden sonst alle Backslash-Zeichen entfernt, was unter anderem zu fehlerhaften Produktdateien f&uuml;hrt, weil z.&nbsp;B. f&auml;lschlicherweise <code>t</code> statt Tabulator (&quot;\t&quot;) als Trennzeichen benutzt wird.
+</p>
+<p><a name="osfilemanager"></a>
+  Der Fehler im osCommerce-Dateimanager l&auml;sst sich beheben, indem in der Datei <code>admin/filemanager.php</code> die Zeile (bei Zeilennummer 148)
+</p>
+<blockquote><pre class="code">$file_contents = htmlspecialchars(implode('', $file_array));</pre></blockquote>
+<p>
+  ersetzt wird durch
+</p>
+<blockquote><pre class="code">$file_contents = <strong>addslashes(</strong>htmlspecialchars(implode('', $file_array))<strong>)</strong>;</pre></blockquote>
+</div>
+
+
+<h1><a name="elmar_password"></a>Zugriffssteuerung und Sicherheit</h1>
+<div class="middleCell">
+<p>
+  Die Startdatei <code>elmar_start.php</code> sollte durch ein Passwort gesch&uuml;tzt werden, das in der Datei <code>config.inc.php</code> unter <code>ELMAR_PASSWORD</code> einzutragen ist. Um den Passwortschutz (vor&uuml;bergehend) auszuschalten, einfach eine leere Zeichenkette eintragen.
+</p>
+<blockquote><pre class="code">define('ELMAR_PASSWORD', '');</pre></blockquote>
+<p>
+  Bei Apache-Servern, die PHP als Modul ausf&uuml;hren, l&auml;uft die Autorisierung &uuml;ber den Browser, sonst wird ein Cookie benutzt. &Uuml;ber HTTP-Verbindungen (statt HTTPS) ist der Schutz jedoch begrenzt, weil das Passwort unter Umst&auml;nden mitgelesen werden kann.
+</p>
+<p>
+  Falls der Passwortschutz wider Erwarten nicht funktionieren sollte, besteht ein einfacher Schutz vor unbefugtem Zugriff im <strong><a name="umbenennen">Umbenennen</a></strong> von <code>elmar_start.php</code> und dem Verzeichnis <code>elmar</code>. Dabei ist in der Datei <code>elmar_config.inc.php</code> die Konstante <code>ELMAR_PATH</code> entsprechend anzupassen. Wenn das Verzeichnis z.&nbsp;B. in <code>geheim</code> und <code>elmar_start.php</code> in <code>geheim_start.php</code> umbenannt wird, muss die Konstante so gesetzt werden:
+</p>
+<blockquote><pre class="code">define('ELMAR_PATH', '<span style="color:red">geheim</span>/');</pre></blockquote>
+<p>
+  damit eine URL der Art <code>http://www.example.com/catalog/<span style="color:red">geheim</span>_start.php?file=index.php</code> die Startseite des Moduls aufruft.
+</p>
+<p class="attention">
+  <strong>ACHTUNG:</strong> Sp&auml;tere <strong>Updates</strong> kopieren neue Dateien wieder in das Verzeichnis <code>elmar</code>, sodass die neuen Dateien ggf. von Ihnen in das umbenannte Verzeichnis zu verschieben sind!
+</p>
+<p>
+  F&uuml;r Apache-Webserver steht dar&uuml;ber hinaus die Datei <code>.htaccess</code> zur Verf&uuml;gung, welche Zugriffe auf das <code>elmar</code>-Verzeichnis von au&szlig;en unterbindet.
+  &Uuml;ber <code>elmar_start.php</code> kann das Webinterface jedoch trotzdem genutzt werden!
+  Weitere Informationen finden Sie in der Datei <a href="access.html">access.html</a>.
+</p>
+</div>
+
+
+<h1><a name="Update">Update</a></h1>
+<div class="middleCell">
+<p>
+  Unter dem Men&uuml;punkt <strong>Update</strong> k&ouml;nnen Sie pr&uuml;fen, ob eine neuere Version des Moduls verf&uuml;gbar ist.
+  Vor der Installation einer neuen Version des Moduls f&uuml;hren Sie bitte zuerst mit dem entsprechenden Men&uuml;punkt ein <strong>Backup</strong> durch.
+  Laden Sie dann die neue Version des Moduls von <a href="http://projekt.wifo.uni-mannheim.de/elmar/nav/osCommerce">http://projekt.wifo.uni-mannheim.de/elmar/nav/osCommerce</a>.
+  Anschlie&szlig;end k&ouml;nnen Sie die <strong>Update-Datei</strong> auspacken und damit die Dateien der alten Version &uuml;berschreiben. Sollten Fehler auftreten, war die installierte Version vermutlich zu alt f&uuml;r ein Update, z.&nbsp;B. von Version 2.x auf 3.x. <a href="#Installation">Installieren</a> Sie dann die neue <strong>Vollversion</strong> und kontrollieren Sie die Einstellungen in den Dateien <code>elmar_config.inc.php</code> sowie <code>config.inc.php</code>.
+  Abschlie&szlig;end stellen Sie ggf. gesicherte Dateien (insbesondere die Shopdatei <code>shopinfo.xml</code>) wieder her.
+</p>
+</div>
+
+
+<h1><a name="logo"><span class="attention">WICHTIG:</span> Verbreitung Ihrer Angebote</a></h1>
+<div class="middleCell">
+<p>
+  Zeigen Sie Preisvergleichsdiensten, Produktsuchmaschinen, Shopping-Portalen usw., dass Sie den <code>shopinfo.xml</code>-Standard unterst&uuml;tzen und diese somit Ihre Shop- und Produktdaten leicht abrufen k&ouml;nnen. Sie erh&ouml;hen damit Ihre Chancen auf eine kostenlose Aufnahme und die Verbreitung Ihrer Angebote. Verlinken Sie dazu Ihre Shopdatei <code>shopinfo.xml</code> z.&nbsp;B. auf der Startseite oder im Impressum (Pfad ggf. anpassen):
+</p>
+<blockquote><pre class="code">&lt;a href=&quot;<strong style="color:red">/</strong>shopinfo.xml&quot;
+   title=&quot;Wir unterst&amp;uuml;tzen den shopinfo.xml-Standard.&quot;
+   target=&quot;_blank&quot;&gt;&lt;code&gt;shopinfo.xml&lt;/code&gt;&lt;/a&gt;</pre></blockquote>
+<p>Und so sieht es aus:
+  <a href="/shopinfo.xml" target="_blank" title="Wir unterst&uuml;tzen den shopinfo.xml-Standard."><code>shopinfo.xml</code></a>
+</p>
+<p>
+  Der Link kann auch einfach in die so genannte Info-Box gesetzt werden. &Ouml;ffnen Sie dazu die osCommerce-Datei <code>catalog/includes/boxes/information.php</code> und &auml;ndern Sie die Anweisung, die mit <code>$info_box_contents[]</code> beginnt und mit <code>');</code> endet:
+</p>
+<blockquote><pre class="code">
+  $info_box_contents[] = array('text' => '...');
+</pre></blockquote>
+<p>
+  F&uuml;gen Sie am Ende zwischen <code>'</code> und <code>);</code> den Link ein:
+</p>
+<blockquote><pre class="code">
+  $info_box_contents[] = array('text' =&gt; '...' <strong style="color:red">. '&lt;br&gt;&lt;a href=&quot;/shopinfo.xml&quot;&gt;shopinfo.xml&lt;/a&gt;'</strong>);
+</pre></blockquote>
+
+<p>
+  Gerne d&uuml;rfen Sie auch unser Logo auf Ihren Seiten einbinden, z.&nbsp;B.:
+</p>
+<blockquote><pre class="code">&lt;a href=&quot;http://elektronischer-markt.de/&quot;
+   target=&quot;_blank&quot;&gt;&lt;img
+   src=&quot;http://projekt.wifo.uni-mannheim.de/elmar/gfx/elmar-logo-100x50.gif&quot;
+   width=&quot;100&quot; height=&quot;50&quot; border=&quot;0&quot;
+   title=&quot;Wir unterst&amp;uuml;tzen den shopinfo.xml-Standard und sind bei Elm@r registriert.&quot;
+   alt=&quot;Elm@r - shopinfo.xml&quot;&gt;&lt;/a&gt;</pre></blockquote>
+<p>Und so sieht es aus:
+  <a href="http://elektronischer-markt.de/"
+     target="_blank"><img
+     src="img/elmarlogo.gif"
+     width="100" height="50" border="0"
+     title="Wir unterst&uuml;tzen den shopinfo.xml-Standard und sind bei Elm@r registriert."
+     alt="Elm@r - shopinfo.xml"></a>
+  <br>(Die Grafikdatei steht auch im Verzeichnis <code>.../elmar/img/elmarlogo.gif</code>.)
+</p>
+<p>Oder einfach als Textlink, z.B.:
+  <a href="http://elektronischer-markt.de/"
+    title="Wir unterst&uuml;tzen den shopinfo.xml-Standard und sind bei Elm@r registriert."
+    target="_blank">Elm@r</a>
+</p>
+<blockquote><pre class="code">&lt;a href=&quot;http://elektronischer-markt.de/&quot;
+   title=&quot;Wir unterst&amp;uuml;tzen den shopinfo.xml-Standard und sind bei Elm@r registriert.&quot;
+   target=&quot;_blank&quot;&gt;Elm@r&lt;/a&gt;</pre></blockquote>
+</div>
+
+
+<h1>Bekannte Probleme und L&ouml;sungen</h1>
+<div class="middleCell">
+<!--
+<p>
+  Die Warnung <code><strong>Unable to access includes/spiders.txt</strong></code> kann dadurch behoben werden, dass in <code>includes/application_top.php</code> die kritische Zeile <code>$spiders = file(DIR_WS_INCLUDES . 'spiders.txt');</code> durch <code>$spiders = file(DIR_WS_INCLUDES . 'spiders.txt', <strong>1</strong>);</code> ersetzt wird, damit beim &Ouml;ffnen der Datei der <code>include_path</code> ber&uuml;cksichtigt wird.
+</p>
+-->
+<p>
+  Falls der Server nicht der Schnellste ist, sollte f&uuml;r einen reibungslosen Zugriff auf die Produktdaten unter &quot;Einstellungen&quot; die Option &quot;<strong>Produktdatei speichern</strong>&quot; aktiviert werden. Es wird dann eine Produktdatei auf die Platte geschrieben und der Zugriff erfolgt anschlie&szlig;end schnell per Umleitung auf diese Datei. Per Voreinstellung wird die Produktdatei automatisch beim Zugriff nach 12&nbsp;Stunden neu generiert (siehe <code>UPDATEINTERVAL</code>).<br>
+  Au&szlig;erdem kann in der Datei <code>elmar_config.inc.php</code> der Wert von <code>DB_SLEEP</code> auf <code>1</code> - oder wenn das noch nicht hilft, auf <code>0</code> - gesetzt werden:
+</p>
+<blockquote><pre class="code">define('DB_SLEEP', 1);</pre></blockquote>
+<p>
+  Wenn <strong><code>safe_mode=On</code></strong> und <strong><code>max_execution_time=30</code></strong> ist, darf ein PHP-Skript h&ouml;chstens 30&nbsp;Sekunden laufen, bevor es abgebrochen wird. Die Erstellung der Produktdatei durch Aufruf von <code>elmar_products.php</code> dauert f&uuml;r Shops mit mehreren Tausend Produkten unter Umst&auml;nden l&auml;nger, so dass das Skript vorzeitig abgebrochen wird, wodurch <strong>abgeschnittene Produktdateien</strong> entstehen, die nicht alle Produkte enthalten.
+  Unter dem Men&uuml;punkt &quot;Produktdateien&quot; k&ouml;nnen Sie mit dem Button &quot;<strong>Markierte Produktdateien in mehreren Schritten generieren</strong>&quot; trotzdem vollst&auml;ndige Produktdateien erzeugen.
+  Allerdings verfolgen einige Browser wie bspw. <em>Firefox</em> nur eine maximale Anzahl von Weiterleitungen, sodass unter Umst&auml;nden nicht alle Produkte in die Produktdatei aufgenommen werden. Mit dem <em>Internet Explorer</em> funktioniert es.
+  <br>(Elm@r kann Ihre Produkte bei Kundenabfragen &uuml;brigens auch mithilfe der <a href="http://projekt.wifo.uni-mannheim.de/elmar/nav?dest=impl.productdata.index">Echtzeitabfrageschnittstelle</a> <code>elmar_request.php</code> listen, die von dem Timeout-Problem nicht betroffen ist.)
+</p>
+<p>
+  Die osCommerce-Funktion <strong><code>get_browser_language()</code></strong> in der Datei <code>includes/classes/language.php</code> liefert auf dem <strong>Microsoft Internet Information Server</strong> mit ISAPI-PHP immer die Standardsprache Englisch, wodurch deutsche Produkte u.&nbsp;U. nicht gefunden werden. Dies l&auml;sst sich reparieren, indem <code>getenv('HTTP_ACCEPT_LANGUAGE')</code> durch <code>$_SERVER['HTTP_ACCEPT_LANGUAGE']</code> ersetzt wird. (Dies betrifft <strong>osCommerce&nbsp;2.2&nbsp;Milestone&nbsp;2</strong>.)
+</p>
+<p>
+  Wenn der Server voll ausgelastet ist, k&ouml;nnen Fehler der folgenden Art auftreten:<br>
+  <code>mysql_connect(): Too many connections. Unable to connect to database server!</code><br>
+  Dieses Problem hat nicht direkt mit diesem Modul zu tun, sondern taucht h&auml;ufig auf gemeinsam genutzten Servern und/oder bei aktivierten &quot;Persistent Connections&quot; auf (siehe
+  <a href="http://forums.oscommerce.de/viewtopic.php?t=6442">Artikel im deutschen osCommerce-Forum</a>).
+  Abhilfe schafft ein Neustart des Servers oder auch einfach nur warten, bis es wieder geht...
+</p>
+<p>
+  Das Modul benutzt die osCommerce-Einstellung zur Berechnung der <strong>Versandkosten</strong> und der <strong>Mehrwertsteuer</strong>. Damit das funktioniert, muss der osCommerce-Shop korrekt konfiguriert sein. Insbesondere betrifft dies die folgenden Angaben:
+</p>
+<ul>
+  <li>Steuerklassen und -s&auml;tze</li>
+  <li><code>Display Prices with Tax: true</code> f&uuml;r Preise inkl. Mehrwertsteuer (sonst in Produktdateien ohne MwSt.)</li>
+  <li><code>Enable Flat Shipping: True; Shipping Cost: 5.00</code> f&uuml;r eine Versandkostenpauschale von bspw. 5&nbsp;EUR</li>
+  <li><code>Allow Free Shipping: true; Free Shipping For Orders Over: 50</code> f&uuml;r Versandkostenfreiheit ab bspw. 50&nbsp;EUR</li>
+</ul>
+<p>
+  Weil auf vielen Webservern PHPs <strong><code>open_basedir</code></strong> gesetzt ist, k&ouml;nnen die Dateien, die zum Webinterface des Moduls geh&ouml;ren, nicht direkt aufgerufen werden. Stattdessen ist <b><code>elmar_start.php?file=...</code></b> zu benutzen, wobei f&uuml;r <code>...</code> der Name des Skripts einzusetzen ist, z.&nbsp;B. <code>index.php</code>.
+<!--
+  Sonst treten Fehlermeldungen der folgenden Art auf:<br>
+  <code>Warning: open_basedir restriction in effect. File is in wrong directory&nbsp;...</code><br>
+-->
+<!--
+  Die Einstellung f&uuml;r <code>open_basedir</code> ist nicht durch PHP-Skripte modifizierbar, sondern muss ggf. in der Serverkonfiguration ge&auml;ndert werden.
+-->
+</p>
+<p>
+  F&uuml;r Kelkoo sollte ein Wert f&uuml;r<br>
+</p>
+<blockquote><pre class="code">define('VERSANDKOSTEN_AB', '');</pre></blockquote>
+<p>
+  in der Datei <code>elmar_config.inc.php</code> eingetragen werden, damit das Feld nicht leer bleibt.
+</p>
+<p>
+  Beim Abruf von Produktdateien sendet das Elm@r-Modul TXT- oder CSV-Dateien, f&uuml;r die der Browser in der Regel ein Dialogfenster zum &quot;Speichern unter&quot; &ouml;ffnet (siehe <a href="http://projekt.wifo.uni-mannheim.de/images/csv_speichern.gif" target="_blank">Bild</a>). Wenn der <strong>Internet Explorer</strong> die Dateien stattdessen anzeigt, kann man unter &quot;Extras - Internetoptionen - Sicherheit - Stufe anpassen - Verschiedenes&quot; die Option <strong>&quot;Dateien basierend auf dem Inhalt und nicht der Dateierweiterung &ouml;ffnen&quot;</strong> deaktivieren (siehe <a href="http://projekt.wifo.uni-mannheim.de/images/ie_dateiinhalt.gif" target="_blank">Bild</a>).<br>
+  Was beim &Ouml;ffnen von Dateien passieren soll, kann man z.&nbsp;B. im Explorer unter &quot;Extras - Ordneroptionen - Dateitypen&quot; einstellen. Dort sollte die Option <strong>&quot;&Ouml;ffnen nach dem Download best&auml;tigen&quot;</strong> aktiviert sein (siehe <a href="http://projekt.wifo.uni-mannheim.de/images/download_bestaetigen.gif" target="_blank">Bild</a>).
+</p>
+<p>
+  Das Skript <code><strong>elmar_request.php</strong></code> beantwortet Echtzeitsuchanfragen, die haupts&auml;chlich von Nutzern bei <a href="http://elektronischer-markt.de/" target="_blank">Elm@r</a> kommen. Sofern aktiviert, kann man im Men&uuml; unter <strong>Protokolle -&gt; Echtzeitanfragen</strong> sehen, wonach potenzielle Kunden suchen. Ruft man das Skript <code>elmar_request.php</code> einfach so auf, erscheint ein XML-Dokument mit einer Fehlermeldung, weil Suchbegriffe fehlen. Um die Echtzeitsuche zu testen, steht im Webinterface der Men&uuml;punkt <strong>Test&nbsp;2</strong> zur Verf&uuml;gung. Echtzeitabfragen lassen sich unterbinden, indem der <code>OnlineRequest</code>-Block in der Shopdatei <code>shopinfo.xml</code> entfernt wird.
+</p>
+</div>
+
+
+<h1><a name="Schreibrechte">Schreibrechte erteilen</a></h1>
+<div class="middleCell">
+<p>
+  Das Elm@r-Modul ben&ouml;tigt Schreibrechte f&uuml;r die folgenden Dateien.
+  Schreibrechte k&ouml;nnen meist mit FTP-Programmen erteilt oder unter Linux bspw. mit dem Befehl
+  <b><code>chmod&nbsp;666&nbsp;[Dateiname]</code></b> bzw. <b><code>chmod&nbsp;a+rw&nbsp;[Dateiname]</code></b> eingestellt werden (siehe <code>elmar/writeaccess.sh</code>).
+</p>
+
+<table border="0" cellspacing="1" cellpadding="3" summary="Schreibrechte" bgcolor="black">
+  <tr class="cellHeader"><th>Datei</th><th>Erl&auml;uterung</th></tr>
+  <tr class="row2">
+    <td><code>catalog/<b>shopinfo.xml</b></code></td>
+    <td>Die Shopdatei, in welche shopspezifische Daten geschrieben werden. Diese Datei kann auch im Stammverzeichnis des Webservers stehen, sodass sie unter einer URL der Art <code>http://www.example.com/shopinfo.xml</code> erreichbar ist.</td>
+  </tr>
+  <tr class="row1">
+    <td><code>catalog/<b>products.csv</b></code></td>
+    <td>In die Produktdatei werden Produkt- und Preisinformationen geschrieben, damit diese zum Download bereitstehen. Die Generierung erfolgt automatisch durch <code>elmar_products.php</code>. Au&szlig;erdem k&ouml;nnen weitere Produktdateien <code>kelkoo.txt</code>, <code>pangora.txt</code> usw. f&uuml;r <EM>Kelkoo</EM>, <EM>Pangora</EM> usw. angelegt werden.</td>
+  </tr>
+  <tr class="row2">
+    <td><code>catalog/elmar/<b>config.inc.php</b></code></td>
+    <td>Enth&auml;lt Einstellungen f&uuml;r das Elm@r-Modul; Anpassung mittels <code>elmar/setup.php</code></td>
+  </tr>
+  <tr class="row1">
+    <td><code>catalog/elmar/logs/<b>error.html</b></code></td>
+    <td rowspan="2">Protokollierung von Fehlermeldungen.</td>
+  </tr>
+  <tr class="row1">
+    <td><code>catalog/elmar/logs/<b>error.log</b></code></td>
+  </tr>
+  <tr class="row2">
+    <td><code>catalog/elmar/logs/<b>products.html</b></code></td>
+    <td rowspan="2">Protokollierung von Produktdateianfragen.</td>
+  </tr>
+  <tr class="row2">
+    <td><code>catalog/elmar/logs/<b>products.log</b></code></td>
+  </tr>
+  <tr class="row1">
+    <td><code>catalog/elmar/logs/<b>request.html</b></code></td>
+    <td rowspan="2">Protokollierung von Echtzeitanfragen nach Produkten.</td>
+  </tr>
+  <tr class="row1">
+    <td><code>catalog/elmar/logs/<b>request.log</b></code></td>
+  </tr>
+</table>
+
+</div>
+
+<h1><a name="Deinstallation">Deinstallation</a></h1>
+<div class="middleCell">
+<p>
+  Die meisten Dateien des Elm@r-Moduls landen im Verzeichnis <code>elmar</code> bzw. dessen Unterverzeichnissen.
+  Des Weiteren werden f&uuml;nf Dateien, deren Namen jeweils mit <code>elmar</code> beginnen, im <code>catalog</code>-Verzeichnis abgelegt.
+  Au&szlig;erdem k&ouml;nnen noch die Dateien <code>shopinfo.xml</code> (Shopdatei), <code>products.csv</code> (Produktdatei) und weitere Produktdateien <code>kelkoo.txt</code>, <code>pangora.txt</code> usw. erzeugt werden.
+</p>
+<p>
+  Im Verzeichnis <code>elmar</code> befinden sich die Dateien <code>uninstall.bat</code> f&uuml;r Windows und <code>uninstall.sh</code> f&uuml;r Unix-Systeme (vor dem Aufruf ggf. Ausf&uuml;hrungsrechte setzen: <code>chmod&nbsp;u+x&nbsp;uninstall.sh</code>). Damit lassen sich alle Dateien des Elm@r-Moduls l&ouml;schen. Weitere Ma&szlig;nahmen sind zur Deinstallation nicht notwendig, weil das Elm@r-Modul keine Ver&auml;nderungen an der osCommerce-Installation vornimmt.
+</p>
+</div>
+
+
+<h1><a name="spenden">Finanzielle Unterst&uuml;tzung</a></h1>
+<div class="middleCell">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+  <input type="hidden" name="cmd" value="_xclick">
+  <input type="hidden" name="business" value="stefan@kuhlins.de">
+  <input type="hidden" name="item_name" value="Support Elm@r-Modul f&uuml;r osCommerce">
+  <input type="hidden" name="no_shipping" value="1">
+  <input type="hidden" name="cn" value="Nachricht">
+  <input type="hidden" name="currency_code" value="EUR">
+  <input type="hidden" name="lc" value="DE">
+  <p>
+    <input style="margin-top:3px;margin-bottom:3px;margin-left:10px;margin-right:10px;width:80px;height:31px" align="left" type="image" src="img/paypal.gif" name="submit" alt="Spenden" title="F&ouml;rdern Sie die Weiterentwicklung des Elm@r-Moduls!">
+
+    Sie k&ouml;nnen das Elm@r-Modul kostenlos nutzen. Ich w&uuml;rde mich aber freuen, wenn Sie die Arbeit daran finanziell unterst&uuml;tzen w&uuml;rden. Mit dem folgenden Button gelangen Sie zu einer Seite von <a href="https://www.paypal.com/de/refer/pal=stefan%40kuhlins.de" target="_blank">PayPal</a>, wo Sie mir auf elektronischem Wege schnell, einfach und sicher Geld &uuml;berweisen k&ouml;nnen. <EM>PayPal</EM> ist ein &quot;Institut f&uuml;r elektronisches Geld&quot; und geh&ouml;rt zu <em>eBay</em>. Falls Sie lieber auf einem anderen Weg bezahlen m&ouml;chten, nehmen Sie bitte Kontakt mit <a href="mailto:stefan@kuhlins.de?subject=Spende">mir</a> auf. <strong>Damit Sie das Geld steuerlich als Betriebsausgabe verbuchen k&ouml;nnen, leiste ich gerne Support im Zusammenhang mit dem Elm@r-Modul und stelle Ihnen eine Rechnung inkl. MwSt. aus.</strong>
+  </p>
+  <p>
+    <a href="https://www.paypal.com/de/refer/pal=stefan%40kuhlins.de" target="_blank"><img src="img/paypal2.gif" align="left" hspace="10" width="88" height="33" border="0" alt="PayPal" title="Anmelden bei PayPal - schnell, einfach und kostenlos!"></a>
+
+    M&ouml;chten auch Sie im Rahmen Ihres Online-Shops oder bei <EM>eBay</EM>-Auktionen Zahlungen &uuml;ber <a href="https://www.paypal.com/de/refer/pal=stefan%40kuhlins.de" target="_blank">PayPal</a> in Empfang nehmen? Wenn ja, melden Sie sich mit dem folgenden Button an - schnell, einfach und <strong>kostenlos</strong>!
+  </p>
+  <p>
+    Interessieren Sie sich f&uuml;r von mir verfasste B&uuml;cher? Hier finden Sie <A HREF="http://www.amazon.de/exec/obidos/redirect?tag=stefankuhlins-21&amp;path=search-handle-url/index%3Dbooks-de%26field-author%3DKuhlins%252C%2520Stefan" target="_blank">meine B&uuml;cher bei Amazon</a>.
+  </p>
+</form>
+</div>
+
+
+<h1>Support und Copyright</h1>
+<div class="middleCell">
+<p>
+  <strong>Elm<span style="color:red">@</span>r-Modul f&uuml;r osCommerce</strong> zur Unterst&uuml;tzung des <code>shopinfo.xml</code>-Standards<br>
+  <a href="http://projekt.wifo.uni-mannheim.de/elmar/nav/osCommerce">http://projekt.wifo.uni-mannheim.de/elmar/nav/osCommerce</a><br>
+  Copyright &copy; 2004-2005 <a href="http://kuhlins.de/">Dr. Stefan Kuhlins</a><br>
+  (Mit bestem Dank an Max Wenzel, der bei der Entwicklung der Version 1.0 mitgeholfen hat.)<br>
+  <br>
+  <strong>osCommerce</strong>: Open Source E-Commerce Solutions<br>
+  <a href="http://www.oscommerce.com/">http://www.oscommerce.com/</a><br>
+  Copyright &copy; 2002-2004 osCommerce<br>
+  Released under the GNU General Public License
+</p>
+<p>F&uuml;r Fragen und Verbesserungsvorschl&auml;ge zu diesem Modul, wenden Sie sich bitte an:
+<a href="mailto:osCommerce@elektronischer-markt.de?subject=Elm@r-Modul">osCommerce@elektronischer-markt.de</a>
+</p>
+<p style="background-color:#ececec">
+  Das Elm@r-Modul wird Ihnen von uns <strong>kostenlos</strong> zur Verf&uuml;gung gestellt.
+  Wie bei kostenloser Software &uuml;blich, erfolgt die <strong>Benutzung auf eigene Gefahr</strong>.
+  Es ist zwar unwahrscheinlich, dass durch das Modul Sch&auml;den entstehen,
+  aber sicherheitshalber distanzieren wir uns von allen eventuellen Sch&auml;den, die durch die Benutzung des Moduls entstehen k&ouml;nnten.
+  Wenn Sie damit nicht einverstanden sind, sollen Sie das Modul nicht einsetzen.
+</p>
+<p><strong>Viel Erfolg mit dem Elm@r-Modul f&uuml;r osCommerce!</strong></p>
+</div>
+
+<!-- footer_begin -->
+      </div>
+    </td>
+  </tr>
+</table>
+<div align="center" style="border-top:1px black solid">
+  <p>&copy;&nbsp;2004-2005 &nbsp; Elm@r &nbsp; &bull; &nbsp; Der elektronische Markt &nbsp; &bull; &nbsp; <a href="http://elektronischer-markt.de/" target="_blank">http://elektronischer-markt.de/</a></p>
+</div>
+</body>
+</html>
+<!-- footer_end -->

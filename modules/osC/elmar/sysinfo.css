@@ -1,0 +1,12 @@
+pre {margin: 0px; font-family: monospace;}
+table {border-collapse: collapse;}
+div.center { text-align: left; margin-left: 10px; }
+h1 {font-size: 150%; color: black;}
+h2 {font-size: 125%; color: black;}
+.p  {text-align: left;}
+.e  {border: 1px solid black; background-color: #ccccff; color: black; font-weight: bold; font-size: 75%; }
+.h  {border: 1px solid black; background-color: #9999cc; color: black; font-weight: bold; font-size: 75%; }
+.v  {border: 1px solid black; background-color: #cccccc; color: black; font-size: 75%; }
+.vr {border: 1px solid black; background-color: #cccccc; color: black; text-align: right; font-size: 75%; }
+img {float: right; border: 0px;}
+hr {border: 0px; height: 0px;}

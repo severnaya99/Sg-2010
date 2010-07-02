@@ -1,0 +1,78 @@
+<script language="javascript"><!--
+function session_win() {
+  window.open("<{$js_cart_link}>","info_shopping_cart","height=460,width=430,toolbar=no,statusbar=no,scrollbars=yes").focus();
+}
+//--></script>
+
+<{include file="db:header.html"}>
+<table width="100%"><tr>
+<!-- body_text //-->
+    <td width="100%" valign="top"><{$form_login}>
+	<table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$site_image}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{if $messagestack == 1 }>
+      <tr>
+        <td><{$message_output}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+
+<{ if $cartcontents == 1 }>
+      <tr>
+        <td class="smallText"><{$smarty.const.TEXT_VISITORS_CART}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main" width="50%" valign="top"><b><{$smarty.const.HEADING_NEW_CUSTOMER}></b></td>
+          </tr>
+          <tr>
+            <td width="50%" height="100%" valign="top">
+			  <table border="0" width="100%" height="100%" cellspacing="1" cellpadding="2" class="infoBox">
+              <tr class="infoBoxContents">
+                <td>
+				  <table border="0" width="100%" height="100%" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td><{$seperator}></td>
+                  </tr>
+                  <tr>
+                    <td class="main" valign="top"><{$smarty.const.TEXT_NEW_CUSTOMER }><br><br><{$smarty.const.TEXT_NEW_CUSTOMER_INTRODUCTION}></td>
+                  </tr>
+                  <tr>
+                    <td><{$seperator}></td>
+                  </tr>
+                  <tr>
+                    <td>
+					  <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                      <tr>
+                        <td width="10"><{$seperator1}></td>
+                        <td align="right"><a href="<{$fca_link}>"><{$bt_continue}></a></td>
+                        <td width="10"><{$seperator1}></td>
+                      </tr>
+                      </table></td>
+                  </tr>
+
+            </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></form></td>
+</tr></table>

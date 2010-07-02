@@ -1,0 +1,76 @@
+============================
+2008/21/01: Version 2.1.6
+============================
+
+- Fix error when submit an event from public side
+- Fix Bug : Category perm are not respected to display event
+- Fix Bug : Translation file isn't loaded
+- Fix bug : An user could be in the who's going and who's not going list
+
+
+============================
+2008/28/12: Version 2.1.5
+============================
+
+- Add Reccuring rule description on event view
+- Add the RSS page
+- Extend the search function to address and contact field
+- Set the update proc to upgrade from eXtCal 2.0.4
+- Add the navigation tab menu
+
+
+============================
+2007/18/12: Version 2.1.4
+============================
+
+- Add reccuring event feature
+
+
+============================
+2007/10/07: Version 2.1.3
+============================
+
+- Add a file attachement feature to the module
+- Add a "who's not going" feature
+- Add a version checker (display a message if a new version of the module is out)
+
+
+============================
+2007/28/04: Version 2.1.2
+============================
+
+- Add a preview feature on submit event page
+- Fix a bug that disallow fresh install
+
+
+============================
+2007/25/04: Version 2.1.1
+============================
+
+- Add the "hide past event" feature
+
+
+============================
+2007/22/04: Version 2.1.0
+============================
+
+- Rewrite the module from scratch
+
+
+============================
+2006/11/04: Version 2.0.4 RC2
+============================
+
+- Add the possibility to display more than 1 event on spotlight bloc
+- Bug fix : eXtCal don't work with XOOPS under 2.0.15
+
+
+============================
+2006/31/10: Version 2.0.4 RC1
+============================
+
+- Add a "flat" monthly view
+- Little display improvement
+- Fix an error on pruning page
+- Add property to event to set a maximum member limit per event
+- Change the month template to display all event's infos

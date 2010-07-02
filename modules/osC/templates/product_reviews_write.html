@@ -1,0 +1,119 @@
+<script language="javascript"><!--
+function checkForm() {
+  var error = 0;
+  var error_message = "<{$smarty.const.JS_ERROR}>";
+
+  var review = document.product_reviews_write.review.value;
+
+  if (review.length < <{$smarty.const.REVIEW_TEXT_MIN_LENGTH}>) {
+    error_message = error_message + "<{$smarty.const.JS_REVIEW_TEXT}>";
+    error = 1;
+  }
+
+  if ((document.product_reviews_write.rating[0].checked) || (document.product_reviews_write.rating[1].checked) || (document.product_reviews_write.rating[2].checked) || (document.product_reviews_write.rating[3].checked) || (document.product_reviews_write.rating[4].checked)) {
+  } else {
+    error_message = error_message + "<{$smarty.const.JS_REVIEW_RATING}>";
+    error = 1;
+  }
+
+  if (error == 1) {
+    alert(error_message);
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function popupWindow(url) {
+  window.open(url,'popupWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=100,height=100,screenX=150,screenY=150,top=150,left=150')
+}
+//--></script>
+<{include file="db:header.html"}>
+<table width="100%" ><tr>
+<!-- body_text //-->
+    <td width="100%" valign="top"><{$form_rev}><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading" valign="top"><{$products_name}></td>
+            <td class="pageHeading" align="right" valign="top"><{$products_price}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $message == 1 }>
+      <tr>
+        <td><{$messagetext}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="2">
+          <tr>
+            <td valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td class="main"><b><{$smarty.const.SUB_TITLE_FROM}></b><{$cust_name}></td>
+              </tr>
+              <tr>
+                <td class="main"><b><{$smarty.const.SUB_TITLE_REVIEW}></b></td>
+              </tr>
+              <tr>
+                <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+                  <tr class="infoBoxContents">
+                    <td><table border="0" width="100%" cellspacing="2" cellpadding="2">
+                      <tr>
+                        <td class="main"><{$rev_field}></td>
+                      </tr>
+                      <tr>
+                        <td class="smallText" align="right"><{$smarty.const.TEXT_NO_HTML}></td>
+                      </tr>
+                      <tr>
+                        <td class="main"><b><{$smarty.const.SUB_TITLE_RATING}></b><{$smarty.const.TEXT_BAD}> <{$rate_1}><{$rate_2}><{$rate_3}><{$rate_4}><{$rate_5}> <{$smarty.const.TEXT_GOOD}></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td><{$seperator}></td>
+              </tr>
+              <tr>
+                <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+                  <tr class="infoBoxContents">
+                    <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                      <tr>
+                        <td width="10"><{$seperator1}></td>
+                        <td class="main"><a href="<{$rev_link}>"><{$bt_back}></a></td>
+                        <td class="main" align="right"><{$bt_continue}></td>
+                        <td width="10"><{$seperator1}></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+            <td width="<{$image_width}>" align="right" valign="top"><table border="0" cellspacing="0" cellpadding="2">
+              <tr>
+                <td align="center" class="smallText">
+<{if $p_image == 1}>
+<script language="javascript"><!--
+document.write('<a href="javascript:popupWindow(\'<{$image_link}>\')"><{$image_text}><br><{$smarty.const.TEXT_CLICK_TO_ENLARGE}></a>');
+//--></script>
+<noscript>
+<a href="<{$image_li}>" target="_blank"><{$image_tx}><br><{$smarty.const.TEXT_CLICK_TO_ENLARGE}></a>
+</noscript>
+<{/if}>
+<p><a href="<{$buy_now}>"><{$buy_now_img}></a></p>
+
+                </td>
+              </tr>
+            </table>
+          </td>
+        </table></td>
+      </tr>
+    </table></form></td>
+</tr></table>

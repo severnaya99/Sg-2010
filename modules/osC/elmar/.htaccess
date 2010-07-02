@@ -1,0 +1,68 @@
+# Zugriffssteuerung für Apache
+# Sollte mit Apache ab Version 1.3 funktionieren.
+# $Id: .htaccess 382 2005-08-09 15:44:38Z stefan $
+#
+#---------------------------------------------------------
+# Kein Zugriff von aussen, nur localhost zulassen
+#---------------------------------------------------------
+Order deny,allow
+Deny from all
+Allow from 127.0.0.1
+
+#---------------------------------------------------------
+# Nach Bedarf eigene IP-Adressen und Domaenen zulassen
+#---------------------------------------------------------
+#Allow from 192.0.34.166
+#Allow from www.example.com
+
+#---------------------------------------------------------
+#Ab hier braucht normalerweise nichts geaendert zu werden.
+#---------------------------------------------------------
+
+# Beim Aufruf des Verzeichnisses index.php laden.
+DirectoryIndex index.php
+
+# Einzelne Dateien zugreifbar machen
+<Files elmar.css>
+  Order allow,deny
+  Allow from all
+</Files>
+<Files check.js>
+  Order allow,deny
+  Allow from all
+</Files>
+<Files *.gif>
+  Order allow,deny
+  Allow from all
+</Files>
+<Files access.html>
+  Order allow,deny
+  Allow from all
+</Files>
+<Files readme.html>
+  Order allow,deny
+  Allow from all
+</Files>
+<Files history.html>
+  Order allow,deny
+  Allow from all
+</Files>
+
+# Kein Zugriff auf Include-Dateien
+<Files *.inc.php>
+  Order allow,deny
+  Deny from all
+</Files>
+
+# Kein Zugriff auf Shellskripte
+<Files *.sh>
+  Order allow,deny
+  Deny from all
+</Files>
+<Files *.bat>
+  Order allow,deny
+  Deny from all
+</Files>
+
+# Hinweis mit Links
+ErrorDocument 403 "Aus Sicherheitsgr&uuml;nden ist das Verzeichnis des Elm@r-Moduls f&uuml;r den Zugriff von au&szlig;en gesperrt. Weitere Informationen finden Sie in den Dateien <a href=readme.html>readme.html</a> und <a href=access.html>access.html</a>.

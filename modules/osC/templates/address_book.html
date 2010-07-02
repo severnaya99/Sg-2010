@@ -1,0 +1,115 @@
+<script language="javascript"><!--
+function rowOverEffect(object) {
+  if (object.className == 'moduleRow') object.className = 'moduleRowOver';
+}
+
+function rowOutEffect(object) {
+  if (object.className == 'moduleRowOver') object.className = 'moduleRow';
+}
+//--></script>
+<{$include file="db:header.html"}>
+<table><tr>
+    <td width="100%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$site_image}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $smessage == 1}>
+      <tr>
+        <td><{$messagetext}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td class="main"><b><{$smarty.const.PRIMARY_ADDRESS_TITLE}></b></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td><{$seperator1}></td>
+                <td class="main" width="50%" valign="top"><{$smarty.const.PRIMARY_ADDRESS_DESCRIPTION}></td>
+                <td align="right" width="50%" valign="top"><table border="0" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="main" align="center" valign="top"><b><{$smarty.const.PRIMARY_ADDRESS_TITLE}></b><br><{$arrow_se}></td>
+                    <td><{$seperator1}></td>
+                    <td class="main" valign="top"><{$adr_label}></td>
+                    <td><{$seperator1}></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="main"><b><{$smarty.const.ADDRESS_BOOK_TITLE}></b></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{foreach item=adr from=$address}>
+              <tr>
+                <td><{$seperator1}></td>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)" onClick="document.location.href='<{$adr.link}>'">
+                    <td class="main"><b><{$adr.name}></b><{$adr.default_address}></td>
+                    <td class="main" align="right"><a href="<{$adr.link}>"><{$img_small}></a> <a href="<{$adr.link_delete}>"><{$img_small_del}></a></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><table border="0" cellspacing="0" cellpadding="2">
+                      <tr>
+                        <td width="10"><{$seperator1}></td>
+                        <td class="main"><{$adr.address}></td>
+                        <td width="10"><{$seperator1}></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+                <td><{$seperator1}></td>
+              </tr>
+<{/foreach}>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td class="smallText"><a href="<{$account}>"><{$bt_back}></a></td>
+<{if $entries == 1 }>
+                <td class="smallText" align="right"><a href="<{$entries_link}>"><{$bt_add_adr}></a></td>
+<{/if}>
+                <td width="10"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="smallText"><{$max_entries}></td>
+      </tr>
+    </table></td>

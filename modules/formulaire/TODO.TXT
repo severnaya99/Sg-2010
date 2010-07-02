@@ -1,0 +1,26 @@
+admin/ele_text.php probleme de quote changées en dur
+admin/ele_upload.php liste des type mime en dur
+admin/updown.php contournement de register global a eviter en testant chaque valeur passée : securité
+admin/elements.php contournement de register global a eviter en testant chaque valeur passée : securité
+admin/menu_index.php contournement de register global a eviter en testant chaque valeur passée : securité
+
+duplicate code in formulaire_block : make use twice of #dhtmltooltip function from include/function.php. We need a standard as well
+
+
+if (!defined("XOOPS_ROOT_PATH")) {
+die("XOOPS root path not defined");
+}
+
+module uses XoopsSecurity class
+http://dev.xoops.org/modules/phpwiki/index.php/XoopsSecurity
+
+FAIT : each directory contains index history-back html file or .htaccess (./doc  also)
+
+superglobal $post et get : yes, in class/elementrenderer.php, class/blocksadmin.inc.php, admin/modform.php
+
+FAIT : "sometime duplicate call : 
+				- example in admin/updown.php
+				include_once (""admin_header.php"");
+				include_once '../../../include/cp_header.php';
+				- same in admin/admin.php"
+

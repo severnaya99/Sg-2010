@@ -1,0 +1,41 @@
+<table border='0' id='z' cellspacing='1' cellpadding='4' width='100%' class='outer'>
+<tr><th colspan='5' align='center'><{$lang_private}></th>
+</tr>
+<tr><td class="head" valign='middle' align='center' width='40%'><{$lang_file}></td>
+<td class="head" avalign='middle' align='center' width='15%'><{$lang_news}></td>
+<td class="head" valign='middle' align='center' width='15%'><{$lang_mes}></td>
+<td class="head" valign='middle' align='center' width='30%'><{$mp_precistotal}></td>
+</tr>
+
+<{foreach item=category from=$categories}> 
+
+<tr align='left' class="<{cycle values="odd,even"}>" >
+<td colspan="4">
+<table><tr><td valign='top'  align='left' width='40%'><div style="margin-left: 20px; text-align:left;" align="center"><{$category.title}></div></td><td valign='middle' align='center' width='15%'><{$category.ms_news}></td><td valign='middle' align='center' width='15%'><{$category.ms_old}></td><td align='middle' align='center' width='30%'><{$category.mp_precis}></td></tr></table></td></tr>
+<tr align='left' class="even">
+<{$category.subcategories}>
+</tr>
+<{/foreach}>
+<tr align='left' height='40px' ><td colspan='7' align='left' class='foot'>
+<{foreach item=boutton from=$box_actions}> 
+<{$boutton}>
+<{/foreach}>
+</td>
+</tr>
+</table>
+
+<br /><br />
+<{if $mp_alert}>
+<table border='0' cellspacing='1' cellpadding='4' width='100%' class='outer'><tr><td  class='alert' align='center'><{$mp_alert}></td></tr></table>
+<br /><br />
+<{/if}>
+
+
+<{if $mp_selectview}>
+<div align='right' width='30%' style='vertical-align: bottom;'><{$mp_selectview}> </div>
+<{/if}><{$mp_flash}>
+
+<table border='0' cellspacing='1' width='100%' height='25'>
+<tr><td width='40%' style='vertical-align: middle;'><{$lang_menu}> 
+</td>
+</tr></table>

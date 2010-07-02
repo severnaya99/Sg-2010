@@ -1,0 +1,130 @@
+<h1><{$display_name}></h1>
+<div class="div_profile" id="div_profile">
+	<div style="float:left; width:66%;">
+        <div class="div_member_display_image" id="div_member_display_image">
+            <img src="<{$display_image}>" width="320px" border="0" class="img_display_image" id="img_display_image">
+        </div>
+		<div class="div_details" id="div_details">
+            <div style="float:left; width:33%">
+                <{if $father_name}><div style="clear:both;"><{$smarty.const._GB_MN_FATHER}>&nbsp;<a href="<{$father_url}>"><{$father_name}></a></div><{/if}>
+                <{if $mother_name}><div style="clear:both;"><{$smarty.const._GB_MN_MOTHER}>&nbsp;<a href="<{$mother_url}>"><{$mother_name}></a></div><{/if}>
+                <{if $partner_name}><div style="clear:both;"><{$smarty.const._GB_MN_PARTNER}>&nbsp;<a href="<{$partner_url}>"><{$partner_name}></a></div><{/if}>            
+                <{if $nickname}><div style="clear:both;"><{$smarty.const._GB_MN_NICKNAME}>&nbsp;<{$nickname}></div><{/if}>
+                <{if $dob or $dob != '000-00-00'}><div style="clear:both;"><{$smarty.const._GB_MN_DOB}>&nbsp;<{$dob}></div><{/if}>
+                <{if $dod or $dod != '000-00-00'}><div style="clear:both;"><{$smarty.const._GB_MN_DOD}>&nbsp;<{$dod}></div><{/if}>
+                <{if $anniversary or $anniversary != '0000-00-00'}><div style="clear:both;"><{$smarty.const._GB_MN_ANNIVERSARY}>&nbsp;<{$anniversary}></div><{/if}>            
+            </div>
+            <div style="float:left; width:33%">
+                <{if $height}><div style="clear:both;"><{$smarty.const._GB_MN_HEIGHT}>&nbsp;<{$height}></div><{/if}>
+                <{if $weight}><div style="clear:both;"><{$smarty.const._GB_MN_WEIGHT}>&nbsp;<{$weight}></div><{/if}>
+                <{if $colour_hair}><div style="clear:both;"><{$smarty.const._GB_MN_COLOURHAIR}>&nbsp;<{$colour_hair}></div><{/if}>
+                <{if $colour_eyes}><div style="clear:both;"><{$smarty.const._GB_MN_COLOUREYES}>&nbsp;<{$colour_eyes}></div><{/if}>
+            </div>
+            <div style="float:right; width:33%">
+            	<{foreach item=sibbling from=$sibblings}>
+                <{if $sibbling.name}><div style="clear:both;"><{$sibbling.relationship}>:&nbsp;<a href="<{$sibbling.url}>"><{$sibbling.name}></a></div><{/if}>
+				<{/foreach}>
+            </div>
+        </div>
+    </div>
+    <div style="float:right; width:33%;">
+        <{foreach item=image from=$images}>
+        <div class="button_images" id="button_images">
+        	<h2><{$image.alt}></h2>
+            <img src="<{$image.url}>" alt="<{$image.alt}>" width="145px" border="0" class="img_other_image" id="img_other_image">        </div>
+        <{/foreach}>
+    </div>
+</div>
+<div style="clear:both;">&nbsp;</div>
+<div class="profile_wiki" id="profile_wiki">
+<{if $bio}>
+<h3><{$smarty.const._GB_MN_BIOGRAPH}></h3>
+<div class="bio" id="bio"><{$bio}></div>
+<{/if}>
+<{if $history}>
+<h3><{$smarty.const._GB_MN_PERSONALHISTORY}></h3>
+<div class="history" id="history"><{$history}></div>
+<{/if}>
+<{if $education}>
+<h3><{$smarty.const._GB_MN_EDUCATION}></h3>
+<div class="education" id="education"><{$education}></div>
+<{/if}>
+<{if $fellowship}>
+<h3><{$smarty.const._GB_MN_FELLOWSHIP}></h3>
+<div class="fellowship" id="fellowship"><{$fellowship}></div>
+<{/if}>
+<{if $earlyhistory}>
+<h3><{$smarty.const._GB_MN_EARLYHISTORY}></h3>
+<div class="earlyhistory" id="earlyhistory"><{$earlyhistory}></div>
+<{/if}>
+<{if $medical}>
+<h3><{$smarty.const._GB_MN_MEDICAL}></h3>
+<div class="medical" id="medical"><{$medical}></div>
+<{/if}>
+<{if $achivements}>
+<h3><{$smarty.const._GB_MN_ARCHIVEMENTS}></h3>
+<div class="achivements" id="achivements"><{$achivements}></div>
+<{/if}>
+<{if $contributations}>
+<h3><{$smarty.const._GB_MN_CONTIBUTATIONS}></h3>
+<div class="contributations" id="contributations"><{$contributations}></div>
+<{/if}>
+<{if $awards}>
+<h3><{$smarty.const._GB_MN_AWARDS}></h3>
+<div class="awards" id="awards"><{$awards}></div>
+<{/if}>
+<{if $media}>
+<h3><{$smarty.const._GB_MN_MEDIA}></h3>
+<div class="media" id="media"><{$media}></div>
+<{/if}>
+<{if $publications}>
+<h3><{$smarty.const._GB_MN_PUBLICATION}></h3>
+<div class="publications" id="publications"><{$publications}></div>
+<{/if}>
+<{if $jobs}>
+<h3><{$smarty.const._GB_MN_EMPLOYMENT}></h3>
+<div class="jobs" id="jobs"><{$jobs}></div>
+<{/if}>
+<{if $spirtual}>
+<h3><{$smarty.const._GB_MN_SPIRITUAL}></h3>
+<div class="spirtual" id="spirtual"><{$spirtual}></div>
+<{/if}>
+<{if $hates}>
+<h3><{$smarty.const._GB_MN_PERSONALHATES}></h3>
+<div class="hates" id="hates"><{$hates}></div>
+<{/if}>
+<{if $likes}>
+<h3><{$smarty.const._GB_MN_PERSONALLIKES}></h3>
+<div class="likes" id="likes"><{$likes}></div>
+<{/if}>
+<{if $music}>
+<h3><{$smarty.const._GB_MN_MUSIC}></h3>
+<div class="music" id="music"><{$music}></div>
+<{/if}>
+<{if $thearts}>
+<h3><{$smarty.const._GB_MN_THEARTS}></h3>
+<div class="thearts" id="thearts"><{$thearts}></div>
+<{/if}>
+<{if $other}>
+<h3><{$smarty.const._GB_MN_OTHER}></h3>
+<div class="other" id="other"><{$other}></div>
+<{/if}>
+</div>
+<div style="clear:both;">&nbsp;</div>
+<div align="center"><{$lang_copyright}></div><br /> 
+<div style="text-align: center; padding: 3px; margin:3px;">
+  <{$commentsnav}>
+  <{$lang_notice}>
+</div>
+<div style="clear:both;">&nbsp;</div>
+<div style="margin:3px; padding: 3px;">
+<!-- start comments loop -->
+<{if $comment_mode == "flat"}>
+  <{include file="db:system_comments_flat.html"}>
+<{elseif $comment_mode == "thread"}>
+  <{include file="db:system_comments_thread.html"}>
+<{elseif $comment_mode == "nest"}>
+  <{include file="db:system_comments_nest.html"}>
+<{/if}>
+<!-- end comments loop -->
+</div>

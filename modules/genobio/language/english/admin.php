@@ -1,0 +1,52 @@
+<?php
+
+	define('_GB_AM_MEMBERS', 'Members:');
+	define('_GB_AM_GROUPNICKNAME', 'Groups Nickname:');
+	define('_GB_AM_GROUPBIO', 'Group Bio:');
+	define('_GB_AM_GROUPHISTORY', 'Group History:');		
+	define('_GB_AM_GROUPACTIVITIES', 'Group Activities:');
+	define('_GB_AM_GROUPTOYS', 'Group Toys:');
+	define('_GB_AM_NICKNAME', 'Nickname:');
+	define('_GB_AM_FATHER', 'Father:');		
+	define('_GB_AM_MOTHER', 'Mother:');
+	define('_GB_AM_PARTNER', 'Partner:');
+	define('_GB_AM_SIBBLINGGROUP', 'Sibbling Group:');
+	define('_GB_AM_DOB', 'DOB:');		
+	define('_GB_AM_DOD', 'DOD');
+	define('_GB_AM_ANNIVERSARY', 'Anniversary:');
+	define('_GB_AM_HEIGHT', 'Height:');
+	define('_GB_AM_WEIGHT', 'Weight:');		
+	define('_GB_AM_COLOURHAIR', 'Colour Hair:');
+	define('_GB_AM_COLOUREYES', 'Colour Eyes');
+	define('_GB_AM_BABYPHOTO', 'Baby Photo:');
+	define('_GB_AM_MIDLIFEPHOTO', 'Midlife Photo:');		
+	define('_GB_AM_ELDERLYPHOTO', 'Elderly Photo:');
+	define('_GB_AM_CURRENTPHOTO', 'Current Photo:');		
+	define('_GB_AM_INDIVIDUALBIO', 'Individual Biograph:');
+	define('_GB_AM_HISTORY', 'History:');		
+	define('_GB_AM_EDUCATION', 'Education:');
+	define('_GB_AM_FELLOWSHIP', 'Fellowship:');		
+	define('_GB_AM_EARLYHISTORY', 'Early History:');
+	define('_GB_AM_MEDICAL', 'Medical:');		
+	define('_GB_AM_ACHIEVEMENTS', 'Achivements:');
+	define('_GB_AM_CONTRIBUTIONS', 'Contributations:');		
+	define('_GB_AM_AWARDS', 'Awards:');
+	define('_GB_AM_MEDIA', 'Media:');		
+	define('_GB_AM_PUBLICATION', 'Publications:');
+	define('_GB_AM_EMPLOYMENT', 'Jobs/Employment:');		
+	define('_GB_AM_SPIRITUAL', 'Spiritual Beliefs:');
+	define('_GB_AM_INDIVIDUALHATES', 'Individual Hates:');		
+	define('_GB_AM_INDIVIDUALLIKES', 'Individual Likes:');		
+	define('_GB_AM_MUSIC', 'Music:');		
+	define('_GB_AM_THEARTS', 'The Arts:');		
+	define('_GB_AM_OTHER', 'Other Information:');		
+	define('_GB_AM_DISPLAYNAME', 'Display Name:');		
+	define('_GB_AM_DISPLAYPICTURE', 'Display Picture:');			
+	define('_GB_AM_SEX', 'Sex:');							
+	define('_GB_AM_CATEGORY', 'Category:');							
+	define('_GB_AM_USERNAME', 'Username:');		
+	define('_GB_AM_PERSONALDOMAIN', 'Personal Domain:');							
+	define('_GB_AM_ASSOCIATEDDOMAIN', 'Associated Domain:');		
+	define('_GB_AM_CATNAME', 'Name:');											
+
+?>

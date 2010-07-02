@@ -1,0 +1,8 @@
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^births,([0-9]+)-([0-9]+)-([0-9]+) birth.php?date=$1-$2-$3
+RewriteRule ^?op=profile&id=([0-9]+)$ index.php?op=profile&id=$1
+RewriteRule ^images/$ images/$1

@@ -1,0 +1,148 @@
+<!-- $Id: access.html 309 2005-03-04 20:20:22Z stefan $ -->
+<!-- header_begin -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="LTR" lang="de">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Das Elm@r-Modul f&uuml;r osCommerce: Zugriffssteuerung</title>
+  <link rel="stylesheet" type="text/css" href="elmar.css">
+</head>
+<body>
+<table border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#6b7da6" summary="Layout Kopf">
+<tr>
+  <td width="210" bgcolor="#FFFFFF"><img src="img/oscommerce.gif" border="0" alt="osCommerce" title="osCommerce" width="204" height="50"></td>
+  <td>
+    <div style="color:#eaeeff;background-color:#6b7da6;padding-top:10px;padding-bottom:0px;padding-left:50px;padding-right:10px">
+      <div style="font-weight:bold; width:100%; filter:Shadow(color=#303030, direction=135)">
+        <h1 style="text-align:center;font-size:22px;color:#eaeeff;margin:0px;padding:1px;">
+          Elm<span style="color:red">@</span>r - Zugriffssteuerung
+        </h1>
+      </div>
+      <br clear="all">
+    </div>
+  </td>
+</tr>
+<tr>
+  <td colspan="2" bgcolor="#2a5580">&nbsp;</td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0"  bgcolor="#2a5580" width="100%" summary="Layout Seite">
+  <tr>
+    <td valign="top">
+    </td>
+    <td valign="top" bgcolor="#FFF8DC" width="99%">
+      <div class="middle">
+<!-- header_end -->
+
+<h1>Zugriffssteuerung</h1>
+<div class="middleCell">
+<p class="comment">
+Das Elm@r-Modul wird &uuml;ber das Startskript <CODE>elmar_start.php</CODE> gesteuert.
+Der beste Schutz gegen eine unbefugte Nutzung des Webinterface besteht im <STRONG>Setzen eines Passworts</STRONG> in der Datei <code>config.inc.php</code> mit der Konstanten <CODE>ELMAR_PASSWORD</CODE>, siehe <a href="readme.html#elmar_password">Readme</a>.
+</p>
+
+<p>
+Falls der Passwortschutz wider Erwarten nicht funktionieren sollte, k&ouml;nnen das Startskript <CODE>elmar_start.php</CODE> und das Verzeichnis <CODE>elmar</CODE> auch umbenannt werden. Weitere Informationen dazu finden Sie in der <a href="readme.html#umbenennen">Readme</a>.
+</p>
+
+<p>
+Aus dem <CODE>elmar</CODE>-Verzeichnis l&auml;dt der Webserver bei Bedarf Grafikdateien und Stylesheets.
+Die PHP-Dateien im <CODE>elmar</CODE>-Verzeichnis lassen sich ohne das Startskript nicht aufrufen.
+Wenn die Protokollierung von Zugriffen aktiviert ist, werden im Verzeichnis <CODE>elmar/logs/</CODE> Protokolldateien angelegt. Dies sind dann die einzigen Dateien im <CODE>elmar</CODE>-Verzeichnis, die vor Zugriffen von au&szlig;en gesch&uuml;tzt werden sollten.
+</p>
+
+<p>
+Dem Verzeichnis <b><code>elmar</code></b> liegt die Datei <strong><code>.htaccess</code></strong> bei, die Zugriffe von au&szlig;en unterbindet. Dies funktioniert jedoch nur auf geeignet eingestellten <strong>Apache</strong>-Webservern.
+Alternativ kann man mittels <code>.htaccess</code> auch ein <a href="http://projekt.wifo.uni-mannheim.de/~kuhlins/htpasswd.php" target="_blank">Passwort f&uuml;r das Verzeichnis einrichten</a>.
+</p>
+</div>
+
+
+<h1>Das Startskript <code>elmar_start.php</code> sch&uuml;tzen</h1>
+<div class="middleCell">
+<p>
+Um das Webinterface zu sch&uuml;tzen, muss der Zugriff auf <CODE>elmar_start.php</CODE> eingeschr&auml;nkt werden.
+Wem das Setzen eines Modulpassworts (siehe <a href="readme.html#elmar_password">Readme</a>) nicht gen&uuml;gt, der kann auch den Aufruf der Datei unterbinden. Auf Apache-Servern kann man dazu die Datei <code>.htaccess</code> im Verzeichnis, in dem sich <CODE>elmar_start.php</CODE> befindet (das ist normalerweise das <code>catalog</code>-Verzeichnis von osCommerce), anpassen, indem die folgenden Anweisungen am Ende hineinkopiert werden.
+</p>
+
+<h2>1. M&ouml;glichkeit: Passwortschutz</h2>
+
+<blockquote style="padding:10px;border:1px black solid;background-color:#efefef">
+<pre>&lt;Files elmar_start.php&gt;
+  AuthName &quot;Elm@r-Modul&quot;
+  AuthUserFile &quot;<span style="color:red">/pfad/zur/datei/.htpasswd</span>&quot;
+  AuthType Basic
+  require valid-user
+&lt;/Files&gt;</pre>
+</blockquote>
+
+<p>
+Der Pfad ist an die eigene Umgebung anzupassen. Die Passwortdatei f&uuml;r <code>AuthUserFile</code> kann man mit dem Programm <code>htpasswd</code>, das Teil des Apache-Pakets ist, erstellt werden. Alternativ k&ouml;nnen Sie Eintr&auml;ge f&uuml;r die Passwortdatei mithilfe dieses <a href="http://projekt.wifo.uni-mannheim.de/~kuhlins/htpasswd.php" target="_blank">HTML-Formulars</a> generieren lassen.
+</p>
+
+<h2>2. M&ouml;glichkeit: Zugriff nur von bestimmten IP-Adressen oder Domains (siehe unten)</h2>
+
+<blockquote style="padding:10px;border:1px black solid;background-color:#efefef">
+<pre>&lt;Files elmar_start.php&gt;
+  Order deny,allow
+  Deny from all
+  Allow from 127.0.0.1
+  <span style="color:green"><b>Allow from 134.155.100.170</b></span>
+&lt;/Files&gt;</pre>
+</blockquote>
+
+<p>
+Die beiden gezeigten M&ouml;glichkeiten lassen sich auch kombinieren.
+Hier finden Sie die <a href="http://httpd.apache.org/docs-2.0/howto/auth.html" target="_blank">Apache-Dokumentation</a> und weitere <a href="http://de.selfhtml.org/diverses/htaccess.htm" target="_blank">Informationen zu .htaccess-Dateien</a>.
+</p>
+</div>
+
+
+<h1>Das Verzeichnis <code>elmar</code> sch&uuml;tzen</h1>
+<div class="middleCell">
+<p>
+Das Elm@r-Modul beinhaltet im Verzeichnis <code>elmar</code> die Datei <code>.htaccess</code>, welche per Voreinstellung das &Ouml;ffnen der Seiten nur erlaubt, wenn Ihr Internet-Browser auf dem Webserver l&auml;uft. Benutzen Sie in diesem Fall <code>localhost</code> (entspricht der IP-Adresse <code>127.0.0.1</code>) als Domain in der URL, etwa <a href="readme.html">http://localhost/catalog/elmar/readme.html</a> (passen Sie die URL ggf. bitte an Ihre Installation an).
+</p>
+
+<p>
+Des Weiteren kann die Datei <strong><code>.htaccess</code></strong> im Unterverzeichnis <strong>elmar</strong> so angepasst werden, dass nur ausgew&auml;hlte Rechner zugreifen k&ouml;nnen. Tragen Sie dazu wie folgt die Domain oder IP-Adresse Ihres Rechners (im Beispiel <span style="color:green"><b>134.155.100.170</b></span>) ein.
+</p>
+
+<p class="comment">
+Klicken Sie
+<a href="http://projekt.wifo.uni-mannheim.de/ip.php" target="_blank" onclick="window.open('http://projekt.wifo.uni-mannheim.de/ip.php','IP-Adresse','width=200,height=110,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');return false;">hier</a>,
+um Ihre aktuelle IP-Adresse anzuzeigen.
+</p>
+
+<blockquote style="padding:10px;border:1px black solid;background-color:#efefef">
+<pre>#--------------------------------------------------------
+# Kein Zugriff von au&szlig;en, nur localhost zulassen
+#--------------------------------------------------------
+Order deny,allow
+Deny from all
+Allow from 127.0.0.1
+
+#--------------------------------------------------------
+# Nach Bedarf eigene IP-Adressen und Dom&auml;nen zulassen
+#--------------------------------------------------------
+<span style="color:green"><b>Allow from 134.155.100.170</b></span>
+#Allow from www.example.com
+
+#--------------------------------------------------------
+#Ab hier braucht normalerweise nichts ge&auml;ndert zu werden.
+#--------------------------------------------------------
+...</pre>
+</blockquote>
+
+</div>
+
+</div>
+</td>
+</tr>
+</table>
+<div align="center" style="border-top:1px black solid">
+  <p>&copy;&nbsp;2004-2005 &nbsp; Elm@r &nbsp; &bull; &nbsp; Der elektronische Markt &nbsp; &bull; &nbsp; <a href="http://elektronischer-markt.de/" target="_blank">http://elektronischer-markt.de/</a></p>
+</div>
+</body>
+</html>

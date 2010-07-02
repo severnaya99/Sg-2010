@@ -1,0 +1,72 @@
+<{include file="db:header.html"}>
+<table width="100%"><tr>
+    <td width="100%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="100%"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td align="right"><{$site_image}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $process == 1 }>
+      <tr>
+        <td class="main"><{$proc_image}><{$smarty.const.TEXT_SUCCESS}><br><br>gv <{$idl}></td>
+      </tr>
+      <tr>
+        <td align="right"><br><a href="<{$href_link}>"><{$bt_continue}></a></td>
+      </tr>
+<{/if}> 
+<{ if $process == 2 }>
+      <tr>
+        <td><form action="<{$send_link}>" method="post"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><{$main_text}></td>
+          </tr>
+<{ if $pmessage==1 }>
+           <tr>
+            <td class="main"><{$pmessage_start}></td>
+          </tr>
+          <tr>
+            <td class="main"><{$pmessage_text}></td>
+          </tr>
+<{/if}>
+<{$hidden_fields}>
+          <tr>
+            <td class="main"><{$bt_back}></a></td>
+            <td align="right"><br><{$bt_send}></td>
+          </tr>
+        </table></form></td>
+      </tr>
+<{elseif $error == 1 }>
+      <tr>
+        <td class="main"><{$smarty.const.HEADING_TEXT}></td>
+      </tr>
+      <tr>
+        <td><form action="<{$gv_send}>" method="post"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_NAME}><br><{$name}></td>
+          </tr>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_EMAIL}><br><{$email}><{$error_text}></td>
+          </tr>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_AMOUNT}><br><{$amount}><{$error_amount}></td>
+          </tr>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_MESSAGE}><br><{$message_f}></td>
+          </tr>
+        </table>
+        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><a href="<{$nav_link}>"><{$bt_back1}></a></td>
+            <td class="main" align="right"><{$bt_continue}></td>
+          </tr>
+        </table></form></td>
+      </tr>
+<{/if}>
+    </table></td>
+</tr></table>

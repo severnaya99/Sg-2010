@@ -1,0 +1,82 @@
+<{include file="db:header.html"}>
+<table width="100%"><tr>
+    <td width="100%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$site_image}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td>
+<{ if $orders == 1 }>
+<{foreach item=history from=$tmp_history}>
+          <table border="0" width="100%" cellspacing="0" cellpadding="2">
+            <tr>
+              <td class="main"><b><{$smarty.const.TEXT_ORDER_NUMBER}></b><{$history.orders_id}></td>
+              <td class="main" align="right"><b><{$smarty.const.TEXT_ORDER_STATUS}></b><{$history.orders_status_name}></td>
+            </tr>
+          </table>
+          <table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+            <tr class="infoBoxContents">
+              <td><table border="0" width="100%" cellspacing="2" cellpadding="4">
+                <tr>
+                  <td class="main" width="50%" valign="top"><b><{$smarty.const.TEXT_ORDER_DATE}></b><{$history.date_purchased}><br><b><{$history.type}></b><{$history.name}></td>
+                  <td class="main" width="30%" valign="top"><b><{$smarty.const.TEXT_ORDER_PRODUCTS}></b><{$history.count}><br><b><{$smarty.const.TEXT_ORDER_COST}></b><{$history.order_total}></td>
+                  <td class="main" width="20%"><a href="<{$history.link}>"><{$img_small}></a></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table>
+          <table border="0" width="100%" cellspacing="0" cellpadding="2">
+            <tr>
+              <td><{$seperator1}></td>
+            </tr>
+          </table>
+<{/foreach}>
+<{else}>
+          <table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+            <tr class="infoBoxContents">
+              <td><table border="0" width="100%" cellspacing="2" cellpadding="4">
+                <tr>
+                  <td class="main"><{$smarty.const.TEXT_NO_PURCHASES}></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table>
+<{/if}>
+        </td>
+      </tr>
+<{if $orders == 1 }>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="smallText" valign="top"><{$history_count}></td>
+            <td class="smallText" align="right"><{$smarty.const.TEXT_RESULT_PAGE}> <{$histoy_result}></td>
+          </tr>
+        </table></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator2}></td>
+                <td><a href="<{$account}>"><{$bt_back}></a></td>
+                <td width="10"><{$seperator2}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+	</tr></table>

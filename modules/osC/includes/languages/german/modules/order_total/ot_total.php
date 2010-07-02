@@ -1,0 +1,17 @@
+<?php
+/*
+  $Id: ot_total.php 56 2005-12-09 15:10:01Z Michael $
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2002 osCommerce
+
+  Released under the GNU General Public License
+*/
+
+  define('MODULE_ORDER_TOTAL_TOTAL_TITLE', '<b>Summe</b>');
+  define('MODULE_ORDER_TOTAL_TOTAL_DESCRIPTION', 'Summe der Bestellung');
+
+
+?>

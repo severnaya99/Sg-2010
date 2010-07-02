@@ -1,0 +1,32 @@
+<{assign var='column' value='0'}>
+<div id="div_pagenav_right" class="div_pagenav_right"><{$pagenav}></div>
+<{foreach item=person from=$people}>
+<{assign var='ended' value='0'}>
+<{if $column eq '0'}>
+<div id="div_row" class="div_row">
+    <div id="div_item_left" class="div_item_left">
+        <div id="div_image" class="div_image"><a href="<{$person.profile_url}>"><img border="0" width="190px" src="<{$person.display_image}>" id="img_display_image" class="img_display_image"></a></div>
+        <div id="div_name" class="div_name"><a href="<{$person.profile_url}>"><{$person.display_name}></a></div>
+    </div>
+<{elseif $column eq '1'}>
+    <div id="div_item_right" class="div_item_right">
+        <div id="div_image" class="div_image"><a href="<{$person.profile_url}>"><img border="0" width="190px" src="<{$person.display_image}>" id="img_display_image" class="img_display_image"></a></div>
+        <div id="div_name" class="div_name"><a href="<{$person.profile_url}>"><{$person.display_name}></a></div>
+    </div>
+<{/if}>
+
+<{if $column eq '1'}>
+</div>
+<{assign var='column' value='0'}></div>
+<{assign var='ended' value='1'}>
+<{else}>
+	<{assign var='column' value='1'}>
+    <{assign var='ended' value='0'}>
+<{/if}>
+
+
+<{/foreach}>
+<{if $ended eq '0'}>
+</div><{assign var='ended' value='1'}>
+<{/if}>
+<div id="div_pagenav_left" class="div_pagenav_left"><{$pagenav}></div>

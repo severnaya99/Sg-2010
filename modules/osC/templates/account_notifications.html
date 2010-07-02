@@ -1,0 +1,129 @@
+<script language="javascript"><!--
+function rowOverEffect(object) {
+  if (object.className == 'moduleRow') object.className = 'moduleRowOver';
+}
+
+function rowOutEffect(object) {
+  if (object.className == 'moduleRowOver') object.className = 'moduleRow';
+}
+
+function checkBox(object) {
+  document.account_notifications.elements[object].checked = !document.account_notifications.elements[object].checked;
+}
+//--></script>
+<{include file="db:header.html"}>
+<table width="100%"><tr>
+    <td width="100%" valign="top"><{$form_notifications}><{$action_field}>
+	<table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$site_image}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="main"><b><{$smarty.const.MY_NOTIFICATIONS_TITLE}></b></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td><{$seperator1}></td>
+                <td class="main"><{$smarty.const.MY_NOTIFICATIONS_DESCRIPTION}></td>
+                <td><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="main"><b><{$smarty.const.GLOBAL_NOTIFICATIONS_TITLE}></b></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)" onclick="checkBox('product_global')">
+                    <td class="main" width="30"><{$product_global}></td>
+                    <td class="main"><b><{$smarty.const.GLOBAL_NOTIFICATIONS_TITLE}></b></td>
+                  </tr>
+                  <tr>
+                    <td width="30">&nbsp;</td>
+                    <td class="main"><{$smarty.const.GLOBAL_NOTIFICATIONS_DESCRIPTION}></td>
+                  </tr>
+                </table></td>
+                <td width="10"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $global_notify == 1 }>
+      <tr>
+        <td class="main"><b><{$smarty.const.NOTIFICATIONS_TITLE}></b></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{if $products == 1 }>
+                  <tr>
+                    <td class="main" colspan="2"><{$smarty.const.NOTIFICATIONS_DESCRIPTION}></td>
+                  </tr>
+<{foreach item=products from=$tmp_products}>
+                    <tr class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)" onclick="checkBox('products[<{$products.count}>]')">
+                    <td class="main" width="30"><{$products.field}></td>
+                    <td class="main"><b><{$products.products_name}></b></td>
+                  </tr>
+<{/foreach}>
+<{else}>
+
+                  <tr>
+                    <td class="main"><{$smarty.const.NOTIFICATIONS_NON_EXISTING}></td>
+                  </tr>
+<{/if}>
+                </table></td>
+                <td width="10"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td><a href="<{$account}>"><{$bt_back}></a></td>
+                <td align="right"><{$bt_continue}></td>
+                <td width="10"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></form></td>
+</tr></table>

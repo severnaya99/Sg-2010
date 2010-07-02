@@ -1,0 +1,81 @@
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+  <tr>
+    <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+      <tr>
+        <td class="main"><b><{$smarty.const.NEW_ADDRESS_TITLE}></b></td>
+        <td class="inputRequirement" align="right"><{$smarty.const.FORM_REQUIRED_INFORMATION}></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+      <tr class="infoBoxContents">
+        <td><table border="0" cellspacing="2" cellpadding="2">
+<{if $gender ==1 }>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_GENDER}></td>
+            <td class="main"><{$male}>&nbsp;&nbsp;<{$smarty.const.MALE}>&nbsp;&nbsp;<{$female}>&nbsp;&nbsp;<{$smarty.const.FEMALE}>&nbsp;<{$gender_entry}></td>
+          </tr>
+<{/if}>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_FIRST_NAME}></td>
+            <td class="main"><{$firstname}>&nbsp;<{$firstname_entry}></td>
+          </tr>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_LAST_NAME}></td>
+            <td class="main"><{$lastname}>&nbsp;<{$lastname_entry}></td>
+          </tr>
+          <tr>
+            <td colspan="2"><{$seperator}></td>
+          </tr>
+<{if $company ==1 }>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_COMPANY}></td>
+            <td class="main"><{$cname}>&nbsp;<{$cname_entry}></td>
+          </tr>
+          <tr>
+            <td colspan="2"><{$seperator}></td>
+          </tr>
+<{/if}>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_STREET_ADDRESS}></td>
+            <td class="main"><{$street}>&nbsp;<{$street_entry}></td>
+          </tr>
+<{if $suburb == 1 }>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_SUBURB}></td>
+            <td class="main"><{$sub}>&nbsp;<{$sub_entry}></td>
+          </tr>
+<{/if}>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_POST_CODE}></td>
+            <td class="main"><{$post_code}>&nbsp;<{$post_code_entry}></td>
+          </tr>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_CITY}></td>
+            <td class="main"><{$city}>&nbsp;<{$city_entry}></td>
+          </tr>
+<{ if $state==1 }>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_STATE}></td>
+            <td class="main"><{$cstate}><{$state_entry}>
+</td>
+          </tr>
+<{/if}>
+          <tr>
+            <td class="main"><{$smarty.const.ENTRY_COUNTRY}></td>
+            <td class="main"><{$country}>&nbsp;<{$country_entry}></td>
+          </tr>
+<{if $primary == 1 }>
+          <tr>
+            <td colspan="2"><{$seperator}></td>
+          </tr>
+          <tr>
+            <td colspan="2" class="main"><{$primary_field}> <{$smarty.const.SET_AS_PRIMARY}></td>
+          </tr>
+<{/if}>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>

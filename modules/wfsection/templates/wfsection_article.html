@@ -1,0 +1,74 @@
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+  <tr>
+    <td class="itemHead"><span class="itemTitle" align = "left"><{$article.title}> <{$article.adminlink}></span></td>
+  </tr>
+  <tr>
+    <td valign="top" class="head" colspan="2">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="84%" class="itemPoster" align="left"><{$lang_author}> <{$article.poster}><br /><{$lang_published}>: <{$article.datetime}><br /><{$article.counter}><br /><{$article.size}></td>
+          <td width="16%" align="right" valign="middle"><{$article.maillink}></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+  <tr>
+    <td width="100%"><{$article.urllink}></td>
+  </tr>
+</table>
+
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+  <tr>
+    <td width="100%"><{$article.maintext}></td>
+  </tr>
+</table>
+	
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+  <tr>
+    <td width="100%"><{$article.pagelink}></td>
+  </tr>
+</table>
+
+<{if $showfiles == true}>
+<table width='100%' cellspacing='0' cellpadding='1'>
+  <tr>
+    <td colspan='2' class='itemHead' align='left'><b><{$lang_downloadsfor}> <{$article.title}></b></td></tr>
+<{$article.downloadlink}>
+
+<{/if}>	
+
+<{if $novote == true}>
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+  <tr>
+    <td valign="middle" class="even" align="center">
+	<{$article.rating}> <{$article.votes}><br /><{$article.ratelink}></td>
+  </tr>
+</table>
+<{/if}>
+	
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+  <tr>
+    <td valign="middle" class="even" align="center"><{$article.catlink}></td>
+  </tr>
+</table>
+
+<div style="text-align: center; padding: 3px;
+margin:3px;">
+<{$commentsnav}>
+<{$lang_notice}>
+</div>
+
+<div style="margin:3px; padding: 3px;">
+<!-- start comments loop -->
+<{if $comment_mode == "flat"}>
+<{include file="db:system_comments_flat.html"}>
+<{elseif $comment_mode == "thread"}>
+<{include file="db:system_comments_thread.html"}>
+<{elseif $comment_mode == "nest"}>
+<{include file="db:system_comments_nest.html"}>
+<{/if}>
+<!-- end comments loop -->
+</div>

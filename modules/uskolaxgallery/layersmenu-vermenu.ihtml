@@ -1,0 +1,21 @@
+<STYLE>
+.nav		{ background-color: #ffffcc; font-family: Helvetica, sans-serif; font-size: 10pt; }
+.navdark	{ background-color: #004488; }
+
+</STYLE>
+
+<!-- vertical menu start -->
+<table border="0" cellpadding="3" cellspacing="0" class="navdark">
+<tr>
+<td>
+<table border="0" cellpadding="10" cellspacing="0" width="{abscissa_step}">
+<tr>
+<td class="nav" nowrap>
+{menubody}
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- vertical menu end -->

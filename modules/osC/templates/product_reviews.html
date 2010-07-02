@@ -1,0 +1,122 @@
+<script language="javascript"><!--
+function popupWindow(url) {
+  window.open(url,'popupWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=100,height=100,screenX=150,screenY=150,top=150,left=150')
+}
+//--></script>
+<{include file="db:header.html"}>
+<table width="100%"><tr>
+<!-- body_text //-->
+    <td width="100%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading" valign="top"><{$products_name}></td>
+            <td class="pageHeading" align="right" valign="top"><{$products_price}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="2">
+          <tr>
+            <td valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{ if $srevs == 1 }>
+<{if $sresult == 1}>
+              <tr>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="smallText"><{$revsplit}></td>
+                    <td align="right" class="smallText"><{$smarty.const.TEXT_RESULT_PAGE}> <{$revlinks}></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td><{$seperator}></td>
+              </tr>
+<{/if}>
+<{foreach item=rev from=$revs}>
+              <tr>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="main"><a href="<{$rev.link}>"><u><b><{$rev.customers_name}></b></u></a></td>
+                    <td class="smallText" align="right"><{$rev.date_added}></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+                  <tr class="infoBoxContents">
+                    <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                      <tr>
+                        <td width="10"><{$seperator1}></td>
+                        <td valign="top" class="main"><{$rev.reviews_text}><br><br><i><{$rev.reviews_rating}></i></td>
+                        <td width="10" align="right"><{$seperator1}></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td><{$seperator}></td>
+              </tr>
+<{/foreach}>
+<{else}>
+              <tr>
+                <td><{$notext}></td>
+              </tr>
+              <tr>
+                <td><{$seperator}></td>
+              </tr>
+<{/if}>
+
+<{ if $srevsplit==1}>
+              <tr>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="smallText"><{$revsplit}></td>
+                    <td align="right" class="smallText"><{$revlinks}></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td><{$seperator}></td>
+              </tr>
+<{/if}>
+              <tr>
+                <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+                  <tr class="infoBoxContents">
+                    <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                      <tr>
+                        <td width="10"><{$seperator1}></td>
+                        <td class="main"><a href="<{$product_info_link}>"><{$bt_back}></a></td>
+                        <td class="main" align="right"><a href="<{$product_review_link}>"><{$bt_write}></a></td>
+                        <td width="10"><{$seperator1}></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+            <td width="<{$image_size}>" align="right" valign="top"><table border="0" cellspacing="0" cellpadding="2">
+              <tr>
+                <td align="center" class="smallText">
+<{ if $jsimage == 1 }>
+<script language="javascript"><!--
+document.write('<a href="javascript:popupWindow(\'<{$popup_image_link}>\')"><{$popup_image}><br><{$smarty.const.TEXT_CLICK_TO_ENLARGE}></a>');
+//--></script>
+<noscript>
+<a href="<{$popup_link_nojs}>" target="_blank"><{$popup_image}><br><{$smarty.const.TEXT_CLICK_TO_ENLARGE }></a>
+</noscript>
+<{/if}>
+<p><a href="<{$buy_now_link}>"><{$buy_now_image}></a></p>
+
+                </td>
+              </tr>
+            </table>
+          </td>
+        </table></td>
+      </tr>
+    </table></td>
+	</tr></table>

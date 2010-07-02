@@ -1,0 +1,163 @@
+<{ include file="db:header.html"}>
+<table width="100%" align="left"><tr>
+    <td width="100%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$site_image}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main" colspan="2"><b><{$order_number}> <small>( <{$order_info}> )</small></b></td>
+          </tr>
+          <tr>
+            <td class="smallText"><{$smarty.const.HEADING_ORDER_DATE}> <{$date_purchased}></td>
+            <td class="smallText" align="right"><{$smarty.const.HEADING_ORDER_TOTAL}> <{$order_total}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+<{ if $delivery == 1}>
+            <td width="30%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td class="main"><b><{$smarty.const.HEADING_DELIVERY_ADDRESS}></b></td>
+              </tr>
+              <tr>
+                <td class="main"><{$address}></td>
+              </tr>
+<{ if $shipping == 1 }>
+              <tr>
+                <td class="main"><b><{$smarty.const.HEADING_SHIPPING_METHOD}></b></td>
+              </tr>
+              <tr>
+                <td class="main"><{$shipping_method}></td>
+              </tr>
+<{/if}>
+            </table></td>
+<{/if}>
+            <td width="<{$width}>" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{ if $tax_group == 1 }>
+                  <tr>
+                    <td class="main" colspan="2"><b><{$smarty.const.HEADING_PRODUCTS}></b></td>
+                    <td class="smallText" align="right"><b><{$smarty.const.HEADING_TAX}></b></td>
+                    <td class="smallText" align="right"><b><{$smarty.const.HEADING_TOTAL}></b></td>
+                  </tr>
+<{else}>
+                  <tr>
+                    <td class="main" colspan="3"><b><{$smarty.const.HEADING_PRODUCTS}></b></td>
+                  </tr>
+<{/if}>
+<{section name=pId loop=$tmp_products}>
+        <tr>
+         <td class="main" align="right" valign="top" width="30"><{$tmp_products[pId].qty}>&nbsp;x</td>
+         <td class="main" valign="top"><{$tmp_products[pId].name}>
+<{section name=attr loop=$tmp_attr[pId] }>		 
+        <br><nobr><small>&nbsp;<i> - <{$tmp_attr[pId][attr].option}> : <{$tmp_attr[pId][attr].value}></i></small></nobr>
+<{/section}>
+   </td>
+<{if $tax_group == 1 }>
+
+ <td class="main" valign="top" align="right"><{$tmp_products[pId].tax}> %</td>
+<{/if}>
+
+<td class="main" align="right" valign="top"><{$tmp_products[pId].final_price}></td>
+ </tr>
+<{/section}>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="main"><b><{$smarty.const.HEADING_BILLING_INFORMATION}></b></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td width="30%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td class="main"><b><{$smarty.const.HEADING_BILLING_ADDRESS}></b></td>
+              </tr>
+              <tr>
+                <td class="main"><{$bill_adr}></td>
+              </tr>
+              <tr>
+                <td class="main"><b><{$smarty.const.HEADING_PAYMENT_METHOD}></b></td>
+              </tr>
+              <tr>
+                <td class="main"><{$pay_method}></td>
+              </tr>
+            </table></td>
+            <td width="70%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{foreach from=$orders item=orders }>
+   <tr>
+               <td class="main" align="right" width="100%"><{$orders.title}></td>
+              <td class="main" align="right"><{$orders.text}></td>
+                    </tr>
+<{/foreach}>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td class="main"><b><{$smarty.const.HEADING_ORDER_HISTORY}></b></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{foreach from=$status item=status}>
+    <tr>
+   <td class="main" valign="top" width="70"><{$status.date}></td>
+   <td class="main" valign="top" width="70"><{$status.name}></td>
+       <td class="main" valign="top"><{$status.comment}></td>
+        </tr>
+<{/foreach}>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+<{ if $download == 1}>
+<{ include file="db:downloads.html"}>
+<{/if}>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td><a href="<{$ah_link}>"><{$bt_back}></a></td>
+                <td width="10"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>

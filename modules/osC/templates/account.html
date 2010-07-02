@@ -1,0 +1,165 @@
+<{include file="db:header.html"}>
+<script language="javascript"><!--
+function rowOverEffect(object) {
+  if (object.className == 'moduleRow') object.className = 'moduleRowOver';
+}
+
+function rowOutEffect(object) {
+  if (object.className == 'moduleRowOver') object.className = 'moduleRow';
+}
+//--></script>
+<table width="100%"><tr>
+    <td width="100%" valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$smarty.const.HEADING_TITLE}></td>
+            <td class="pageHeading" align="right"><{$site_image}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{if $smessage == 1}>
+      <tr>
+        <td><{$messagetext}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+<{if $scustorder == 1 }>
+      <tr>
+        <td><table border="0" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.OVERVIEW_TITLE}></b></td>
+            <td class="main"><a href="<{$account_history_link}>"><u><{$smarty.const.OVERVIEW_SHOW_ALL_ORDERS}></u></a></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td class="main" align="center" valign="top" width="130"><b><{$smarty.const.OVERVIEW_PREVIOUS_ORDERS}></b><br><{$arrow_se}></td>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+<{foreach key=id item=order from=$ordertext }>
+
+                  <tr class="moduleRow" onMouseOver="rowOverEffect(this)" onMouseOut="rowOutEffect(this)" onClick="document.location.href='<{$order.link}>'">
+                    <td class="main" width="80"><{$order.date_purchased}></td>
+                    <td class="main">#<{$order.orders_id}></td>
+                    <td class="main"><{$order.name}>, <{$order.country}></td>
+                    <td class="main"><{$order.orders_status_name}></td>
+                    <td class="main" align="right"><{$order.order_total}></td>
+                    <td class="main" align="right"><a href="<{$order.link}>"><{$bt_small_view}></a></td>
+                  </tr>
+
+<{/foreach}>
+                </table></td>
+                <td><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.MY_ACCOUNT_TITLE}></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td width="60"><{$img_account_personal}></td>
+                <td width="10"><{$seperator1}></td>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="main"><{$arrow_green}><a href="<{$account_edit}>"><{$smarty.const.MY_ACCOUNT_INFORMATION}></a></td>
+                  </tr>
+                  <tr>
+                    <td class="main"><{$arrow_green}><a href="<{$account_address_book}>"><{$smarty.const.MY_ACCOUNT_ADDRESS_BOOK}></a></td>
+                  </tr>
+                  <tr>
+                    <td class="main"><{$arrow_green}><a href="<{$account_password}>"><{$smarty.const.MY_ACCOUNT_PASSWORD}></a></td>
+                  </tr>
+                </table></td>
+                <td width="10" align="right"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.MY_ORDERS_TITLE}>></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td width="60"><{$account_orders}></td>
+                <td width="10"><{$seperator1}></td>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="main"><{$arrow_green}><a href="<{$account_history_link}>"><{$smarty.const.MY_ORDERS_VIEW}></a></td>
+                  </tr>
+                </table></td>
+                <td width="10" align="right"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td class="main"><b><{$smarty.const.EMAIL_NOTIFICATIONS_TITLE}></b></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td width="60"><{$img_account_notifications}></td>
+                <td width="10"><{$seperator1}></td>
+                <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="main"><{$arrow_green}><a href="<{$account_newsletter}>"><{$smarty.const.EMAIL_NOTIFICATIONS_NEWSLETTERS}></a></td>
+                  </tr>
+                  <tr>
+                    <td class="main"><{$arrow_green}><a href="<{$account_notifications}>"><{$smarty.const.EMAIL_NOTIFICATIONS_PRODUCTS}></a></td>
+                  </tr>
+                </table></td>
+                <td width="10" align="right"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+</tr></table>

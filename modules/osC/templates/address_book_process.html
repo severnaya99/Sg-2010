@@ -1,0 +1,108 @@
+<{include file="db:form_check.js.html"}>
+<{include file="db:header.html"}>
+<table width="100%"><tr>
+    <td width="100%" valign="top"><{$form_adr}>
+	<table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="pageHeading"><{$title}></td>
+            <td class="pageHeading" align="right"><{$site_img}></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $message ==  1 }>
+      <tr>
+        <td><{$messagetext}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{/if}>
+<{ if $delete == 1}>
+      <tr>
+        <td class="main"><b><{$smarty.const.DELETE_ADDRESS_TITLE}></b></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td><{$seperator1}></td>
+                <td class="main" width="50%" valign="top"><{$smarty.const.DELETE_ADDRESS_DESCRIPTION}></td>
+                <td align="right" width="50%" valign="top"><table border="0" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td class="main" align="center" valign="top"><b><{$smarty.const.SELECTED_ADDRESS}></b><br><{$arrow_se}></td>
+                    <td><{$seperator1}></td>
+                    <td class="main" valign="top"><{$del_label}></td>
+                    <td><{$seperator1}></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td><a href="<{$address_book}>"><{$bt_back}></a></td>
+                <td align="right"><a href="<{$address_book_del}>"><{$bt_back}></a></td>
+                <td width="10"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+<{else}>
+  <tr>
+        <td><{include file="db:address_book_details.html"}></td>
+      </tr>
+      <tr>
+        <td><{$seperator}></td>
+      </tr>
+<{ if $edit ==1 }>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td><a href="<{$address_book}>"><{$bt_back}></a></td>
+                <td align="right"><{$edit_field}><{$edit_field1}><{$bt_update}></td>
+                <td width="10"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+<{else}>
+      <tr>
+        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+          <tr class="infoBoxContents">
+            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+              <tr>
+                <td width="10"><{$seperator1}></td>
+                <td><a href="<{$back_link}>"><{$bt_back}></a></td>
+                <td align="right"><{$field_process}><{$bt_continue}></td>
+                <td width="10"><{$seperator1}></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+
+<{/if}>
+<{/if}>
+
+    </table><{$form_end}></td>
+	</tr></table>

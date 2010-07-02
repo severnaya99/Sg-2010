@@ -1,0 +1,256 @@
+<b><u>=> Version 2.14 Final (2008-07-05)</u></b>
+
+- Added : New PDF generator to be used on ICMS 1.1 with tcpdf (stranger)
+- Added : Using the new preference of SmartObject which allows disabling of SmartMdules footer on admin
+- Fixed : Replacing the credits in the templates by a comment instead of an hidden text
+- Fixed : Upgrading from news module recenter than 1.44 was not possible (stranger)
+
+<b><u>=> Version 2.14 Beta (2008-04-13)</u></b>
+
+- Added : Addition of a rate feature to rate article
+- Added : Addition of an option in the module preference '[CONTENT OPTIONS] Display sub categories', 'Display sub-categories on index page only' thanks to Mowaffak
+- Added : Config option to display or not the module breadcrumb
+- Added : Addition of a shortcut link to edit the categories' details (only application for those with administrative privilege), thanks to Jason Wong and Shine
+- Added : Addition of the possibility to select multiple categories in the Recent Items List and Recent Items Details block
+- Added : Import script for WF-Section up to until version 2.07
+- Added : Verification to be sure SmartObject is installed as this is now a requirement for SmartSection to work
+- Fixed : SmartsectionMetagen was missing under some situation
+- Fixed : The Spotlight block edit form was causing a problem with large number of articles
+- Fixed : Some characters were not supported in makepdf.php. They are now, thanks to ccopen and McDonald
+- Fixed : Category icon problem fixed thanks to Jason Wong and Shine
+- Fixed : Categories now have pagination thanks to eljkmw and Shine
+- Fixed : No introduction text showen in mainpage thanks to McDonald and Shine
+- Fixed : Upon deleting article tag-entries are not deleted from Tag-module thanks to McDonald and Shine
+- Fixed : Offline articles were still accessible via direct URL (malanciault/shine)
+- Fixed : Files linked to articles are now only accessible by people with proper permissions AND when article is "Published"
+- Fixed : File needs to be "Visible" for it to be available, even via direct link
+
+<b><u>=> Version 2.13 Final (2007-02-09)</u></b>
+
+- Added : the article body now supports the [flash-fileid] tag where fileid is the id of a flash file linked to an article. This tag will be automatically replaced with the embeded Flash.
+- Fixed : a user who is notauthor of an article was able to link a file to it under som circumstances
+- Fixed : Undefined variable: totalItemsOnPage in file modules/smartsection/index.php line 177
+- Fixed : Smarty error: unable to read resource: "db:tag_bar.html"
+- Fixed : Undefined variable: max_imgsize in file modules/smartsection/include/fileform.inc.php line 42
+- Fixed : Object of class SmartsectionCategory could not be converted to int in file modules/smartsection/class/item.php line 179
+- Fixed : Object of class SmartsectionCategory could not be converted to int in file modules/smartsection/class/item.php line 181
+- Fixed : Object of class SmartsectionCategory could not be converted to int in file language/german/local.php line 11
+- Fixed : Object of class SmartsectionCategory could not be converted to int in file language/german/local.php line 11
+- Fixed : Object of class SmartsectionCategory could not be converted to int in file modules/smartsection/include/functions.php line 161
+- Fixed : ' char was causing a problem in the title of the article as the TITLE tag of the page
+
+<b><u>=> Version 2.13 RC 4(forum release)</u></b>
+
+- Fixed : security issue fixed thanks to Rroselicoe;
+
+<b><u>=> Version 2.13 RC 4(forum release)</u></b>
+
+- Fixed : missing item_tag field on clean install
+- Fixed : undefined constant _MI_SSECTION_LATESTFILES
+- Fixed : Undefined offset: 3 in file modules/smartsection/blocks/items_spot.php line 20
+
+<b><u>=> Version 2.13 RC 3(forum release)</u></b>
+
+- Added : option to set the title length in recent items and new items block
+- Fixed : Tag handler does not exists
+- Fixed : some problems occured when the Tag module was not installed
+
+<b><u>=> Version 2.13 RC 2(forum release)</u></b>
+
+- Added : it is now possible to attach a fil to an article directly from the creation/edition form
+
+<b><u>=> Version 2.13 RC 1(2007-01-29)</u></b>
+
+- Fixed : In userinfo page, when no keywords were looked for, the article link still had the &keywords string which was screwing the layout on the article page
+- Removed : removing class/metagen.php as it is now handle by smartmetagen.php
+- Added : we are now wupporting phpPP's Tags module
+- Added : When a SWF file is linked to an article, the SWF will be dipsplayed embed in the article
+- Added : Category images are now displayed within the Summary view and Full view display type
+- Added : When a category does not hold any articles, the article count is not displayed, instead of being displayed as 0
+
+<b><u>=> Version 2.12 RC2 (unreleased)</u></b>
+
+- Fixed : SmartMetaGen class was replaced by SmartsectionMetaGen
+- Fixed : Spotlight block was sorting ASC by date instead of DESC by date
+- Fixed : french language constant in block (regarding the spotlight block) was fixed
+- Fixed : Undefined offset: 63 in file /modules/smartsection/class/smartmetagen.php line 265
+- Fixed : Fatal error: Call to undefined function smartsection_getModuleConfig()
+- Fixed : Call to a member function setDescription() on a non-object in smartsection\admin\item.php on line 227 when a (some) non existing WYSIWYG editor was selected
+- Fixed : Only variables should be assigned by reference in file /modules/smartsection/class/permission.php line 36
+- Fixed : Only variables should be assigned by reference in file /modules/smartsection/admin/item.php line 168
+- Fixed : Only variables should be assigned by reference in file /modules/smartsection/admin/item.php line 272
+- Fixed : Only variables should be assigned by reference in file /modules/smartsection/admin/item.php line 351
+- Fixed : Only variables should be assigned by reference in file /modules/smartsection/xoops_version.php line 622
+- Fixed : Only variables should be assigned by reference in file /modules/smartsection/class/item.php line 603
+- Fixed : It was only possible to configure the Partial View for 1 group
+- Added : A new config option was added to enable category breadcrumb in the search results
+
+<b><u>=> Version 2.12 RC1 (2006-10-19)</u></b>
+
+- Added : New block to list the latest uploaded files
+- Added : more inmprovment to the SmartMetaGen thanks to PsyLove
+
+<b><u>=> Version 2.11 RC1 (2006-09-29)</u></b>
+
+- Added : Support for Importing News 1.44
+- Added : Sanitizig accentuated characters in the short_url thanks to psylove
+- Added : module config option to personnalized the name of the module when using URL Rewriting
+- Fixed : Send to a friend button was having a blank body when the SiteName had an apostrophe
+- Fixed : Wrong file inclusion on admin/pw_upload_file an class/file.php, thanks to dead
+- Fixed : problem with articles having categoryid=0. This is fixed when updating the module (articles that have caegoryid=0 will be changed for an available categoryid)
+- Fixed : Wrong URL for attached files when using URL_REWRITE
+- Fixed : DisplayLastItems config option was no more present in the preferences
+- Fixed : undefined variable - QUERY_STRING in include/functions.php thanks to Peekay
+- Fixed : Changing INSERT queries to fix problems related to MySQL 5.x
+- Changed : TinyEditor has changed its code so SmartSection needed to update its support for this editor (thanks to alain01)
+- Changed : The print and pdf link of an article are no more opening in a new window
+- Changed : Replacing the smartsection metagen class with the SmartMetaGen class of the SmartObject Framework
+- Removed : Check Table procedure has been implemented directly in the module update
+
+<b><u>=> Version 2.11 Beta (Private release)</u></b>
+
+- Fixed : Fatal error: Only variables can be passed by reference in /smartsection/item.php on line 177
+- Fixed : Some bugs fixed for XOOPS 2.0.14 and 2.0.15
+- Fixed : When printing an article, the summary was not displayed
+- Added : Partial View features for some specified Groups
+
+<b><u>=> Version 2.1 RC 2 (2006-05-30)</u></b>
+
+- Some minor big fixes
+
+<b><u>=> Version 2.1 RC 1 (2006-05-26)</u></b>
+
+- Removing GIJOE's block admin support.
+- Print page was not displaying correctly when [pagebreak] was used (thanks to solo ;-))
+- Addition of a constant in the code used to hide advanced features.
+- Metagen functions encapsulated in SmartsectionMetagen class
+- short_url field added to categories and articles : when using Rewrite feature, you can now set the short_url to be used
+- Meta-keywords and meta-description fields added to categories and articles : these information are now saved in the database and you can customize them as you wish
+- New logo thanks to xpider !
+- Support for XOOPS 2.2.x WYSIWYG editor framework
+- Support for FCKeditor for XOOPS 2.0.13.2 and XOOPS 2.2.x
+- Support for Spaw editor
+- Supoprt for HTMLArea editor
+- Supoprt for Inbetween editor
+- Preference to not show the Category summary when on a category page without subcats
+- The size of the title in the last articles (after the category summary) is now managed by the $xoopsModuleConfig['titlesize'] preference)
+- Even if the "Display last articles" preferences was turned Off, articles were still displayed on index page
+
+<b><u>=> Version 2.0 Beta 1 (not released)</u></b>
+
+- Security fix dans seo.php (Skalpa)
+- Template-enabled admin menu (Skalpa)
+- Category edit form now manage by its own class (Skalpa)
+- Possibility to specify a template for each category (Skalpa)
+- Addition of a new field in a category : the category header
+- Now supporting import from WF-Section 1.0.4.
+- New Display Type : WFSection like, original idea by Marco
+
+<b><u>=> Version 1.0.5 Beta 1 (2005-11-30)</u></b>
+
+- SEO function thanks to SUDHAKER
+- Query count optimisation and other code optimisations
+- Introduction of support fo XOOPS 2.2.x
+
+<b><u>=> Version 1.0.4 Beta 2 (2005-10-25)</u></b>
+
+- Field address Removed from item, replaced by an inclusion functionnality in item body
+- Multiple pagewrap XoopsCode included in the form [pagewrap=filename]
+- pagenav problem in admin/item.php
+- WF-Section 1.5 migration script (importing categories, articles, htmlpage, linked files and commenys)
+- News 1.1 migration script (importing categories, articles and comments)
+- FPDF now supporting ul and li tags (bug #3087)
+- Userinfo screen was displaying articles not yet approved (bug #3090)
+- Adding new Options (html, xcodes, images, etc...) in the user submit form (#bug 3089)
+
+<b><u>=> Version 1.0.3 RC 2 (2005-09-21)</u></b>
+
+- Bug fixed when setting the status of an article while creating it.
+- MimeTypes link has been added to the module DHTML menu on admin side.
+- English language files had come typos that were causing wrning when installin the module.
+- Some language fixes.
+
+<b><u>=> Version 1.0.3 RC 1 (2005-09-18)</u></b>
+
+- some errors were fixed to enable bug free cloning
+- class_exists typo in fpdf.pdf
+- in the Article tab on the admin side, all articles are now displayed grouped by status (thanks to DuGris ;-))
+- The PageWrap functionnality inspired from Chappy's TinyContent have been implemented in the module
+- Support added for TinyEditor.
+
+<b><u>=> Version 1.0.2 Beta 1 (2005-09-08)</u></b>
+
+- Fix in the wysiwyg editor
+- Sorting order fix
+- collapsable bar now remembering state in a cookie
+- english files syntax check, thanks to carnuke
+- new functionnality : duplicating an article
+- implementation of group permissions to allow article submission by category
+- users can now edit their own article
+- a bug was fixed regarding the page navigation bar not always showing
+- the add file form is now managed by template
+- uploaded files can now be set active or inactive. if inactive, they won't be display on the user side
+- a check box has been added to the file upload form to allow another file upload just after hiting the submit button
+- Imlementation of MimeTypes management, based on xHelp, thanks to 3Dev
+- Article can now be outputed in PDF format
+- Adding the file clone.txt explaining how to clone the module
+- In the About page, the Version History is now directly taken from the changelog.txt file (thanks to 3Dev ;-))
+
+<b><u>=> Version 1.0 Beta 1 (2005-06-13)</u></b>
+
+- Addition of check database table functionnality, including  a new dbUpdater class that performs the db upgrade
+- Keyword highlighting added in the search function
+- A lot of errors were fixed in the Spotlight block
+- The Preferences page now has naviation tabs, just like the other admin pages. Thanks to Xavier from Wiwimod :-)
+- A bug prevented the creation of a category with an id greater than 128. This has been fixed, thanks to tommyz
+- Blocks were not displaying items by hits of weight
+- Files deletion bug is fixed
+- Displaying multiple nested categories bug is fixed
+- Bug fix related to the date when submitting an item from the user side
+- Implementation of a template in the Submit an item form
+- Implementation of a preview function
+- Add some item links in the admin side
+
+<b><u>=> Version 0.93 Beta 1 (2005-02-18)</u></b>
+
+- Improvments in the folder creation script
+- Corrections in the french language files for the Article plugin
+- Add a config option to display or not the sub-categories under the top categories
+- Add a config option to display or not a list of last articles in the index page
+
+<b><u>=> Version 0.92 Beta 1 (2005-01-30)</u></b>
+
+- Plugins are now better implemented as they are complete sentences and not only words (feature #1943)
+- The About page is now managed by a class
+- Navigation throught previous and next items within a category is now possible
+- An item now has an image field (feature #1942)
+- Bug fixed when uploading category image (the category is still not used in user side thought...) (bug #1565)
+- All uploaded images and files are now uploaded in xoops_root/uploads/smartsection. This fixes a couple of reported bugs... (bug #1620)
+- Bug fixed in collapse javascript functions (#bug 1859)
+- Block editing was causin some fatal errors. This has been fixed (bug #1717)
+- The module was causing Fatal errors in the user profile and the search results page. This has been fixed (bug #1718)
+- The icon to edit a category had a wrong link. This has been fixed. (bug #1719)
+- Missing/trunked object in sent email has been fixed (bug #1791)
+- Anonymous blank page has been fixed (bug # 1777)
+- Problem with article title in multilanguage has been fixed (bug #1830)
+- "Published By" missing has been fixed (bug #1696)
+- Datetime error on the Datesub field has been fixed (bug #1621)
+
+<b><u>=> Version 0.81 Beta 1</u></b>
+
+- Adding the [pagebreak] functionnality
+- Adding Koivi WYSIWYG support (feature #1932)
+
+<b><u>=> Version 0.8 Beta 2</u></b>
+=====================
+
+- Add a function to create the upload and images folder in the admin section
+- Uploading files linked to articles is now working
+- Fix the bug of anonymous access
+- Fix the bug of Fatal error in the user profile
+- Fix the bug of Fatal error in the global search
+- Other bug fixing
+
+<b><u>=> Version 0.8 Beta 1</u></b>
+
+- First public release of the module.

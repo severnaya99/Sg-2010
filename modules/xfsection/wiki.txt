@@ -1,0 +1,101 @@
+$Id: wiki.txt,v 1.2 2005/06/20 15:03:23 ohwada Exp $
+
+=================================================
+Date:    2003/11/21
+Author:  Kenichi OHWADA
+URL:     http://linux.ohwada.net/
+Email:   linux@ohwada.net
+=================================================
+
+Url link by BracketName.
+
+BracketName is the simple code adopted by PukiWiki. 
+Please look at the following about PukiWiki.
+http://pukiwiki.org/
+
+Please change the following files when using it,
+becouse it has come to be turned off by the default. 
+22 line, conf.php
+35 line, class/wfsarticle.php 
+
+It may not operate in the English version, 
+becouse multi byte functions are required.
+
+The character string bundled with double brace like [[hogehoge]],
+it will be changed into url link.
+Japanese, a sign, a number, and a half-size blank character can be included in the character string.
+the character string is changed to url encoding.
+A form is as follows. 
+
+1. Link in XFSection 
+When it writes Like
+[[hogehoge]]
+will be changed into
+<a href="http://hostname/modules/xfsectuon/article.php?title=hogehoge">hogehoge</a> .
+
+When it writes Like
+[[foo bar]]
+will be changed into
+<a href="http://hostname/modules/xfsectuon/article.php?title=foo%20bar">hogehoge</a> .
+
+2. Aliase
+When it writes Like
+[[hogehoge>foobar]]
+will be changed into
+<a href="http://hostname/modules/xfsectuon/article.php?title=foobar">hogehoge</a> .
+
+3. link to external site
+When it writes Like
+ [[hogehoge:http://www.pukiwiki.org/]]
+will be changed into
+<a href="http://www.pukiwiki.org/">hogehoge</a> .
+
+4. notation of Bracket
+At notation HTML, Bracket can be used &#091; instead of [ .
+When you want to display [[hogehoge]], and don't to use link,
+please use this notation.
+
+
+=================================================
+List of added files
+=================================================
+wiki
+  - init.php
+  - make_link.php
+  - mbstring.php
+  - func.php
+  - file.php
+  - plugin.php
+  - html.php
+
+=================================================
+The changed part from PukiWiki 
+=================================================
+Base on PukiWiki 1.4.3 .
+
+ÇPÅDmake_link.php
+(1) In PukiWiki, the specification does not allow a tag into the text,
+and then tag code is changed into HTML code like "&lt;".
+In XFsection, Transparence is carried out. 
+(2)  In PukiWiki, existence of a article ,whiche is file, is checked.
+When it does not exist, ? is displayed. 
+In XFsection, it links unconditionally.
+
+2. init.php
+The required variable was merged from the following file. 
+init.php
+pukiwiki.php
+pukiwiki.ini.php
+default.ini.php
+ja.lng
+
+3. mbstring.php
+It is the dummy file of mbstring, multi byte functions.
+It prepared for the English versions.   
+
+4. The following file are not changed. 
+func.php
+file.php
+plugin.php
+html.php
+

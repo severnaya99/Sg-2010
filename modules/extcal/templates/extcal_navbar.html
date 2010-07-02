@@ -1,0 +1,15 @@
+<style type="text/css">
+	#navlist { padding:3px 0; margin:10px 0 0 0; border-bottom:1px solid; font:bold 12px Verdana, sans-serif; }
+	#navlist li { list-style:none; margin:0; display:inline; }
+	#navlist li a { padding:3px 0.5em; margin-left:3px; border:1px solid; -moz-border-radius-topleft:7px; -moz-border-radius-topright:7px; -moz-border-top-right-radius:5px; border-bottom:none; text-decoration:none; display:inline; }
+	#navlist li a#current { border-bottom:1px solid white; }
+</style>
+
+<ul id="navlist">
+	<li><a href="calendar-month.php" <{if $view == "calmonth"}>id="current"<{else}>class="head"<{/if}>><{$lang.calmonth}></a></li>
+	<li><a href="calendar-week.php" <{if $view == "calweek"}>id="current"<{else}>class="head"<{/if}>><{$lang.calweek}></a></li>
+	<li><a href="year.php" <{if $view == "year"}>id="current"<{else}>class="head"<{/if}>><{$lang.year}></a></li>
+	<li><a href="month.php" <{if $view == "month"}>id="current"<{else}>class="head"<{/if}>><{$lang.month}></a></li>
+	<li><a href="week.php" <{if $view == "week"}>id="current"<{else}>class="head"<{/if}>><{$lang.week}></a></li>
+	<li><a href="day.php" <{if $view == "day"}>id="current"<{else}>class="head"<{/if}>><{$lang.day}></a></li>
+</ul>

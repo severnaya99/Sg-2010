@@ -1,0 +1,207 @@
+  /*boutton de la barre box*/
+
+input[disabled] {
+background-color: #EEEEEE;
+cursor: no-drop;
+}
+
+  /*class des message*/
+
+.xo-message-alert {
+font-weight: normal;
+background-color: #fbe3e4;
+color: #d12f19;
+padding: 5px;
+}
+
+
+img {
+  /*behavior:url("include/pngbehavior.htc");*/
+}
+
+/*popup new message */
+.xo-message-popup {
+background-color: #fbe3e4;
+width: 300px;
+position: absolute;
+height: 130px;
+border-right: 1px solid #dedede;
+border-bottom: 1px solid #dedede;
+border-top: 1px solid #eeeeee;
+border-left: 1px solid #eeeeee;
+padding: 5px;
+text-align: center;
+left: 50%; 
+display: block;
+margin-left: -375px;
+top: 150px;
+}
+
+.xo-message-popup span {
+color: #FF0000;
+}
+
+.xo-message-popup :hover {
+background-color: #ebf5ff;
+}
+
+  /*Menu de deplacement accueil/ option etc*/
+#mpbuttonbar {
+color:#000000;
+background-color: #FFFFFF;
+padding: 5px;
+ }
+#mpbuttonbar a span { 
+display: block;
+float: left;
+margin-top: 0pt;
+margin-right: 7px;
+margin-bottom: 0pt;
+margin-left: 0pt;
+
+border-right: 1px solid #dedede;
+border-bottom: 1px solid #dedede;
+border-top: 1px solid #eeeeee;
+border-left: 1px solid #eeeeee;
+font-family: "Lucida Grande",Tahoma,Arial,Verdana,sans-serif;
+font-size: 100%;
+line-height: 130%;
+text-decoration: none;
+font-weight: normal;
+color: #565656;
+padding-top: 5px;
+padding-right: 10px;
+padding-bottom: 6px;
+padding-left: 10px;
+}
+#mpbuttonbar a:hover span { 
+color: #336699;
+text-decoration: none;
+}
+#mpbuttonbar #current span { background-color: #ebf5ff; color:#000; }
+
+  /*class de la page index*/
+#xo-mp-index {
+  width: 100%;
+}
+#xo-message-index {
+  width: 25%;
+}
+#xo-message-index .images {
+  width: auto;
+  height: 32px;
+  border: 0;
+  font: bold 12px Arial, Verdana;
+}
+#xo-message-index .text {
+  padding: 3px 0 3px 33px;
+  border: 0;
+}
+#xo-message-index .details {
+  padding: 3px 0 3px 50px;
+  border: 0;
+}
+#xo-message-index .percent {
+  padding: 0 0 0 50px;
+  width: 350px;
+  border: 0;
+}
+#xo-calendar {
+  color:            #666;
+  border:           1px solid silver;
+  font:             normal 11px Arial, verdana;
+}
+#xo-calendar .head {
+  width: 20px;
+  height: 16px;
+  text-align:       center;
+  padding: 1px;
+  background-color: #C2CDD6;
+}
+#xo-calendar .today {
+  font-weight: bold;
+  color: red;
+  text-align:       center;
+  padding: 1px;
+  background-color: #92A6BC;
+}
+#xo-calendar .today a{
+  color: red;
+}
+#xo-calendar .other {
+  text-align:       center;
+  padding: 1px;
+  background-color: #F3F3F3;
+}
+#xo-calendar .other a {
+  font-weight: bold;
+}
+#xo-calendar .footer {
+  text-align:       center;
+  padding: 0px;
+  background-color: #F3F3F3;
+}
+
+  /*boite de suggestion ajax recherche de membre*/
+.suggestionsBox {
+position: relative;
+left: 30px;
+margin: 10px 0px 0px 0px;
+width: 200px;
+font: 12px Arial, Verdana;
+text-decoration:none;
+border: 1px solid silver;
+background-color:#FFFFFF;
+text-align:left;
+color:#000000;
+
+}
+	
+.suggestionList {
+margin: 0px;
+padding: 0px;
+}
+
+#autoSuggestionsList li {
+list-style : none;
+}	
+.suggestionList li {
+margin: 0px 0px 3px 0px;
+padding: 3px;
+cursor: pointer;
+list-style : none;
+}
+	
+.suggestionList li:hover {
+ background-color:#EBF5FF;
+}
+
+  /*preview des messages*/
+.viewBox {
+position: relative;
+left: 30px;
+margin: 5px 5px 0px 0px;
+width: 95%;
+font: 12px Arial, Verdana;
+text-decoration:none;
+border: 1px solid silver;
+background-color:#FFFFFF;
+text-align:left;
+color:#000000;
+}
+	
+.viewList {
+margin: 0px;
+padding: 0px;
+}
+	
+.viewList li {
+margin: 0px 0px 3px 0px;
+padding: 3px;
+list-style : none;
+cursor: pointer;
+}
+	
+.viewList li:hover {
+ background-color:#EBF5FF;
+}
